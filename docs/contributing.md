@@ -17,6 +17,8 @@ In short:
 
 ### Development
 
+English should be used for variable names, docstrings, documentation etc for uniformity.
+
 [Pylint](https://www.pylint.org/) is used to enforce proper guidelines:
 
 1. [PEP 8](https://www.python.org/dev/peps/pep-0008/) compliance.
