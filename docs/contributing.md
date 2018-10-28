@@ -16,6 +16,8 @@ In short:
 1. Participate in discussion between the team members on whether the feature needs improvements or should be merged.
 1. Repeat!
 
+For a more detailed guide on how to stay in sync with the upstream and avoid conflicts, read [this](https://gist.github.com/Chaser324/ce0505fbed06b947d962).
+
 ### Development
 
 English should be used for variable names, docstrings, documentation etc for uniformity.
