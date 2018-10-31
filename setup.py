@@ -24,6 +24,7 @@ setup(
         'dev': [
             'pylint',
             'pylint-quotes',
+            'git-pylint-commit-hook',
         ],
     },
 )

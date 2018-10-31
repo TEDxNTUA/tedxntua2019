@@ -2,6 +2,8 @@
 
 * `docs/`  
   Project-level documentation needs to be stored here and be written in Markdown. Module-specific documentation may be located only in source files.
+* `etc/`
+  Extra files that accompany the project, such as configuration of external tools etc.
 * `project/`
     * `settings/`  
       Settings module that reads from *.env* and exports configuration parameters to Django.

@@ -27,6 +27,8 @@ English should be used for variable names, docstrings, documentation etc for uni
 1. [PEP 8](https://www.python.org/dev/peps/pep-0008/) compliance.
 1. Docstrings everywhere :)
 
+*RECOMMENDED:* To enforce Pylint checking right before each commit, then copy the `etc/pre-commit` file to `.git/hooks/pre-commit`. This uses the `git-pylint-commit-hook` module that is included in the dev-dependencies.
+
 Rules are meant to be broken though, so if you disagree when Pylint complains about something, feel free to edit the [pylintrc](../pylintrc) configuration accordingly.
 
 ### Testing
