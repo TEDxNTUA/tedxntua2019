@@ -6,6 +6,7 @@
   Extra files that accompany the project, such as configuration of external tools etc.
 * `project/`
     * [`team/`](team/index.md)
+    * [`about/`](about/index.md)
     * `settings/`  
       Settings module that reads from *.env* and exports configuration parameters to Django.
     * `urls.py`  
