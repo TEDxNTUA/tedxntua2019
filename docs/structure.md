@@ -5,6 +5,7 @@
 * `etc/`
   Extra files that accompany the project, such as configuration of external tools etc.
 * `project/`
+    * [`program/`](program/index.md)
     * [`team/`](team/index.md)
     * [`about/`](about/index.md)
     * [`partners/`](partners/index.md)
