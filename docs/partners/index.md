@@ -10,7 +10,7 @@ link of their website.
 
 Attributes:
 * `name`: name
-* `type`: One of {`GSP` = Grand sponsors plus, `GP` = Grand sponsors, `SPO` = Sponsors, `SUP` = Supporters}
+* `partner_type`: One of {`GSP` = Grand Sponsors Plus, `GP` = Grand Sponsors, `SPO` = Sponsors, `SUP` = Supporters, `MP` = Media Partners, `CP` = Community Partners}
 * `link`: Link to website
 
 ## Views
