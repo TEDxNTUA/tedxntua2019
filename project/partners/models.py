@@ -23,7 +23,7 @@ class Partner(models.Model):
     )
 
     name = models.CharField(max_length=255, verbose_name='name')
-    type = models.CharField(max_length=2, choices=PARTNER_TYPES)
+    type = models.CharField(max_length=3, choices=PARTNER_TYPES)
     link = models.URLField()
 
     def __str__(self):
