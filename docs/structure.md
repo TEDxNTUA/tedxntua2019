@@ -9,6 +9,8 @@
     * [`team/`](team/index.md)
     * [`about/`](about/index.md)
     * [`partners/`](partners/index.md)
+    * [`privacy/`](privacy/index.md)
+    * [`license/`](license/index.md)
     * `settings/`  
       Settings module that reads from *.env* and exports configuration parameters to Django.
     * `urls.py`  

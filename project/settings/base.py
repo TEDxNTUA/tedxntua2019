@@ -16,6 +16,8 @@ INSTALLED_APPS = [
     'project.program',
     'project.about',
     'project.team',
+    'project.privacy',
+    'project.license',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
