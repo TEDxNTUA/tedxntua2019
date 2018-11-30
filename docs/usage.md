@@ -2,5 +2,5 @@
 
 To initiate the server run:
 ```
-$ manage.py runserver
+$ python manage.py runserver
 ```
