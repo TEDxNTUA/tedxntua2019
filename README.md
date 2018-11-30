@@ -1,6 +1,6 @@
 # TEDxNTUA 2019 Website
 
-Django project for the [2019.tedxntua.com](2019.tedxntua.com) website.
+Django project for the [2019.tedxntua.com](https://2019.tedxntua.com) website.
 
 ## Authors
 
