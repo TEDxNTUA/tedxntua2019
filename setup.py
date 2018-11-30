@@ -23,6 +23,7 @@ setup(
     extras_require={
         'dev': [
             'pylint',
+            'pylint-django',
             'pylint-quotes',
             'git-pylint-commit-hook',
         ],
