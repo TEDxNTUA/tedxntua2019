@@ -11,5 +11,5 @@ Attributes:
 * `last`: Last name
 * `email`: Email address
 * `team`: One of {`XP` = Experience, `IT`, `FR` = Fundraising, `GR` = Graphics, `MD` = Media, `SP` = Speakers, `VP` = Venue & Production}
-
+* `image`: A picture of the team member
 ## Views

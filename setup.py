@@ -19,6 +19,7 @@ setup(
         'dj-database-url',
         'Django',
         'mysqlclient',
+        'django-versatileimagefield',
     ],
     extras_require={
         'dev': [

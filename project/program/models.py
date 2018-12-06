@@ -1,4 +1,10 @@
 from django.db import models
+from django.dispatch import receiver
+import logging
+logger = logging.getLogger(__name__)
+
+from versatileimagefield.fields import VersatileImageField
+from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 
 class SpeakerManager(models.Manager):
     def get_queryset(self):
@@ -27,6 +33,15 @@ class Presenter(models.Model):
     quote = models.CharField(max_length=255, blank=True, verbose_name='Inspirational quote')
     link = models.URLField(blank=True, verbose_name='Website or social media profile')
 
+    image = VersatileImageField(
+        'Image',
+        upload_to='static/',
+        width_field='image_width',
+        height_field='image_height'
+    )
+    image_height = models.PositiveIntegerField(editable=False, null=True)
+    image_width = models.PositiveIntegerField(editable=False, null=True)
+
     '''Managers are an easy way to create custom filters for queries.
 
     If a models.Manager() is declared in a model, then the `objects` default manager
@@ -47,6 +62,25 @@ class Presenter(models.Model):
     def __str__(self):
         return self.fullname
 
+@receiver(models.signals.post_save, sender=Presenter)
+def WarmPresenterImages(sender, instance, **kwargs):
+    '''Ensures images are created post-save.
+    Image sizes are stored in base.VERSATILEIMAGEFIELD_RENDITION_KEY_SETS.
+    Using a thumbnail__AxA rendition key, the image fits in a AxA rectangle by
+    maintaining the aspect ratio.
+
+    Documentation link:
+    https://django-versatileimagefield.readthedocs.io/en/latest/overview.html#create-images-wherever-you-need-them
+    '''
+
+
+    img_warmer = VersatileImageFieldWarmer(
+        instance_or_queryset=instance,
+        rendition_key_set='Sizes',
+        image_attr='image',
+        verbose=True
+    )
+    num_created, failed_to_create = img_warmer.warm()
 
 class TalkManager(models.Manager):
     def get_queryset(self):
@@ -85,6 +119,18 @@ class Activity(models.Model):
     subtitle = models.TextField()
     description = models.TextField()
 
+    image = VersatileImageField(
+        'Image',
+        upload_to='static/',
+        width_field='image_width',
+        height_field='image_height',
+        null=True,
+        blank=True
+    )
+    image_height = models.PositiveIntegerField(editable=False, null=True)
+    image_width = models.PositiveIntegerField(editable=False, null=True)
+
+
     '''An activity may be presented by many people and a presenter
     may present many activities respectively
 
@@ -108,3 +154,25 @@ class Activity(models.Model):
 
     class Meta:
         verbose_name_plural = 'Activities'
+
+@receiver(models.signals.post_save, sender=Activity)
+def WarmActivityImages(sender, instance, **kwargs):
+    '''Ensures images are created post-save.
+    Image sizes are stored in base.VERSATILEIMAGEFIELD_RENDITION_KEY_SETS.
+    Using a thumbnail__AxA rendition key, the image fits in a AxA rectangle by
+    maintaining the aspect ratio.
+
+    Documentation link:
+    https://django-versatileimagefield.readthedocs.io/en/latest/overview.html#create-images-wherever-you-need-them
+    '''
+    if instance.image is not None:
+        img_warmer = VersatileImageFieldWarmer(
+            instance_or_queryset=instance,
+            rendition_key_set='Sizes',
+            image_attr='image',
+            verbose=True
+        )
+
+        num_created, failed_to_create = img_warmer.warm()
+    else:
+        logger.info("No image file added for this activity")

@@ -12,5 +12,5 @@ Attributes:
 * `name`: name
 * `partner_type`: One of {`GSP` = Grand Sponsors Plus, `GP` = Grand Sponsors, `SPO` = Sponsors, `SUP` = Supporters, `MP` = Media Partners, `CP` = Community Partners}
 * `link`: Link to website
-
+* `image`: The logo of the Partner.
 ## Views

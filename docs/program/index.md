@@ -13,6 +13,7 @@ Attributes:
 * `short_bio`: Short bio (optional, mainly used for speakers)
 * `quote`: Inspirational quote (optional, mainly used for speakers)
 * `link`: URL to a personal website or social media profile (optional, mainly used for speakers)
+* `image`: A Picture of the Presenter
 
 Computed attributes:
 * `fullname`: Full name (concatenation of `first` and `last`)
@@ -31,6 +32,7 @@ Attributes:
 * `title`: Title
 * `subtitle`: Summary with length of 1-2 sentences
 * `description`: Full description
+* `image`: A Photo of the Activity (optional)
 
 Managers:
 * `talks`: Can be used to get all activities of Talk type (e.g. `Activity.talks.all()`)

@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'project.team',
     'project.privacy',
     'project.license',
+    'versatileimagefield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -111,4 +112,26 @@ LOGGING = {
             'propagate': True
         }
     }
+}
+
+VERSATILEIMAGEFIELD_SETTINGS = {
+    # Documentation link: https://django-versatileimagefield.readthedocs.io/en/latest/installation.html#versatileimagefield-settings
+    'cache_length': 2592000,
+    'cache_name': 'versatileimagefield_cache',
+    'jpeg_resize_quality': 70,
+    'sized_directory_name': '__sized__',
+    'filtered_directory_name': '__filtered__',
+    'placeholder_directory_name': '__placeholder__',
+    'create_images_on_demand': False,
+    'image_key_post_processor': None,
+    'progressive_jpeg': False
+}
+
+VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
+    # Documentation link: https://django-versatileimagefield.readthedocs.io/en/latest/installation.html#versatileimagefield-rendition-key-sets
+    'Sizes': [
+        ('small', 'thumbnail__100x100'),
+        ('medium', 'thumbnail__200x200'),
+        ('large', 'thumbnail__500x500')
+    ]
 }

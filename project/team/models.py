@@ -1,4 +1,8 @@
 from django.db import models
+from django.dispatch import receiver
+
+from versatileimagefield.fields import VersatileImageField
+from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 
 class TeamMember(models.Model):
     '''Model for members of the TEDxNTUA 2019 organizing team.
@@ -29,6 +33,15 @@ class TeamMember(models.Model):
     email = models.EmailField()
     team = models.CharField(max_length=2, choices=TEAM_CHOICES)
 
+    image = VersatileImageField(
+        'Image',
+        upload_to='static/',
+        width_field='image_width',
+        height_field='image_height'
+    )
+    image_height = models.PositiveIntegerField(editable=False, null=True)
+    image_width = models.PositiveIntegerField(editable=False, null=True)
+
     @property
     def fullname(self):
         '''Fullname is not stored in the database, but is instead a "computed"
@@ -43,3 +56,23 @@ class TeamMember(models.Model):
         their fullname property
         '''
         return self.fullname
+
+@receiver(models.signals.post_save, sender=TeamMember)
+def WarmTeamMemberImages(sender, instance, **kwargs):
+    '''Ensures images are created post-save.
+    Image sizes are stored in base.VERSATILEIMAGEFIELD_RENDITION_KEY_SETS.
+    Using a thumbnail__AxA rendition key, the image fits in a AxA rectangle by
+    maintaining the aspect ratio.
+
+    Documentation link:
+    https://django-versatileimagefield.readthedocs.io/en/latest/overview.html#create-images-wherever-you-need-them
+    '''
+
+
+    img_warmer = VersatileImageFieldWarmer(
+        instance_or_queryset=instance,
+        rendition_key_set='Sizes',
+        image_attr='image',
+        verbose=True
+    )
+    num_created, failed_to_create = img_warmer.warm()

@@ -1,5 +1,8 @@
 # Project structure
 
+* `__sized__/`
+  * `static/`
+    Resized (warmed) image files are saved here by default
 * `docs/`  
   Project-level documentation needs to be stored here and be written in Markdown. Module-specific documentation may be located only in source files.
 * `etc/`
@@ -17,6 +20,8 @@
       Settings module that reads from *.env* and exports configuration parameters to Django.
     * `urls.py`  
       Top-level routing instructions.
+* `static/`
+  Static files like image files, will be saved here.
 * `manage.py`  
   Django command-line tool.
 * `pylintrc`  
