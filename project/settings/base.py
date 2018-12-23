@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -40,7 +41,9 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # The directories where `{% extends "base.html" %}` directives
+        # will search in.
+        'DIRS': [abs_path('project', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,8 +79,21 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Assets
+
 STATIC_URL = env_str('STATIC_URL', '/static/')
 STATIC_ROOT = env_str('STATIC_ROOT', abs_path('static'))
+
+STATICFILES_DIRS = (
+    abs_path('bundles'),
+)
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'dist/',
+        'STATS_FILE': abs_path('bundles', 'webpack-stats.prod.json')
+    }
+}
 
 
 # Internationalization

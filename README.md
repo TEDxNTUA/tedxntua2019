@@ -16,6 +16,8 @@ This website is brought to you by the TEDxNTUA 2019 IT Team which comprises thre
 * [Installation](docs/installation.md)
 * [Project structure](docs/structure.md)
 * [Usage](docs/usage.md)
+* Subsystems:
+    * [Webpack](docs/webpack/index.md)
 
 ## Code license
 

@@ -5,6 +5,9 @@
     Resized (warmed) image files are saved here by default
 * `docs/`  
   Project-level documentation needs to be stored here and be written in Markdown. Module-specific documentation may be located only in source files.
+* [`bundles/`](webpack/structure.md)
+* `assets/`  
+  Project-level CSS and JS scripts. For documentation on the bundling process, check [here](webpack/index.md).
 * `etc/`
   Extra files that accompany the project, such as configuration of external tools etc.
 * `project/`

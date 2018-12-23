@@ -10,3 +10,7 @@ The project follows the [GoodCode.io](https://goodcode.io/articles/django-env-se
 1. Copy *env.sample* to *.env* and edit *.env* to customize the configuration for your local deployment.
 1. Using MySQL for the database is highly recommended. Create a database and a user and write the credentials to `.env` in the form of `DATABASE_URL=mysql://user:pass@host:port/dbname` (omit `:port` to use the default MySQL port).
 1. Run the migrations `manage.py migrate`.
+
+## Webpack setup
+
+Check [this guide](webpack/installation.md).

@@ -27,6 +27,7 @@ setup(
             'pylint-django',
             'pylint-quotes',
             'git-pylint-commit-hook',
+            'django-webpack-loader',
         ],
     },
 )
