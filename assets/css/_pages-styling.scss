@@ -1,0 +1,97 @@
+/* GENERIC LAYOUT FOR PAGES OTHER THAN HOME */
+
+article:not(.home) {
+	/* header is sticky - add top padding to articles so that content
+	 * is not hidden behind the header
+	 * this only applies for pages different than home;
+	 * in home the desired behavior is the opposite
+	 */
+	background-image: url("/images/backgrounds/pixels.png");
+	background-size: 12.5vw auto;
+	background-repeat: repeat-y;
+	padding-top: 5rem;
+	&.scrolled {
+		padding-top: 3.5rem;
+	}
+	section.content {
+		/*	custom heading styles - guidelines:
+			h1 is only used for the page heading
+			h2 is used in pages completely consisted of sections (eg. sponsors, team)
+			h3 is used for paragraph titles or smaller headings (eg. about, contact)
+		 */
+		h2, .h2 {
+			font-weight: bold;
+			font-size: 2rem;
+		}
+		h3, .h3 {
+			font-weight: bold;
+			font-size: 1.5rem;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			&.primary {
+				color: $brand-primary;
+			}
+		}
+		.container, .container-fluid {
+			margin-bottom: 3rem;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	/* generic grid-image style to be used in speakers, sponsor and team components */
+	.grid-image {
+	    display: inline-block;
+	    border: 0;
+	    position: relative;
+	    max-width: 100%;
+	}
+
+	.grid-image.hover-zoom {
+	    transition: all 200ms ease-in;
+	    transform: scale(1);
+	    &:hover {
+	    	transform: scale(1.05);
+	    	padding: auto;
+	    	z-index: 2;
+	    }
+	}
+
+}
+
+/*
+ * MEDIA QUERIES
+ */
+
+@include media-breakpoint-up(sm) {
+	article:not(.home) {
+		padding-top: 4.7rem;
+		&.scrolled {
+			padding-top: 3.7rem;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	article:not(.home) {
+		section.content {
+			h2, .h2 {
+				font-size: 2.5rem;
+			}
+			h3, .h3 {
+				font-weight: bold;
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 1366px) {
+	article:not(.home) {
+		padding-top: 5.8rem;
+		&.scrolled {
+			padding-top: 4.5rem;
+		}
+	}
+}

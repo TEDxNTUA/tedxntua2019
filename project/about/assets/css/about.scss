@@ -1,0 +1,18 @@
+/* ABOUT PAGE */
+
+article.about {
+	font-size: .85rem;
+	section.content {
+		max-width: 1200px;
+	}
+	.col {
+		margin-bottom: 2rem;
+	}
+	p {
+		color: black;
+		font-size: 1em;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

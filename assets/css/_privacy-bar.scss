@@ -1,0 +1,45 @@
+/* PRIVACY BAR */
+
+.privacy-bar {
+	background: #111;
+	padding: .5rem 0;
+	position: fixed;
+	z-index: 999;
+	color: white;
+	width: 100%;
+	bottom: 0;
+	font-size: .8rem;
+	display: none;
+	.container-fluid {
+		max-width: 1366px;
+		padding: 0 1rem;
+	}
+	.accept {
+		background-color: $brand-primary;
+		color: white;
+		padding: .5rem 2.5rem;
+		margin-left: .5rem;
+		&:hover {
+			background-color: saturate($brand-primary, 10%);
+		}
+	}
+	.description a:hover {
+		color: saturate($brand-primary, 10%);
+	}
+}
+
+/*
+ * MEDIA QUERIES
+ */
+
+@include media-breakpoint-up(sm) {
+	.privacy-bar .container-fluid {
+		padding: 0 2rem;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.privacy-bar {
+		font-size: 1rem;
+	}
+}

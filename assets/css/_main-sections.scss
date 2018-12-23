@@ -1,0 +1,52 @@
+/* MAIN SECTIONS */
+
+// HEADING
+section.heading {
+	width: 100%;
+	/* bottom inner shadow */
+	h1 {
+		font-weight: normal;
+		font-size: 2rem;
+		padding: .75rem 2rem;
+		text-align: center;
+		margin: 0 auto;
+		color: $body-bg;
+	}
+	background-color: #444444;
+}
+
+// CONTENT
+section.content, article.home .section-content {
+	max-width: 1366px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+}
+
+main, section.content {
+	min-height: 540px;
+}
+
+section.content > .container-fluid {
+	/* remove bootstrap's default paddings */
+	padding-left: 0;
+	padding-right: 0;
+}
+
+// FOOTER
+@import "footer";
+
+/*
+ * MEDIA QUERIES
+ */
+
+@include media-breakpoint-up(sm) {
+	section.content {
+		padding: 3rem 2rem;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	section.heading {
+		display: none;
+	}
+}

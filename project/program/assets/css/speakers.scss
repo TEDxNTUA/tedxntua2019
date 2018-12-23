@@ -1,0 +1,79 @@
+/* SPEAKERS PAGE */
+
+article.speakers {
+	text-align: center;
+	font-size: .85rem;
+	/* remove bootstrap's container-fluid margin from this page, since we have a custom layout */
+	section.content .container-fluid {
+		margin-bottom: 0;
+	}
+	section.content .speaker-container {
+		margin-bottom: 2rem;
+		&:last {
+			margin-bottom: 0;
+		}
+	}
+	div.speaker-header {
+		text-align: center;
+		border-bottom: 1px solid #AAA;
+		/* bottom-padding */
+		padding: 0 0 1.5rem 0;
+		/* middle spacing */
+		h2 {
+			margin: 1rem 0 .1rem 0;
+			font-size: 1.5rem;
+		}
+		h5 {
+			font-weight: normal;
+			font-style: italic;
+			font-size: 1.15em;
+		}
+		img {
+			width: 75%;
+			max-width: 320px;
+		}
+	}
+	blockquote.quote {
+		font-size: 1.1em;
+		color: #333;
+		margin: 1rem 0 0 0;
+	}
+	div.speaker-info {
+		/* top padding */
+		font-size: 1em;
+		padding: 1.5rem 0 0 0;
+		text-align: justify;
+		max-width: 800px;
+		h3 {
+			font-size: 1.35rem;
+		}
+		h3 a {
+			display: inline;
+			color: $body-color;
+			font-weight: normal;
+			&:hover {
+				color: darken($body-color, 10%);
+			}
+		}
+	}
+	.speakers-footer {
+		margin-top: 3rem;
+	}
+	section.content .nospeakers-container {
+		padding: 1rem 0;
+		margin-bottom: 2rem;
+		.col > span.empty-sign {
+			display: block;
+			font-size: 5rem;
+			line-height: 1.15;
+		}
+		p {
+			margin: .5rem 0;
+			font-size: 1em;
+		}
+	}
+	.embed-responsive {
+		max-width: 640px;
+		margin: 0 auto;
+	}
+}
