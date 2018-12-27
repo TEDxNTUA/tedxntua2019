@@ -84,7 +84,9 @@ AUTH_PASSWORD_VALIDATORS = [
 STATIC_URL = env_str('STATIC_URL', '/static/')
 STATIC_ROOT = env_str('STATIC_ROOT', abs_path('static'))
 
-STATICFILES_DIRS = ()
+STATICFILES_DIRS = (
+    abs_path('project/static'),
+)
 
 # Webpack Loader configuration is set
 # on the environment-specific settings
