@@ -1,0 +1,61 @@
+{% load static %}
+<nav id="nav" class="navbar navbar-expand-lg mx-auto">
+    <div class="row-wrapper">
+        <a class="navbar-brand mr-auto" href="#">
+            <img src="{% static "images/tedxntua_logo.png" %}" alt="TEDxNTUA Logo" />
+        </a>
+
+        <div class="language-selector">
+            <button class="btn dropdown-toggle nav-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                EN
+                <i class="fas fa-angle-down"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#" hreflang="el">
+                    Ελληνικά
+                </a>
+                <a class="dropdown-item" href="#" hreflang="en">
+                    English
+                </a>
+            </div>
+        </div>
+
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHotdog" aria-controls="navbarHotdog" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hotdog-container">
+                <span class="hotdog hotdog-1"></span>
+                <span class="hotdog hotdog-2"></span>
+                <span class="hotdog hotdog-3"></span>
+                <span class="triangle"></span>
+            </div>
+        </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarHotdog">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Speakers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Schedule</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Partners</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Team</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item primary-item">
+                <a class="nav-link" href="#">Get tickets!</a>
+            </li>
+        </ul>
+    </div>
+</nav>

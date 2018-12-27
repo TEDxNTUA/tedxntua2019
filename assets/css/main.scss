@@ -34,80 +34,19 @@
 // GLOBALS
 @import "globals";
 
-// TOOLTIPS
-@import "tooltips";
-
 // HELPERS
 @import "layout-helpers";
 
 // NAVIGATION MENU
 @import "nav";
 
-// MAIN SECTIONS LAYOUT
-@import "main-sections";
+// INSERT HERE OTHER COMPONENT STYLES
+// ...
 
-// PRIVACY BAR
-@import "privacy-bar";
 
-// ANGLE BRACKETS STYLING
-@import "angle-brackets";
 
-// SLIDER TAB
-@import "slider-tab";
-
-// QUOTE STYLING
-@import "quote";
-
-// HOME PAGE
-@import "~@/home/assets/css/home";
-
-// GENERIC STYLING, OTHER THAN HOME
-@import "pages-styling";
-
-// ABOUT PAGE
-@import "~@/about/assets/css/about";
-
-// SPEAKERS PAGE
-@import "~@/program/assets/css/speakers";
-
-// PARTNERS PAGE
-@import "~@/partners/assets/css/partners";
-
-// TEAM PAGE
-@import "~@/team/assets/css/team";
-
-// SCHEDULE PAGE
-@import "~@/program/assets/css/schedule";
-
-// CONTACT PAGE
-@import "~@/contact/assets/css/contact";
-
-/* PRIVACY POLICY AND LICENSE PAGE */
-article.privacy, article.license {
-	font-size: .85rem;
-}
 
 /*
- * MEDIA QUERIES
+ * GENERAL MEDIA QUERIES
  */
 
-@include media-breakpoint-up(sm) {
-	article.home #hero.live, article.about, article.schedule, article.speakers, article.team, article.privacy, article.license {
-		font-size: .9rem;
-	}
-}
-
-@include media-breakpoint-up(md) {
-    a.call-to-action {
-        font-size: 1.25rem;
-    }
-	article.home #hero.live, article.about, article.schedule, article.speakers, article.team, article.privacy, article.license {
-		font-size: 1rem;
-	}
-}
-
-@include media-breakpoint-up(lg) {
-	article.home #hero.live, article.about, article.speakers, article.team, article.privacy, article.license {
-		font-size: 1.1rem;
-	}
-}

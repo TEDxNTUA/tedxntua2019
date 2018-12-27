@@ -1,15 +1,34 @@
+{% load static %}
 {% load render_bundle from webpack_loader %}
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %} | TEDxNTUA 2019</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    {% render_bundle "main" "css" %}
 </head>
+
 <body>
-    {% block content %}{% endblock %}
-    {% render_bundle 'main' 'js' %}
-    {% block scripts %}{% endblock %}
+
+    <header class="dark">
+        {% include "layouts/partials/nav.html" %}
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        {% include "layouts/partials/footer.html" %}
+    </footer>
+
+    {% render_bundle "main" "js" %}
+    {% block scripts %}
+    {% endblock %}
+
 </body>
+
 </html>

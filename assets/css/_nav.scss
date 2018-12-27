@@ -1,7 +1,9 @@
+@import "nav-hotdog-toggler";
+
 /* NAVIGATION MENU */
 
-header.dark {
-	background-color: #202020;
+header {
+	background-color: $navbar-default-bg;
 	width: 100%;
 	position: fixed;
 	z-index: 1000;
@@ -10,178 +12,99 @@ header.dark {
 	 * Fix: set max-height to 100% of the viewport height and enable
 	 * scrolling for that case
 	 */
-	overflow: auto;
+	overflow: visible;
 	max-height: 100vh;
-}
-
-nav.navbar {
-	height: 100%;
-	max-width: 1366px;
-	padding: .5rem 1rem;
-}
-
-header.scrolled {
-	background-color: #181818;
-	border-bottom: 2px solid #131313;
-	nav.navbar {
-		padding: .25rem 1rem;
+	&.scrolled {
+		// Add border when scrolled
+		border-bottom: 2px solid darken($navbar-default-bg, 30%);
 	}
 }
 
-.navbar-brand-wrapper {
+nav#nav {
+	height: 100%;
+	max-width: $max-content-width;
+	padding-top: $header-padding-y;
+	padding-bottom: $header-padding-y;
+	padding-left: $header-padding-x;
+	padding-right: $header-padding-x;
+	// Replicate Bootstrap's functionality for $navlink-color
+	.nav-link {
+		color: rgba($navlink-color, 0.5);
+		font-size: .85rem;
+		&:hover {
+			color: $navlink-hover-color;
+		}
+		&.disabled {
+			color: rgba($navlink-color, 0.25);
+		}
+	}
+}
+
+header.scrolled nav#nav {
+	// Reduce padding-y when scrolled
+	padding-top: 0.5 * $header-padding-y;
+	padding-bottom: 0.5 * $header-padding-y;
+}
+
+.row-wrapper {
 	display: flex;
 	flex-flow: row nowrap;
+	align-items: center;
+	width: 100%;
 }
 
 .navbar-brand {
-	/* navbar takes the height of the brand logo */
-	height: 4rem;
-	padding: .6rem 0;
-	/* zoom effect on hover */
-	transition: transform .2s ease;
+	// navbar takes the height of the brand logo
+	height: $logo-height;
 	img {
-		/* responsive */
+		// Responsive
 		height: 100%;
 		width: auto;
-	}
-	&:hover {
-		transform: scale(1.02, 1.02);
 	}
 }
 
 header.scrolled .navbar-brand {
-	height: 3rem;
-	padding: .5rem 0;
+	// Shrink logo when scrolled
+	height: 0.75 * $logo-height;
 }
 
-.navbar-flags {
-	align-self: center;
-}
-
-a.flagLink {
-	display: block;
-	/* ignore line height and have auto element height */
-	line-height: 0;
-	/* height of brand = 4rem - 2 * 0.6rem = 2.8rem
-	 * distribute 2.8rem to flags as following:
-	 * 0.96rem height for each flag -> 2 * 0.96rem = 1.92rem
-	 * remaining 2.8 - 1.92 = 0.88rem becomes margin
-	 * 0.88rem / 4 = 0.22rem margin for each flag (top and bottom)
-	 */
-	padding-left: 1.6rem;
-	background-size: 1.6rem 0.96rem;
-	background-repeat: no-repeat no-repeat;
-	height: 0.96rem;
-	margin: 0.22rem 0;
-	background-size: 100%;
-	opacity: .9;
-	&:hover {
-		opacity: 1;
+.language-selector {
+	position: relative;
+	.dropdown-toggle {
+		// Remove Bootstrap styling and replicate styling for nav-links
+		background: transparent;
+		color: rgba($navlink-color, 0.5);
+		padding-left: $navlink-padding;
+		padding-right: $navlink-padding;
+		margin: 0;
+		&:hover {
+			color: $navlink-hover-color;
+		}
+		&::after {
+			content: none;
+		}
 	}
-}
-a.flagLink.el {
-	background-image: url("/images/flag-el.png");
-}
-a.flagLink.en {
-	background-image: url("/images/flag-en.png");
-}
-
-header.scrolled a.flagLink {
-	/* height of brand = 3rem - 2 * 0.5rem = 2rem */
-	padding-left: 1.333333rem;
-	height: 0.8rem;
-	background-size: 1.333333rem 0.8rem;
-	margin: 0.1rem 0;
-}
-
-.navbar-toggler {
-	cursor: pointer;
-	align-items: center;
-	border: none;
-	padding: 0;
-	&:active, &:focus {
-		outline: none;
-	}
-	.hotdog-container {
-		display: inline-block;
-		position: relative;
-		width: 36px;
-		height: 19px;
-	}
-	.hotdog {
-		display: block;
-		position: absolute;
-		border-radius: 4px;
-		width: 100%;
-		height: 3px;
-		background: #BBB;
-		left: 0;
-		z-index: 5;
-		transition: width .35s , top .35s, left .35s, transform .35s .2s;
-	}
-	.hotdog-1 {
-		top: 0;
-	}
-	.hotdog-2 {
-		top: 8px;
-	}
-	.hotdog-3 {
-		top: 16px;
-	}
-	.triangle {
-		display: block;
-		position: absolute;
-		z-index: 4;
-		width: 0;
-		height: 0;
-		bottom: 0;
-		opacity: 0;
-		border-style: solid;
-		border-width: 0 19px 19px 19px;
-		border-radius: 4px;
-		border-color: transparent transparent #BBB transparent;
-		transition: opacity .35s .2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	.dropdown-menu {
+		min-width: 0;
 	}
 }
 
-.navbar-toggler:not(.collapsed) {
-	.hotdog-1 {
-		top: 8px;
-		left: -2px;
-		width: 26px;
-		transform: rotate(-46deg);
-	}
-	.hotdog-2 {
-		top: 8px;
-		left: 14px;
-		width: 26px;
-		transform: rotate(46deg);
-	}
-	.hotdog-3 {
-		top: 23px;
-		left: 1px;
-		width: 100%;
-		transform: translateY(-6px);
-	}
-	.triangle {
-		opacity: 1;
-	}
-}
-
-.navbar-expand-lg .navbar-nav .nav-link {
-	font-size: 1.1rem;
+nav#nav .nav-link {
 	padding-right: $navlink-padding;
 	padding-left: $navlink-padding;
+	white-space: nowrap;
 	&:hover {
 		color: $brand-primary;
 	}
 }
 
 /* highlighted item */
-.navbar-dark .navbar-nav .get-tickets {
+nav#nav .primary-item {
 	background-color: $brand-primary;
 	a.nav-link {
-		color: white;
+		&, &:hover {
+			color: $navlink-color;
+		}
 	}
 	&:hover {
 		background-color: saturate($brand-primary, 10%);
@@ -192,119 +115,35 @@ header.scrolled a.flagLink {
  * MEDIA QUERIES
  */
 
-@include media-breakpoint-down(lg) {
-	.lang-dropdown {
-		display: none !important;
-	}
-}
-
 @include media-breakpoint-up(sm) {
-	nav.navbar {
-		padding: .5rem 2rem;
-	}
-	header.scrolled nav.navbar {
-		padding: .25rem 2rem;
+	nav#nav {
+		padding-left: 2 * $header-padding-x;
+		padding-right: 2 * $header-padding-x;
 	}
 	.navbar-brand {
-		height: 4.2rem;
+		height: 1.05 * $logo-height;
 	}
 	header.scrolled .navbar-brand {
-		height: 3.2rem;
-		padding: .5rem 0;
-	}
-	a.flagLink {
-		/* height of brand = 4.2rem - 2 * 0.6rem = 3rem */
-		padding-left: 2rem;
-		height: 1.2rem;
-		background-size: 2rem 1.2rem;
-		margin: 0.15rem 0;
-	}
-	header.scrolled a.flagLink {
-		/* height of brand = 3.2rem - 2 * 0.5rem = 2.2rem */
-		padding-left: 1.5rem;
-		height: 0.9rem;
-		background-size: 1.5rem 0.9rem;
-		margin: 0.1rem 0;
+		height: 0.75 * 1.05 * $logo-height;
 	}
 }
 
-@include media-breakpoint-down(lg) {
-	header.dark {
-		overflow: visible;
-	}
-	header.scrolled {
-		padding-top: 0;
-	}
-	nav.navbar {
-		position: relative;
-	}
-	.navbar-expand-lg .navbar-nav .nav-link {
-		font-size: .85rem;
-		padding-left: 0.5 * $navlink-padding;
-		padding-right: 0.5 * $navlink-padding;
-	}
-	.navbar-toggler {
-		display: flex;
-	}
-	#lang-switch, header.scrolled #lang-switch {
-		padding-left: 2rem;
-		height: 0.9rem;
-		font-size: 0.9rem;
-		background-size: 1.5rem 0.9rem;
-		margin: 0;
-		color: #DDD;
-	}
-	.lang-dropdown, header.scrolled .lang-dropdown {
-		position: absolute;
-		right: 2rem;
-		top: 100%;
-		background: #f5f8fa;
-		display: none;
-		padding: .25rem .75rem;
-		border-radius: 2px;
-		border: 1px solid #CCC;
-		a.flagLink {
-			display: block;
-			padding-left: 2.5rem;
-			height: 2rem;
-			font-size: 1.2rem;
-			background-size: 2rem 1.2rem;
-			padding-top: 1rem;
-			background-position: left center;
-			margin: 0;
-		}
-		&::before {
-			content: "";
-			position: absolute;
-			bottom: 100%;
-			width: 0;
-			height: 0;
-			right: .75rem;
-			margin: 0 auto;
-			border-left: 10px solid transparent;
-			border-right: 10px solid transparent;
-			border-bottom: 10px solid #f5f8fa;
-		}
-	}
-}
-
-@include media-breakpoint-up(xl) {
-	.navbar-expand-lg .navbar-nav .nav-link {
+@include media-breakpoint-up(lg) {
+	nav#nav .nav-link {
 		font-size: 1rem;
-		padding-right: $navlink-padding;
-		padding-left: $navlink-padding;
+		padding-left: 2 * $navlink-padding;
+		padding-right: 2 * $navlink-padding;
 	}
 }
 
 @media (min-width: 1366px) {
 	.navbar-brand {
-		height: 4.8rem;
+		height: 1.2 * $logo-height;
 	}
 	header.scrolled .navbar-brand {
-		height: 4rem;
-		padding: .5rem 0;
+		height: 0.75 * 1.2 * $logo-height;
 	}
-	.navbar-expand-lg .navbar-nav .nav-link {
+	nav#nav .nav-link {
 		font-size: 1.15rem;
 	}
 }

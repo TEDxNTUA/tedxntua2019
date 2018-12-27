@@ -21,6 +21,11 @@ a {
 	color: white;
 }
 
+// Remove Bootstrap's box-shadow from buttons
+.btn:hover, .btn:focus {
+	box-shadow: none;
+}
+
 a.call-to-action {
 	display: inline-block;
 	border-radius: 1rem;
@@ -31,5 +36,15 @@ a.call-to-action {
 	padding: .75rem 2rem;
 	&:hover {
 		background-color: saturate($brand-primary, 10%);
+	}
+}
+
+/*
+ * MEDIA QUERIES
+ */
+
+@include media-breakpoint-up(md) {
+    a.call-to-action {
+        font-size: 1.25rem;
 	}
 }
