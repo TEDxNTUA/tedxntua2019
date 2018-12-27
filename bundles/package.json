@@ -9,6 +9,7 @@
     "build:dev": "webpack --mode=development --config webpack-config/webpack.dev.conf.js",
     "build:prod": "NODE_ENV=production webpack --mode=production --config webpack-config/webpack.prod.conf.js",
     "build": "npm run build:prod",
+    "watch": "webpack --mode=development --config webpack-config/webpack.dev.conf.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
