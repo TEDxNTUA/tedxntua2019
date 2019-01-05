@@ -12,6 +12,7 @@ SECRET_KEY = env_str('SECRET_KEY', 'secret' if DEBUG else '')
 # Application definition
 
 INSTALLED_APPS = [
+    'project.home',
     'project.partners',
     'project.program',
     'project.about',
@@ -85,15 +86,12 @@ STATIC_URL = env_str('STATIC_URL', '/static/')
 STATIC_ROOT = env_str('STATIC_ROOT', abs_path('static'))
 
 STATICFILES_DIRS = (
-    abs_path('bundles'),
+    abs_path('project/static'),
 )
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'dist/',
-        'STATS_FILE': abs_path('bundles', 'webpack-stats.prod.json')
-    }
-}
+# Webpack Loader configuration is set
+# on the environment-specific settings
+# dev.py and prod.py
 
 
 # Internationalization

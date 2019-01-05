@@ -1,0 +1,101 @@
+/* TEAM PAGE */
+
+article.team {
+	font-size: .85rem;
+
+	section.content h2 {
+		border-bottom: 2px dashed #333;
+		margin-bottom: 1.5rem;
+		/* tooltip normally inherits font weight from h2 */
+		&[data-tooltip]::after {
+			font-weight: normal;
+		}
+	}
+
+	/* replace default bootstrap margins */
+	.row {
+		margin-left: -8px;
+		margin-right: -8px;
+	}
+
+	.col {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+
+	a .photo1 {
+		display: block;
+	}
+	a .photo2 {
+		display: none;
+	}
+	a:hover .photo1 {
+		display: none;
+	}
+	a:hover .photo2 {
+		display: block;
+	}
+	a h5 {
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
+		font-size: 1.25em;
+	}
+
+	blockquote {
+		color: lighten($brand-secondary, 25%);
+		font-stretch: expanded;
+	}
+
+	.thanks {
+		p.h4 {
+			font-size: 1.35em;
+			margin-bottom: 0;
+		}
+		h5 {
+			margin-bottom: .25rem;
+		}
+		h6 {
+			color: $body-color;
+			font-size: .9em;
+		}
+	}
+
+	.join-us-wrapper {
+		padding: 0 1rem;
+	}
+
+	.join-us {
+		width: 100%;
+		max-width: 640px;
+		margin: 0 auto;
+		position: relative;
+		a {
+			margin-top: 2rem;
+		}
+	}
+}
+
+/*
+ * MEDIA QUERIES
+ */
+
+@include media-breakpoint-up(sm) {
+	article.team {
+		.join-us {
+			a {
+				margin-top: 0;
+				position: absolute;
+				bottom: .5rem;
+				right: 0;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	article.team {
+		h5 br {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,39 @@
+/* HOME ANIMATIONS */
+
+@keyframes blink {
+	0%, 100% {
+		color: white;
+		transform: translateY(0);
+	}
+	20% {
+		color: white;
+		transform: translateY(-2px);
+	}
+	10%, 40% {
+		color: $brand-primary;
+	}
+	75% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes zoom {
+	0% {
+		transform: scale(15, 15);
+	}
+	100% {
+		transform: scale(1, 1);
+	}
+}
+
+@keyframes cursor {
+	0%, 24.999% {
+		opacity: 1;
+	}
+	25%, 74.999% {
+		opacity: 0;
+	}
+	75%, 100% {
+		opacity: 1;
+	}
+}

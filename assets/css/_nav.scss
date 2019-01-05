@@ -1,0 +1,159 @@
+@import "nav-hotdog-toggler";
+
+/* NAVIGATION MENU */
+
+header {
+	background-color: $navbar-default-bg;
+	width: 100%;
+	position: fixed;
+	z-index: 1000;
+	/* Since header is sticky, if it does not fit vertically
+	 * the user won't be able to see the rest of the header content.
+	 * Fix: set max-height to 100% of the viewport height and enable
+	 * scrolling for that case
+	 */
+	overflow: visible;
+	max-height: 100vh;
+	&.scrolled {
+		// Add border when scrolled
+		border-bottom: 2px solid darken($navbar-default-bg, 30%);
+	}
+}
+
+nav#nav {
+	height: 100%;
+	max-width: $max-content-width;
+	padding-top: $section-padding-y;
+	padding-bottom: $section-padding-y;
+	padding-left: $section-padding-x;
+	padding-right: $section-padding-x;
+	.navbar-nav {
+		// Spacing between logo and menu when the menu is vertical
+		padding-top: $navlink-padding;
+	}
+	// Replicate Bootstrap's functionality for $navlink-color
+	.nav-link {
+		color: rgba($navlink-color, 0.5);
+		font-size: .85rem;
+		&:hover {
+			color: $navlink-hover-color;
+		}
+		&.disabled {
+			color: rgba($navlink-color, 0.25);
+		}
+	}
+}
+
+header.scrolled nav#nav {
+	// Reduce padding-y when scrolled
+	padding-top: 0.5 * $section-padding-y;
+	padding-bottom: 0.5 * $section-padding-y;
+}
+
+.row-wrapper {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	width: 100%;
+}
+
+.navbar-brand {
+	// navbar takes the height of the brand logo
+	height: $logo-height;
+	img {
+		// Responsive
+		height: 100%;
+		width: auto;
+	}
+}
+
+header.scrolled .navbar-brand {
+	// Shrink logo when scrolled
+	height: 0.75 * $logo-height;
+}
+
+.language-selector {
+	position: relative;
+	.dropdown-toggle {
+		// Remove Bootstrap styling and replicate styling for nav-links
+		background: transparent;
+		color: rgba($navlink-color, 0.5);
+		padding-left: $navlink-padding;
+		padding-right: $navlink-padding;
+		margin: 0;
+		&:hover {
+			color: $navlink-hover-color;
+		}
+		&::after {
+			content: none;
+		}
+	}
+	.dropdown-menu {
+		min-width: 0;
+	}
+}
+
+nav#nav .nav-link {
+	padding-right: $navlink-padding;
+	padding-left: $navlink-padding;
+	white-space: nowrap;
+	&:hover {
+		color: $brand-primary;
+	}
+}
+
+/* highlighted item */
+nav#nav .primary-item {
+	background-color: $brand-primary;
+	a.nav-link {
+		&, &:hover {
+			color: $navlink-color;
+		}
+	}
+	&:hover {
+		background-color: saturate($brand-primary, 10%);
+	}
+}
+
+/*
+ * MEDIA QUERIES
+ */
+
+@include media-breakpoint-up(sm) {
+	nav#nav {
+		padding-left: 2 * $section-padding-x;
+		padding-right: 2 * $section-padding-x;
+	}
+	.navbar-brand {
+		height: 1.05 * $logo-height;
+	}
+	header.scrolled .navbar-brand {
+		height: 0.75 * 1.05 * $logo-height;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	nav#nav {
+		.navbar-nav {
+			// Menu is now horizontal, remove vertical spacing
+			padding-top: 0;
+		}
+		.nav-link {
+			font-size: 1rem;
+			padding-left: 2 * $navlink-padding;
+			padding-right: 2 * $navlink-padding;
+		}
+	}
+}
+
+@media (min-width: 1366px) {
+	.navbar-brand {
+		height: 1.2 * $logo-height;
+	}
+	header.scrolled .navbar-brand {
+		height: 0.75 * 1.2 * $logo-height;
+	}
+	nav#nav .nav-link {
+		font-size: 1.15rem;
+	}
+}

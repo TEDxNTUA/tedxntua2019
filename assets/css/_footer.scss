@@ -1,0 +1,28 @@
+/* FOOTER */
+
+body > footer {
+	background-color: $footer-default-bg;
+	border-top: 3px solid $footer-border-color;
+	color: white;
+	> .container {
+		max-width: $max-content-width;
+		margin: 0 auto;
+		padding-left: $section-padding-x;
+		padding-right: $section-padding-x;
+		padding-top: $section-padding-y;
+		padding-bottom: $section-padding-y;
+	}
+}
+
+/*
+ * MEDIA QUERIES
+ */
+
+@include media-breakpoint-up(sm) {
+	body > footer {
+		> .container {
+			padding-left: 2 * $section-padding-x;
+			padding-right: 2 * $section-padding-x;
+		}
+	}
+}

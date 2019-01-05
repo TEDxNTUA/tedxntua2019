@@ -1,0 +1,32 @@
+/* MAIN SECTIONS */
+
+section.content {
+	// Top padding so that content is not hidden by the sticky header
+	padding-top: $logo-height + 2 * $section-padding-y;
+	max-width: $max-content-width;
+	margin: 0 auto;
+	padding-left: $section-padding-x;
+	padding-right: $section-padding-x;
+}
+
+article.page {
+	padding-top: $section-padding-y;
+	padding-bottom: $section-padding-y;
+}
+
+/*
+ * MEDIA QUERIES
+ */
+@include media-breakpoint-up(sm) {
+	section.content {
+		padding-top: 1.05 * $logo-height + 2 * $section-padding-y;
+		padding-left: 2 * $section-padding-x;
+		padding-right: 2 * $section-padding-x;
+	}
+}
+
+@media (min-width: 1366px) {
+	section.content {
+		padding-top: 1.2 * $logo-height + 2 * $section-padding-y;
+	}
+}
