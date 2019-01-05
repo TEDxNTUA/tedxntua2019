@@ -6334,11 +6334,23 @@ a.text-dark:hover, a.text-dark:focus {
  *  in a .row element, margin-bottom is added to .row elements.
  */
 /* GLOBALS */
+html, body {
+  height: 100%;
+  width: 100%; }
+
 html {
   font-size: 106.25%; }
 
 body {
-  color: #212529; }
+  color: #212529;
+  display: flex;
+  flex-direction: column; }
+
+header, main, footer {
+  flex-shrink: 0; }
+
+main {
+  flex-grow: 1; }
 
 a {
   color: #E62B1E; }
@@ -6464,6 +6476,8 @@ nav#nav {
   padding-bottom: 1rem;
   padding-left: 1rem;
   padding-right: 1rem; }
+  nav#nav .navbar-nav {
+    padding-top: 0.375rem; }
   nav#nav .nav-link {
     color: rgba(255, 255, 255, 0.5);
     font-size: .85rem; }
@@ -6534,6 +6548,8 @@ nav#nav .primary-item {
     height: 2.52rem; } }
 
 @media (min-width: 992px) {
+  nav#nav .navbar-nav {
+    padding-top: 0; }
   nav#nav .nav-link {
     font-size: 1rem;
     padding-left: 0.75rem;
@@ -6546,6 +6562,52 @@ nav#nav .primary-item {
     height: 2.88rem; }
   nav#nav .nav-link {
     font-size: 1.15rem; } }
+
+/* MAIN SECTIONS */
+section.content {
+  padding-top: 5.2rem;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+article.page {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+
+/*
+ * MEDIA QUERIES
+ */
+@media (min-width: 576px) {
+  section.content {
+    padding-top: 5.36rem;
+    padding-left: 2rem;
+    padding-right: 2rem; } }
+
+@media (min-width: 1366px) {
+  section.content {
+    padding-top: 5.84rem; } }
+
+/* FOOTER */
+body > footer {
+  background-color: #101010;
+  border-top: 3px solid #191919;
+  color: white; }
+  body > footer > .container {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+
+/*
+ * MEDIA QUERIES
+ */
+@media (min-width: 576px) {
+  body > footer > .container {
+    padding-left: 2rem;
+    padding-right: 2rem; } }
 
 /*
  * GENERAL MEDIA QUERIES

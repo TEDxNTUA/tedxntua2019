@@ -22,15 +22,24 @@ $font-family-sans-serif: sans-serif;
 $line-height-base: 1.6;
 $text-color: #636b6f;
 
+// Responsive
+$max-content-width: 1366px;
+
+// Section paddings
+$section-padding-x: 1rem;
+$section-padding-y: 1rem;
+
 // Navbar
-$header-padding-x: 1rem;
-$header-padding-y: 1rem;
 $navbar-default-bg: $brand-secondary;
 $logo-height: 3.2rem;
 $navlink-color: #fff;
 $navlink-hover-color: $brand-primary;
 $navlink-padding: .375rem;
 $hotdog-color: #DDD;
+
+// Footer
+$footer-default-bg: #101010;
+$footer-border-color: #191919;
 
 // Buttons
 $btn-default-color: $text-color;
@@ -42,6 +51,3 @@ $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
 $panel-default-heading-bg: #fff;
-
-// Responsive
-$max-content-width: 1366px;

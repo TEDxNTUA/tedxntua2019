@@ -23,10 +23,14 @@ header {
 nav#nav {
 	height: 100%;
 	max-width: $max-content-width;
-	padding-top: $header-padding-y;
-	padding-bottom: $header-padding-y;
-	padding-left: $header-padding-x;
-	padding-right: $header-padding-x;
+	padding-top: $section-padding-y;
+	padding-bottom: $section-padding-y;
+	padding-left: $section-padding-x;
+	padding-right: $section-padding-x;
+	.navbar-nav {
+		// Spacing between logo and menu when the menu is vertical
+		padding-top: $navlink-padding;
+	}
 	// Replicate Bootstrap's functionality for $navlink-color
 	.nav-link {
 		color: rgba($navlink-color, 0.5);
@@ -42,8 +46,8 @@ nav#nav {
 
 header.scrolled nav#nav {
 	// Reduce padding-y when scrolled
-	padding-top: 0.5 * $header-padding-y;
-	padding-bottom: 0.5 * $header-padding-y;
+	padding-top: 0.5 * $section-padding-y;
+	padding-bottom: 0.5 * $section-padding-y;
 }
 
 .row-wrapper {
@@ -117,8 +121,8 @@ nav#nav .primary-item {
 
 @include media-breakpoint-up(sm) {
 	nav#nav {
-		padding-left: 2 * $header-padding-x;
-		padding-right: 2 * $header-padding-x;
+		padding-left: 2 * $section-padding-x;
+		padding-right: 2 * $section-padding-x;
 	}
 	.navbar-brand {
 		height: 1.05 * $logo-height;
@@ -129,10 +133,16 @@ nav#nav .primary-item {
 }
 
 @include media-breakpoint-up(lg) {
-	nav#nav .nav-link {
-		font-size: 1rem;
-		padding-left: 2 * $navlink-padding;
-		padding-right: 2 * $navlink-padding;
+	nav#nav {
+		.navbar-nav {
+			// Menu is now horizontal, remove vertical spacing
+			padding-top: 0;
+		}
+		.nav-link {
+			font-size: 1rem;
+			padding-left: 2 * $navlink-padding;
+			padding-right: 2 * $navlink-padding;
+		}
 	}
 }
 
