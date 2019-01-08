@@ -20,6 +20,7 @@ setup(
         'Django',
         'mysqlclient',
         'django-versatileimagefield',
+        'django-webpack-loader',
     ],
     extras_require={
         'dev': [
@@ -27,7 +28,6 @@ setup(
             'pylint-django',
             'pylint-quotes',
             'git-pylint-commit-hook',
-            'django-webpack-loader',
         ],
     },
 )
