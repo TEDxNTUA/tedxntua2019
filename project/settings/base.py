@@ -1,6 +1,6 @@
 '''Sets default configuration parameters and imports from environment'''
 import dj_database_url
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ugettext_lazy as _
 
 
 from .env import env_bool, env_list, env_setting, abs_path, env_str
@@ -153,7 +153,8 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
     ]
 }
 
-LOCALE_PATHS = (abs_path('project/locales/'),)
+LOCALE_PATHS = ('locale/',)
+print(LOCALE_PATHS)
 
 LANGUAGES = [
     ('el', _('Greek')),
