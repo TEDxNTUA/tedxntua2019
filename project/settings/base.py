@@ -1,6 +1,7 @@
 '''Sets default configuration parameters and imports from environment'''
 import dj_database_url
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
+
 
 from .env import env_bool, env_list, env_setting, abs_path, env_str
 
@@ -38,6 +39,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware'
 ]
 
 TEMPLATES = [
@@ -150,6 +152,8 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
         ('large', 'thumbnail__500x500')
     ]
 }
+
+LOCALE_PATHS = (abs_path('project/locales/'),)
 
 LANGUAGES = [
     ('el', _('Greek')),
