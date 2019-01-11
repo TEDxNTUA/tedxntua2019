@@ -1,5 +1,6 @@
 from django.db import models
 from django.dispatch import receiver
+from i18nfield.fields import I18nCharField, I18nTextField
 
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
@@ -30,7 +31,7 @@ class Partner(models.Model):
         (COMMUNITY_PARTNERS, 'Community Partners'),
     )
 
-    name = models.CharField(max_length=255, verbose_name='name')
+    name = I18nCharField(max_length=255, verbose_name='name')
     partner_type = models.CharField(max_length=3, choices=PARTNER_TYPES)
     link = models.URLField()
 
