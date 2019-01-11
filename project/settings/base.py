@@ -154,7 +154,6 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
 }
 
 LOCALE_PATHS = ('locale/',)
-print(LOCALE_PATHS)
 
 LANGUAGES = [
     ('el', _('Greek')),
