@@ -1,12 +1,13 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block title %}Home{% endblock %}
 {% block description %}This is the home page{% endblock %}
 {% block content %}
 <section class="content">
     <article class="page">
-        <h2>Home page</h2>
+        <h2> {% trans "home.title" %}</h2>
 
-        <p>Content goes here.</p>
+        <p>{% trans "home.content_placeholder" %}</p>
     </article>
 </section>
 {% endblock %}
