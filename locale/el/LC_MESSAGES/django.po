@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-11 16:13+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: project/contact/views.py:7
+msgid "test_message"
+msgstr "Αυτο είναι ένα μήνυμα για testing"
+
+#: project/home/templates/home/index.html:8
+msgid "home.title"
+msgstr "Κεντρική σελίδα"
+
+#: project/home/templates/home/index.html:10
+msgid "home.content_placeholder"
+msgstr "Ένας placeholder"
+
+#: project/settings/base.py:160
+msgid "Greek"
+msgstr ""
+
+#: project/settings/base.py:161
+msgid "English"
+msgstr ""
+
+#: project/templates/layouts/partials/nav.html:37
+msgid "home"
+msgstr "Αρχική"
+
+#: project/templates/layouts/partials/nav.html:40
+msgid "speakers"
+msgstr "Ομιλητές"
+
+#: project/templates/layouts/partials/nav.html:43
+msgid "schedule"
+msgstr "Πρόγραμμα"
+
+#: project/templates/layouts/partials/nav.html:46
+msgid "partners"
+msgstr "Χορηγοί"
+
+#: project/templates/layouts/partials/nav.html:49
+msgid "team"
+msgstr "Ομάδα"
+
+#: project/templates/layouts/partials/nav.html:52
+msgid "about"
+msgstr "Σχετικά με εμάς"
+
+#: project/templates/layouts/partials/nav.html:55
+msgid "contact"
+msgstr "Επικοινωνία"
+
+#: project/templates/layouts/partials/nav.html:58
+msgid "tickets"
+msgstr "Κάνε κράτηση!"
