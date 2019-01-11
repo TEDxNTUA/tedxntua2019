@@ -1,5 +1,6 @@
 '''Sets default configuration parameters and imports from environment'''
 import dj_database_url
+from django.utils.translation import ugettext_lazy as _
 
 from .env import env_bool, env_list, env_setting, abs_path, env_str
 
@@ -149,3 +150,8 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
         ('large', 'thumbnail__500x500')
     ]
 }
+
+LANGUAGES = [
+    ('el', _('Greek')),
+    ('en', _('English')),
+]
