@@ -1,8 +1,32 @@
+from collections import OrderedDict
+
 from django.db import models
 from django.dispatch import receiver
 
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
+
+
+class TeamMemberManager(models.Manager):
+    def get_teams(self):
+        '''Table-level method to get all team members grouped by team.
+
+        Returns a dictionary where team IDs from TeamMember.TEAM_CHOICES
+        are the keys and the value is a dictionary with the `title` of
+        the team and a `members` array.
+
+        The order of teams is the same as in TEAM_CHOICES.
+        '''
+        teams = OrderedDict()
+        for team_id, title in TeamMember.TEAM_CHOICES:
+            teams[team_id] = {
+                'title': title,
+                'members': [],
+            }
+
+        for member in self.get_queryset():
+            teams[member.team]['members'].append(member)
+        return teams
 
 class TeamMember(models.Model):
     '''Model for members of the TEDxNTUA 2019 organizing team.
@@ -42,9 +66,12 @@ class TeamMember(models.Model):
     image_height = models.PositiveIntegerField(editable=False, null=True)
     image_width = models.PositiveIntegerField(editable=False, null=True)
 
+    objects = TeamMemberManager()
+
     @property
     def fullname(self):
-        '''Fullname is not stored in the database, but is instead a "computed"
+        '''
+        Fullname is not stored in the database, but is instead a "computed"
         value derived from the first and last attributes.
         The @property decorator in Python classes enables us to access the value
         like a normal property (e.g. `print(member.fullname)`).
@@ -57,8 +84,9 @@ class TeamMember(models.Model):
         '''
         return self.fullname
 
+
 @receiver(models.signals.post_save, sender=TeamMember)
-def WarmTeamMemberImages(sender, instance, **kwargs):
+def warm_team_member_images(sender, instance, **kwargs):
     '''Ensures images are created post-save.
     Image sizes are stored in base.VERSATILEIMAGEFIELD_RENDITION_KEY_SETS.
     Using a thumbnail__AxA rendition key, the image fits in a AxA rectangle by
@@ -67,7 +95,6 @@ def WarmTeamMemberImages(sender, instance, **kwargs):
     Documentation link:
     https://django-versatileimagefield.readthedocs.io/en/latest/overview.html#create-images-wherever-you-need-them
     '''
-
 
     img_warmer = VersatileImageFieldWarmer(
         instance_or_queryset=instance,
