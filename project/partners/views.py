@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from django.views import View
+from .models import Partner
 
-# Create your views here.
+class PartnersView(View):
+
+    template = 'partners/index.html'
+
+    def get(self, request, *args, **kwargs):
+        partners = Partner.objects.all()
+        return render(request, self.template, {'partners': partners})
