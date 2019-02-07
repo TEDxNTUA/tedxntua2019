@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'project.team',
     'project.privacy',
     'project.license',
+    'project.users',
     'versatileimagefield',
     'django.contrib.admin',
     'django.contrib.auth',
