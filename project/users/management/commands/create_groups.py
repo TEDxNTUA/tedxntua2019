@@ -5,23 +5,24 @@ from project.partners.models import Partner
 from project.program.models import Activity, Presenter
 
 PERMISSIONS = ['view', 'edit', 'add', 'delete']
-permissions = {'media': ['partner'], 'fr': ['partner'],
-               'experience': ['activity', 'presenter'], 'graphics': [],
-               'venue': [], 'speakers': ['presenter']}
+group_permissions = {'media': ['partner', 'activity', 'presenter'],
+                     'fr': ['partner'],
+                     'experience': ['activity', 'presenter'], 'graphics': [],
+                     'venue': [], 'speakers': ['presenter', 'activity']}
 
 
 class Command(BaseCommand):
     help = 'Create group permissions.'
 
     def handle(self, *args, **kwargs):
-        for group in permissions.keys():
+        for group in group_permissions.keys():
             new_group, created = Group.objects.get_or_create(name=group)
-            for model in permissions[group]:
+            for model in group_permissions[group]:
                 if (model == 'partner'):
                     ct = ContentType.objects.get_for_model(Partner)
                 elif (model == 'activity'):
                     ct = ContentType.objects.get_for_model(Activity)
-                else:
+                elif (model == 'presenter'):
                     ct = ContentType.objects.get_for_model(Presenter)
                 for permission in PERMISSIONS:
                     name = 'Can {} {}'.format(permission, model)
