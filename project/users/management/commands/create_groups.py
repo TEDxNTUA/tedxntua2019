@@ -26,12 +26,6 @@ class Command(BaseCommand):
                     ct = ContentType.objects.get_for_model(Presenter)
                 for permission in PERMISSIONS:
                     name = 'Can {} {}'.format(permission, model)
-                    try:
-                        model_add_perm = Permission.objects.get(name=name,
-                                                                content_type=
-                                                                ct)
-                    except:
-                        model_add_perm = Permission.objects.create(name=name,
-                                                                   content_type
-                                                                   =ct)
+                    model_add_perm, _ = Permission.objects.get_or_create(
+                                            name=name, content_type=ct)
                     new_group.permissions.add(model_add_perm)
