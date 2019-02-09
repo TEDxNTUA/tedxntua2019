@@ -41,8 +41,9 @@ $navlink-padding: .375rem;
 $hotdog-color: lighten($body-color, 20%);
 
 // Footer
-$footer-default-bg: #101010;
-$footer-border-color: #191919;
+$footer-default-bg: $tertiary;
+$footer-border-color: transparent;
+$footer-padding-x: 2.5rem;
 
 // Buttons
 $btn-default-color: $text-color;
