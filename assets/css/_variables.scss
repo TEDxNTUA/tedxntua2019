@@ -1,21 +1,23 @@
-// Body
-$body-bg: #fafafa;
-$body-color: #212529;
-
-// Borders
-$laravel-border-color: darken($body-bg, 10%);
-$list-group-border: $laravel-border-color;
-$navbar-default-border: $laravel-border-color;
-$panel-default-border: $laravel-border-color;
-$panel-inner-border: $laravel-border-color;
-
 // Brands
-$brand-primary: #E62B1E;
-$brand-secondary: #222222;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
+$primary: #F19386;
+$secondary: #C1E3D3;
+$tertiary: #212529;
+$info: #8eb4cb;
+$success: #2ab27b;
+$warning: #cbb956;
+$danger: #bf5329;
+
+// Border radius
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+// Input box shadow
+$input-btn-focus-width: 0;
+
+// Body
+$body-bg: $secondary;
+$body-color: $tertiary;
 
 // Typography
 $font-family-sans-serif: sans-serif;
@@ -30,12 +32,13 @@ $section-padding-x: 1rem;
 $section-padding-y: 1rem;
 
 // Navbar
-$navbar-default-bg: $brand-secondary;
+$navbar-default-bg: $body-bg;
+$navbar-scrolled-border: rgba(0, 0, 0, .2);
 $logo-height: 3.2rem;
-$navlink-color: #fff;
-$navlink-hover-color: $brand-primary;
+$navlink-color: lighten($body-color, 20%);
+$navlink-hover-color: $body-color;
 $navlink-padding: .375rem;
-$hotdog-color: #DDD;
+$hotdog-color: lighten($body-color, 20%);
 
 // Footer
 $footer-default-bg: #101010;
@@ -46,7 +49,7 @@ $btn-default-color: $text-color;
 
 // Inputs
 $input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($brand-primary, 25%);
+$input-border-focus: lighten($primary, 25%);
 $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
