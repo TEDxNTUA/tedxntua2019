@@ -2,41 +2,51 @@
 
 footer#footer {
 	background-color: $footer-default-bg;
-	border-top: 3px solid $footer-border-color;
-	color: white;
+	border-top: $footer-border-top;
+	color: $footer-text-color;
 	text-align: center;
 	> .container {
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		max-width: $max-content-width;
 		margin: 0 auto;
+		max-width: $max-content-width;
 		padding-left: $section-padding-x;
 		padding-right: $section-padding-x;
 		padding-top: $section-padding-y;
 		padding-bottom: $section-padding-y;
 	}
-	.links {
+	.social {
+		align-items: center;
+		display: flex;
+		margin-bottom: $section-padding-y;
+		justify-content: center;
+		h3 {
+			// remove default margin
+			margin-bottom: 0;
+		}
+		a {
+			font-size: 1.75rem;
+			// remove default line height
+			line-height: 1;
+			padding-left: 1rem;
+		}
+	}
+	.sections {
+		// sections start as 1-column grid
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-row-gap: $section-padding-y;
+	}
+	.section-content {
 		display: flex;
 		flex-direction: column;
 		&.collapse:not(.show) {
 			display: none;
 		}
 	}
-	.social {
-		margin-bottom: $section-padding-y;
-		width: 100%;
-		.links {
-			font-size: 1.25rem;
-			line-height: 1;
-			justify-content: center;
-			a {
-				padding: .25rem 0;
-			}
-		}
-	}
-	.footer-section:not(:last-child) {
-		margin-bottom: $section-padding-y;
+	.tedx-license {
+		color: rgba($footer-text-color, 0.4);
+		font-size: .75rem;
+		line-height: 1.15;
+		padding-top: .1rem;
 	}
 }
 
@@ -46,11 +56,19 @@ footer#footer {
 
 @include media-breakpoint-up(sm) {
 	footer#footer {
+		text-align: left;
 		> .container {
+			// double the margins
 			padding-left: 2 * $section-padding-x;
 			padding-right: 2 * $section-padding-x;
 			padding-top: 2 * $section-padding-y;
 			padding-bottom: 2 * $section-padding-y;
+		}
+		.sections {
+			// make it a 2-column grid and double gaps
+			grid-column-gap: $footer-column-gap;
+			grid-row-gap: 2 * $section-padding-y;
+			grid-template-columns: 1fr 1fr;
 		}
 		.social {
 			margin-bottom: 2 * $section-padding-y;
@@ -60,25 +78,28 @@ footer#footer {
 
 @include media-breakpoint-up(md) {
 	footer#footer {
-		text-align: left;
-		> .container {
-			flex-direction: row;
+		.sections {
+			// switch to row flex
+			display: flex;
+			flex-wrap: wrap;
+			// reset grid properties
+			grid-column-gap: normal;
+			grid-row-gap: normal;
+			grid-template-columns: none;
+			// column "gap"
+			margin-left: -$footer-column-gap / 2;
+			margin-right: -$footer-column-gap / 2;
+		}
+		.footer-section {
+			margin-left: $footer-column-gap / 2;
+			margin-right: $footer-column-gap / 2;
 		}
 		.social {
-			text-align: center;
-			.links {
-				flex-direction: row;
-				font-size: 1.75rem;
-				a {
-					padding: 0 1rem;
-				}
-			}
+			// pull left
+			justify-content: flex-start;
 		}
-		.footer-section:not(:last-child) {
-			margin-bottom: 0;
-			margin-right: $footer-padding-x;
-		}
-		.legal {
+		.footer-section.legal {
+			// pull right
 			margin-left: auto;
 		}
 	}
@@ -86,8 +107,14 @@ footer#footer {
 
 @include media-breakpoint-up(lg) {
 	footer#footer {
-		.footer-section:not(:last-child) {
-			margin-right: 2 * $footer-padding-x;
+		.sections {
+			// double column gap
+			margin-left: -$footer-column-gap;
+			margin-right: -$footer-column-gap;
+		}
+		.footer-section {
+			margin-left: $footer-column-gap;
+			margin-right: $footer-column-gap;
 		}
 	}
 }
