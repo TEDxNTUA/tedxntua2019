@@ -106,7 +106,7 @@ nav#nav .nav-link {
 nav#nav .primary-item {
 	background-color: $primary;
 	&:hover {
-		background-color: darken($primary, 10%);
+		background-color: $primary-hover;
 	}
 }
 

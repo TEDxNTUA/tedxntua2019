@@ -1,4 +1,8 @@
-/* FOOTER */
+/* FOOTER
+ *
+ * The footer sections are organized as a column in small device sizes,
+ * as a 2x2 grid in medium device sizes and as a row in larger ones.
+ */
 
 footer#footer {
 	background-color: $footer-default-bg;
@@ -30,7 +34,7 @@ footer#footer {
 		}
 	}
 	.sections {
-		// sections start as 1-column grid
+		// layout: column
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-row-gap: $section-padding-y;
@@ -38,15 +42,30 @@ footer#footer {
 	.section-content {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		&.collapse:not(.show) {
 			display: none;
 		}
+	}
+	.primary-link {
+		background-color: $primary;
+		color: $body-color;
+		padding: 0 2rem;
+		&:hover {
+			background-color: $primary-hover;
+			color: black;
+		}
+	}
+	.past-events .fa-youtube {
+		padding-left: .1rem;
+		vertical-align: middle;
 	}
 	.tedx-license {
 		color: rgba($footer-text-color, 0.4);
 		font-size: .75rem;
 		line-height: 1.15;
-		padding-top: .1rem;
+		padding-top: .2rem;
+		width: 15rem;
 	}
 }
 
@@ -65,13 +84,25 @@ footer#footer {
 			padding-bottom: 2 * $section-padding-y;
 		}
 		.sections {
-			// make it a 2-column grid and double gaps
+			// layout: 2x2 grid
+			// double gaps
 			grid-column-gap: $footer-column-gap;
 			grid-row-gap: 2 * $section-padding-y;
 			grid-template-columns: 1fr 1fr;
 		}
+		.section-content {
+			align-items: normal;
+		}
+		.primary-link {
+			margin-left: -.5rem;
+			margin-right: -.5rem;
+			padding: 0 .5rem;
+		}
 		.social {
 			margin-bottom: 2 * $section-padding-y;
+		}
+		.tedx-license {
+			width: 12rem;
 		}
 	}
 }
@@ -79,7 +110,7 @@ footer#footer {
 @include media-breakpoint-up(md) {
 	footer#footer {
 		.sections {
-			// switch to row flex
+			// layout: row
 			display: flex;
 			flex-wrap: wrap;
 			// reset grid properties
@@ -102,6 +133,9 @@ footer#footer {
 			// pull right
 			margin-left: auto;
 		}
+		.tedx-license {
+			width: 10rem;
+		}
 	}
 }
 
@@ -115,6 +149,9 @@ footer#footer {
 		.footer-section {
 			margin-left: $footer-column-gap;
 			margin-right: $footer-column-gap;
+		}
+		.tedx-license {
+			width: 15rem;
 		}
 	}
 }

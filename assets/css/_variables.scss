@@ -1,7 +1,9 @@
 // Brands
 $primary: #F19386;
+$primary-hover: darken($primary, 10%);
 $secondary: #C1E3D3;
 $tertiary: #212529;
+$ted: #E62B1E;
 $info: #8eb4cb;
 $success: #2ab27b;
 $warning: #cbb956;
@@ -44,7 +46,7 @@ $hotdog-color: lighten($body-color, 20%);
 $footer-text-color: white;
 $footer-default-bg: $tertiary;
 $footer-border-top: none;
-$footer-column-gap: 2.5rem;
+$footer-column-gap: 1.5rem;
 
 // Buttons
 $btn-default-color: $text-color;
