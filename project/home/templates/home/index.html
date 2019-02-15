@@ -1,12 +1,17 @@
 {% extends "base.html" %}
+{% load render_bundle from webpack_loader %}
 {% block title %}Home{% endblock %}
 {% block description %}This is the home page{% endblock %}
 {% block content %}
 <section class="content">
-    <article class="page">
+    <article class="page home">
+        <canvas id="enigma-animation" width="800" height="540"></canvas>
         <h1 class="page-heading">Home page</h1>
 
         <p>Content goes here.</p>
     </article>
 </section>
+{% endblock %}
+{% block scripts %}
+{% render_bundle "home" "js" %}
 {% endblock %}

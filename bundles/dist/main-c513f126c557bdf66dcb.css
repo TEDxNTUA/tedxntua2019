@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,700&subset=greek);
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -31,7 +32,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: sans-serif;
+  --font-family-sans-serif: "Fira Sans Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
@@ -55,7 +56,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Fira Sans Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
@@ -3866,7 +3867,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Fira Sans Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -3951,7 +3952,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: sans-serif;
+  font-family: "Fira Sans Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6364,7 +6365,7 @@ a {
 
 ::selection {
   background: #F19386;
-  color: white; }
+  color: #212529; }
 
 /*
  * MEDIA QUERIES
@@ -6578,78 +6579,125 @@ article.page h1.page-heading, article.page h2.page-heading {
 /*
  * MEDIA QUERIES
  */
-/* FOOTER */
+/* FOOTER
+ *
+ * The footer sections are organized as a column in small device sizes,
+ * as a 2x2 grid in medium device sizes and as a row in larger ones.
+ */
 footer#footer {
   background-color: #212529;
-  border-top: 3px solid transparent;
+  border-top: none;
   color: white;
   text-align: center; }
   footer#footer > .container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    max-width: 1366px;
     margin: 0 auto;
+    max-width: 1366px;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem; }
-  footer#footer .links {
-    display: flex;
-    flex-direction: column; }
-    footer#footer .links.collapse:not(.show) {
-      display: none; }
   footer#footer .social {
+    align-items: center;
+    display: flex;
     margin-bottom: 1rem;
-    width: 100%; }
-    footer#footer .social .links {
-      font-size: 1.25rem;
+    justify-content: center; }
+    footer#footer .social h3 {
+      margin-bottom: 0; }
+    footer#footer .social a {
+      font-size: 1.75rem;
       line-height: 1;
-      justify-content: center; }
-      footer#footer .social .links a {
-        padding: .25rem 0; }
-  footer#footer .footer-section:not(:last-child) {
-    margin-bottom: 1rem; }
+      padding-left: 1rem; }
+  footer#footer .sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 1rem; }
+  footer#footer .section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    footer#footer .section-content.collapse:not(.show) {
+      display: none; }
+  footer#footer .primary-link {
+    background-color: #F19386;
+    color: #212529;
+    padding: 0 2rem; }
+    footer#footer .primary-link:hover {
+      background-color: #ec6a58;
+      color: black; }
+  footer#footer .past-events .fa-youtube {
+    padding-left: .1rem;
+    vertical-align: middle; }
+  footer#footer .tedx-license {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: .75rem;
+    line-height: 1.15;
+    padding-top: .2rem;
+    width: 15rem; }
 
 /*
  * MEDIA QUERIES
  */
 @media (min-width: 576px) {
-  footer#footer > .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem; }
-  footer#footer .social {
-    margin-bottom: 2rem; } }
-
-@media (min-width: 768px) {
   footer#footer {
     text-align: left; }
     footer#footer > .container {
-      flex-direction: row; }
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem; }
+    footer#footer .sections {
+      grid-column-gap: 1.5rem;
+      grid-row-gap: 2rem;
+      grid-template-columns: 1fr 1fr; }
+    footer#footer .section-content {
+      align-items: normal; }
+    footer#footer .primary-link {
+      margin-left: -.5rem;
+      margin-right: -.5rem;
+      padding: 0 .5rem; }
     footer#footer .social {
-      text-align: center; }
-      footer#footer .social .links {
-        flex-direction: row;
-        font-size: 1.75rem; }
-        footer#footer .social .links a {
-          padding: 0 1rem; }
-    footer#footer .footer-section:not(:last-child) {
-      margin-bottom: 0;
-      margin-right: 2.5rem; }
-    footer#footer .legal {
-      margin-left: auto; } }
+      margin-bottom: 2rem; }
+    footer#footer .tedx-license {
+      width: 12rem; } }
+
+@media (min-width: 768px) {
+  footer#footer .sections {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column-gap: normal;
+    grid-row-gap: normal;
+    grid-template-columns: none;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem; }
+  footer#footer .footer-section {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem; }
+  footer#footer .social {
+    justify-content: flex-start; }
+  footer#footer .footer-section.legal {
+    margin-left: auto; }
+  footer#footer .tedx-license {
+    width: 10rem; } }
 
 @media (min-width: 992px) {
-  footer#footer .footer-section:not(:last-child) {
-    margin-right: 5rem; } }
+  footer#footer .sections {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem; }
+  footer#footer .footer-section {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem; }
+  footer#footer .tedx-license {
+    width: 15rem; } }
 
 a.collapse-triangle:after, button.collapse-triangle:after {
   content: "\25B2"; }
 
 a.collapse-triangle.collapsed:after, button.collapse-triangle.collapsed:after {
   content: "\25BC"; }
+
+/* HOME */
+article.home canvas#enigma-animation {
+  width: 100%; }
 
 /* ABOUT PAGE */
 article.about #about-ted, article.about #about-tedx {
