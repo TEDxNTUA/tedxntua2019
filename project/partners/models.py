@@ -1,11 +1,11 @@
 from django.db import models
 from django.dispatch import receiver
-from i18nfield.fields import I18nCharField, I18nTextField
-
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
+from parler.models import TranslatableModel, TranslatedFields
 
-class Partner(models.Model):
+
+class Partner(TranslatableModel):
     '''Model for partners of the TEDxNTUA 2019 organization.
 
     The `partner_type` attribute is represented as a CharField with limited possible
@@ -30,8 +30,9 @@ class Partner(models.Model):
         (MEDIA_PARTNERS, 'Media Partners'),
         (COMMUNITY_PARTNERS, 'Community Partners'),
     )
-
-    name = I18nCharField(max_length=255, verbose_name='name')
+    translations = TranslatedFields(
+        name=models.CharField(max_length=255, verbose_name='name')
+    )
     partner_type = models.CharField(max_length=3, choices=PARTNER_TYPES)
     link = models.URLField()
 
@@ -61,7 +62,6 @@ def WarmPartnerImages(sender, instance, **kwargs):
     Documentation link:
     https://django-versatileimagefield.readthedocs.io/en/latest/overview.html#create-images-wherever-you-need-them
     '''
-
 
     img_warmer = VersatileImageFieldWarmer(
         instance_or_queryset=instance,
