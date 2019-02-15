@@ -21,6 +21,7 @@ setup(
         'mysqlclient',
         'django-versatileimagefield',
         'django-webpack-loader',
+        'django-parler',
     ],
     extras_require={
         'dev': [
