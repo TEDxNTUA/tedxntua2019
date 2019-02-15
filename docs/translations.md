@@ -30,9 +30,9 @@ Run `make` again, in order for your change to have effect on the project (compil
 
 ### Translation of database fields
 
-There are 2 options here:
+We are using [django-parler](https://github.com/django-parler/django-parler) for database fields translation.
 
-* Use seeders
-* Use admin interface
-  * Connect with your credentials to admin site as superuser. Go to the appropriate table and add/update the database entry.
+The model should inherit from `TranslatableModel` class of `parler.models` and declare translatable fields explicitly in the `translations = TranslatedFields(<field1>, <field2>, ..., <fieldN>)` variable.
+
+The admin integration is smooth. The only thing you need to do is to create an admin class that inherits from `TranslatableAdmin` class of `parler.admin`, associate it with a `TranslatableModelForm` and register it to the admin backend.
 
