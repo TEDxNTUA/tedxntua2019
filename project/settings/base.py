@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'project.privacy',
     'project.license',
     'versatileimagefield',
+    'parler',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -159,3 +160,15 @@ LANGUAGES = [
     ('el', _('Greek')),
     ('en', _('English')),
 ]
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'el'},
+    ),
+    'default': {
+        'fallbacks': ['en'],
+        'hide_untranslated': False,
+    }
+}
+PARLER_DEFAULT_LANGUAGE_CODE = 'en'
