@@ -7,5 +7,5 @@ class PartnersView(View):
     template = 'partners/index.html'
 
     def get(self, request, *args, **kwargs):
-        partners = Partner.objects.all()
+        partners = Partner.objects.get_partners_by_type()
         return render(request, self.template, {'partners': partners})

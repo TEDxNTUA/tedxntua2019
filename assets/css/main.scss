@@ -1,6 +1,9 @@
 // Variables
 @import "variables";
 
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,500,700&subset=greek");
+
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
@@ -40,13 +43,21 @@
 // MAIN SECTIONS
 @import "main-sections";
 
+// PAGE STYLING
+@import "pages-styling";
+
 // FOOTER
 @import "footer";
+
+// COLLAPSE TRIANGLE
+@import "collapse-triangle";
 
 // INSERT HERE OTHER COMPONENT STYLES
 // ...
 
-
+// INDIVIDUAL PAGE STYLES
+@import "~@/home/assets/css/home";
+@import "~@/about/assets/css/about";
 
 
 /*

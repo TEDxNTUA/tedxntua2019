@@ -1,18 +1,21 @@
 /* ABOUT PAGE */
 
 article.about {
-	font-size: .85rem;
-	section.content {
-		max-width: 1200px;
-	}
-	.col {
-		margin-bottom: 2rem;
-	}
-	p {
-		color: black;
-		font-size: 1em;
-		&:last-child {
-			margin-bottom: 0;
+	#about-ted, #about-tedx {
+		margin: 0 auto;
+		max-width: 768px;
+		p {
+			text-align: justify;
 		}
 	}
+}
+
+/*
+ * MEDIA QUERIES
+ */
+
+@include media-breakpoint-up(sm) {
+}
+
+@include media-breakpoint-up(md) {
 }

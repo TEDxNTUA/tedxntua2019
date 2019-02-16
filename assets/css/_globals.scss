@@ -15,6 +15,7 @@ body {
 	// The header, the main and the footer
 	display: flex;
 	flex-direction: column;
+	font-family: $font-stack;
 }
 
 header, main, footer {
@@ -30,42 +31,22 @@ main {
 }
 
 a {
-	color: $brand-primary;
+	color: $primary;
 	&:hover {
-		color: darken($brand-primary, 20%);
+		color: $primary-hover;
 	    text-decoration: none;
+	}
+	&:focus {
+		outline: none;
+		border: 0;
 	}
 }
 
 ::selection {
-	background: $brand-primary;
-	color: white;
-}
-
-// Remove Bootstrap's box-shadow from buttons
-.btn:hover, .btn:focus {
-	box-shadow: none;
-}
-
-a.call-to-action {
-	display: inline-block;
-	border-radius: 1rem;
-	background-color: $brand-primary;
-	color: white;
-	font-size: 1rem;
-	text-align: center;
-	padding: .75rem 2rem;
-	&:hover {
-		background-color: saturate($brand-primary, 10%);
-	}
+	background: $primary;
+	color: $body-color;
 }
 
 /*
  * MEDIA QUERIES
  */
-
-@include media-breakpoint-up(md) {
-    a.call-to-action {
-        font-size: 1.25rem;
-	}
-}

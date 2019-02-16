@@ -13,15 +13,15 @@
 
 <body>
 
-    <header class="dark">
+    <header id="header" class="dark">
         {% include "layouts/partials/nav.html" %}
     </header>
 
-    <main>
+    <main id="main">
         {% block content %}{% endblock %}
     </main>
 
-    <footer>
+    <footer id="footer">
         {% include "layouts/partials/footer.html" %}
     </footer>
 
