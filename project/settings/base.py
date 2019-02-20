@@ -114,7 +114,7 @@ LOGGING = {
         'console': {
             'level': env_setting('LOG_LEVEL', 'INFO'),
             'class': 'logging.StreamHandler',
-        }
+        },
     },
     'formatters': {
         'simple': {

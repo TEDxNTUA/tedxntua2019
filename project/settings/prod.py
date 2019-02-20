@@ -3,6 +3,16 @@ from .base import * # pylint: disable=wildcard-import
 from .env import abs_path
 
 
+# Add logging to file in production mode
+
+LOGGING['handlers']['file'] = {
+    'level': env_setting('LOG_LEVEL', 'INFO'),
+    'class': 'logging.FileHandler',
+    'filename': abs_path('logs', 'debug.log')
+}
+
+LOGGING['loggers']['']['handlers'].append('file')
+
 STATICFILES_DIRS += (
     abs_path('bundles/dist'),
 )
