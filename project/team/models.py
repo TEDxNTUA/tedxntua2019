@@ -5,9 +5,12 @@ from django.dispatch import receiver
 
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
+from parler.models import TranslatableModel, TranslatedFields
+from parler.managers import TranslatableQuerySet, TranslatableManager
 
 
-class TeamMemberManager(models.Manager):
+class TeamMemberManager(TranslatableManager):
+
     def get_teams(self):
         '''Table-level method to get all team members grouped by team.
 
@@ -28,7 +31,8 @@ class TeamMemberManager(models.Manager):
             teams[member.team]['members'].append(member)
         return teams
 
-class TeamMember(models.Model):
+
+class TeamMember(TranslatableModel):
     '''Model for members of the TEDxNTUA 2019 organizing team.
 
     The `team` attribute is represented as a CharField with limited possible
@@ -51,9 +55,10 @@ class TeamMember(models.Model):
         (SPEAKERS, 'Speakers'),
         (VENUE_PRODUCTION, 'Venue & Production'),
     )
-
-    first = models.CharField(max_length=255, verbose_name='First name')
-    last = models.CharField(max_length=255, verbose_name='Last name')
+    translations = TranslatedFields(
+        first=models.CharField(max_length=255, verbose_name='First name'),
+        last=models.CharField(max_length=255, verbose_name='Last name')
+    )
     email = models.EmailField()
     team = models.CharField(max_length=16, choices=TEAM_CHOICES)
 
@@ -73,8 +78,8 @@ class TeamMember(models.Model):
         '''
         Fullname is not stored in the database, but is instead a "computed"
         value derived from the first and last attributes.
-        The @property decorator in Python classes enables us to access the value
-        like a normal property (e.g. `print(member.fullname)`).
+        The @property decorator in Python classes enables us to access the
+        value like a normal property (e.g. `print(member.fullname)`).
         '''
         return ' '.join([self.first, self.last])
 

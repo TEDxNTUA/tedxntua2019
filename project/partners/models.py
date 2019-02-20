@@ -2,9 +2,9 @@ from collections import OrderedDict
 
 from django.db import models
 from django.dispatch import receiver
-
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
+from parler.models import TranslatableModel, TranslatedFields
 
 
 class PartnerManager(models.Manager):
@@ -28,7 +28,8 @@ class PartnerManager(models.Manager):
             partners[item.partner_type]['items'].append(item)
         return partners
 
-class Partner(models.Model):
+
+class Partner(TranslatableModel):
     '''Model for partners of the TEDxNTUA 2019 organization.
 
     The `partner_type` attribute is represented as a CharField with limited possible
@@ -53,8 +54,9 @@ class Partner(models.Model):
         (MEDIA_PARTNERS, 'Media Partners'),
         (COMMUNITY_PARTNERS, 'Community Partners'),
     )
-
-    name = models.CharField(max_length=255, verbose_name='name')
+    translations = TranslatedFields(
+        name=models.CharField(max_length=255, verbose_name='name')
+    )
     partner_type = models.CharField(max_length=3, choices=PARTNER_TYPES)
     link = models.URLField()
 
@@ -72,6 +74,7 @@ class Partner(models.Model):
     def __str__(self):
         '''Objects of the Partner class are represented as strings by their name'''
         return self.name
+
 
 @receiver(models.signals.post_save, sender=Partner)
 def warm_partner_images(sender, instance, **kwargs):
