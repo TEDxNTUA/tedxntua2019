@@ -22,7 +22,8 @@ from django.dispatch import receiver
 
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
-
+from parler.models import TranslatableModel, TranslatedFields
+from parler.managers import TranslatableQuerySet, TranslatableManager
 
 logger = logging.getLogger(__name__)
 
@@ -229,7 +230,7 @@ def warm_activity_images(sender, instance, **kwargs):
 
 # Presenter model & managers
 
-class PresenterTypeManager(models.Manager):
+class PresenterTypeManager(TranslatableManager):
     '''
     Abstract class for managers that return presenters of specific activity
     types, e.g. speakers, performers, etc.
@@ -238,25 +239,26 @@ class PresenterTypeManager(models.Manager):
         super().__init__()
         self.type_ = type_
 
-    def get_queryset(self):
-        return super().get_queryset().filter(activity__activity_type=self.type_)
+    # def get_queryset(self):
+    #     return super().get_queryset().filter(activity__activity_type=self.type_)
 
 
-class Presenter(models.Model):
+class Presenter(TranslatableModel):
     '''
     Person that participates in the event as a guest,
     ie. a speaker, a performer, a workshop presenter or a host.
 
     First and last name are the only required fields.
     '''
+    translations = TranslatedFields(
+        first=models.CharField(max_length=255, verbose_name='First name'),
+        last=models.CharField(max_length=255, verbose_name='Last name'),
+        occupation=models.CharField(max_length=255, blank=True),
+        short_bio=models.TextField(blank=True, verbose_name='Short bio'),
+        quote=models.CharField(max_length=255, blank=True,
+                               verbose_name='Inspirational quote')
+    )
 
-    first = models.CharField(max_length=255, verbose_name='First name')
-    last = models.CharField(max_length=255, verbose_name='Last name')
-
-    occupation = models.CharField(max_length=255, blank=True)
-    short_bio = models.TextField(blank=True, verbose_name='Short bio')
-    quote = models.CharField(max_length=255, blank=True,
-                             verbose_name='Inspirational quote')
     link = models.URLField(blank=True,
                            verbose_name='Website or social media profile')
 
@@ -277,7 +279,7 @@ class Presenter(models.Model):
     # Documentation link:
     # https://docs.djangoproject.com/el/2.1/topics/db/managers/
 
-    objects = models.Manager()
+    objects = TranslatableManager()
     speakers = PresenterTypeManager(Activity.TALK)
     performers = PresenterTypeManager(Activity.PERFORMANCE)
     workshop_presenters = PresenterTypeManager(Activity.WORKSHOP)
