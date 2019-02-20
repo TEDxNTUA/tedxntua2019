@@ -28,6 +28,7 @@ logger = logging.getLogger(__name__)
 
 # Stage non-database model
 
+
 class Stage(Enum):
     '''Enum class that represents the event stages'''
     MAIN = 'main'
@@ -59,16 +60,18 @@ class Stage(Enum):
 # Activity model & managers
 
 class ActivityManager(models.Manager):
-    '''The main manager of the Activity model providing class-level functionality'''
+    '''The main manager of the Activity model providing class-level
+    functionality'''
     def get_schedule(self):
         '''Get the schedule of the event organized by time and stages.
 
-        Generates a dictionary with time (hh:mm format) as keys (in ascending order)
-        and the activities starting on each stage at that time (or None) as values.
+        Generates a dictionary with time (hh:mm format) as keys
+        (in ascending order) and the activities starting on each stage at that
+        time (or None) as values.
 
-        If two activities start at the same time and stage, only one will be returned,
-        since the other will be overridden. This is prevented by the clean() method of
-        the Activity model.
+        If two activities start at the same time and stage, only one will be
+        returned, since the other will be overridden. This is prevented by the
+        clean() method of the Activity model.
 
         Example result:
         {
@@ -114,6 +117,7 @@ class ActivityManager(models.Manager):
         slots = OrderedDict(sorted(slots.items()))
         return slots
 
+
 class ActivityTypeManager(models.Manager):
     '''
     Abstract class for managers that return activities of specific type,
@@ -122,8 +126,10 @@ class ActivityTypeManager(models.Manager):
     def __init__(self, type_):
         super().__init__()
         self.type_ = type_
+
     def get_queryset(self):
         return super().get_queryset().filter(activity_type=self.type_)
+
 
 class Activity(models.Model):
     '''
@@ -143,7 +149,8 @@ class Activity(models.Model):
         (HOSTING, 'Hosting'),
     )
 
-    activity_type = models.CharField(max_length=1, choices=TYPE_CHOICES, verbose_name='Type')
+    activity_type = models.CharField(max_length=1, choices=TYPE_CHOICES,
+                                     verbose_name='Type')
 
     start = models.TimeField()
     end = models.TimeField()
@@ -162,7 +169,6 @@ class Activity(models.Model):
     )
     image_height = models.PositiveIntegerField(editable=False, null=True)
     image_width = models.PositiveIntegerField(editable=False, null=True)
-
 
     '''An activity may be presented by many people and a presenter
     may present many activities respectively
@@ -190,10 +196,12 @@ class Activity(models.Model):
         same_time_activities = Activity.objects.filter(start=self.start)
         for other in same_time_activities:
             if Stage.from_activity(self) == Stage.from_activity(other):
-                raise ValidationError('There exists another activity that starts at the same time and stage')
+                raise ValidationError('There exists another activity that \
+                                       starts at the same time and stage')
 
     class Meta:
         verbose_name_plural = 'Activities'
+
 
 @receiver(models.signals.post_save, sender=Activity)
 def warm_activity_images(sender, instance, **kwargs):
@@ -223,14 +231,16 @@ def warm_activity_images(sender, instance, **kwargs):
 
 class PresenterTypeManager(models.Manager):
     '''
-    Abstract class for managers that return presenters of specific activity types,
-    e.g. speakers, performers, etc.
+    Abstract class for managers that return presenters of specific activity
+    types, e.g. speakers, performers, etc.
     '''
     def __init__(self, type_):
         super().__init__()
         self.type_ = type_
+
     def get_queryset(self):
         return super().get_queryset().filter(activity__activity_type=self.type_)
+
 
 class Presenter(models.Model):
     '''
@@ -245,8 +255,10 @@ class Presenter(models.Model):
 
     occupation = models.CharField(max_length=255, blank=True)
     short_bio = models.TextField(blank=True, verbose_name='Short bio')
-    quote = models.CharField(max_length=255, blank=True, verbose_name='Inspirational quote')
-    link = models.URLField(blank=True, verbose_name='Website or social media profile')
+    quote = models.CharField(max_length=255, blank=True,
+                             verbose_name='Inspirational quote')
+    link = models.URLField(blank=True,
+                           verbose_name='Website or social media profile')
 
     image = VersatileImageField(
         'Image',
@@ -276,6 +288,7 @@ class Presenter(models.Model):
 
     def __str__(self):
         return self.fullname
+
 
 @receiver(models.signals.post_save, sender=Presenter)
 def warm_presenter_images(sender, instance, **kwargs):
