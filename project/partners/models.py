@@ -7,6 +7,26 @@ from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 from parler.models import TranslatableModel, TranslatedFields
 
 
+class PartnerManager(models.Manager):
+    def get_partners_by_type(self):
+        '''Table-level method to get all partners grouped by type.
+        Returns a dictionary where partner types from Partner.PARTNER_TYPES
+        are the keys and the value is a dictionary with the `title` of
+        the team and a `items` array.
+        The order of partner types is the same as in PARTNER_TYPES.
+        '''
+        partners = OrderedDict()
+        for type_, title in Partner.PARTNER_TYPES:
+            partners[type_] = {
+                'title': title,
+                'items': [],
+            }
+
+        for item in self.get_queryset():
+            partners[item.partner_type]['items'].append(item)
+        return partners
+
+
 class Partner(TranslatableModel):
     '''Model for partners of the TEDxNTUA 2019 organization.
 
