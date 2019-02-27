@@ -16,11 +16,12 @@ header {
 	max-height: 100vh;
 	&.scrolled {
 		// Add border when scrolled
-		border-bottom: 2px solid darken($navbar-default-bg, 30%);
+		border-bottom: 2px solid $navbar-scrolled-border;
 	}
 }
 
 nav#nav {
+	font-size: 1.15rem;
 	height: 100%;
 	max-width: $max-content-width;
 	padding-top: $section-padding-y;
@@ -31,15 +32,13 @@ nav#nav {
 		// Spacing between logo and menu when the menu is vertical
 		padding-top: $navlink-padding;
 	}
-	// Replicate Bootstrap's functionality for $navlink-color
 	.nav-link {
-		color: rgba($navlink-color, 0.5);
-		font-size: .85rem;
+		color: $navlink-color;
 		&:hover {
 			color: $navlink-hover-color;
 		}
 		&.disabled {
-			color: rgba($navlink-color, 0.25);
+			color: rgba($navlink-color, 0.5);
 		}
 	}
 }
@@ -77,7 +76,9 @@ header.scrolled .navbar-brand {
 	.dropdown-toggle {
 		// Remove Bootstrap styling and replicate styling for nav-links
 		background: transparent;
-		color: rgba($navlink-color, 0.5);
+		color: $navlink-color;
+		// Override Bootstrap's 1rem
+		font-size: 1em;
 		padding-left: $navlink-padding;
 		padding-right: $navlink-padding;
 		margin: 0;
@@ -90,28 +91,22 @@ header.scrolled .navbar-brand {
 	}
 	.dropdown-menu {
 		min-width: 0;
+		font-size: 1em;
 	}
 }
 
 nav#nav .nav-link {
 	padding-right: $navlink-padding;
 	padding-left: $navlink-padding;
+	text-align: center;
 	white-space: nowrap;
-	&:hover {
-		color: $brand-primary;
-	}
 }
 
 /* highlighted item */
 nav#nav .primary-item {
-	background-color: $brand-primary;
-	a.nav-link {
-		&, &:hover {
-			color: $navlink-color;
-		}
-	}
+	background-color: $primary;
 	&:hover {
-		background-color: saturate($brand-primary, 10%);
+		background-color: $primary-hover;
 	}
 }
 
@@ -139,10 +134,18 @@ nav#nav .primary-item {
 			padding-top: 0;
 		}
 		.nav-link {
-			font-size: 1rem;
+			// shrink font size to fit all links
+			font-size: .8em;
 			padding-left: 2 * $navlink-padding;
 			padding-right: 2 * $navlink-padding;
 		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	nav#nav .nav-link {
+		// restore font size
+		font-size: 1em;
 	}
 }
 
@@ -152,8 +155,5 @@ nav#nav .primary-item {
 	}
 	header.scrolled .navbar-brand {
 		height: 0.75 * 1.2 * $logo-height;
-	}
-	nav#nav .nav-link {
-		font-size: 1.15rem;
 	}
 }

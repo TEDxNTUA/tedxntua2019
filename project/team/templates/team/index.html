@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Team{% endblock %}
+{% block description %}This is the Team page{% endblock %}
+{% block content %}
+<section class="content">
+    <article class="page team">
+        <h2 class="page-heading">Our Team</h2>
+        {% for id, team in teams.items %}
+        <div class="team-container" id="{{ id }}">
+            <h3>{{ team.title }}</h3>
+            <p>Members go here.</p>
+        </div>
+        {% endfor %}
+    </article>
+</section>
+{% endblock %}

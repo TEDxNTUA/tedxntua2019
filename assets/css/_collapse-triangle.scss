@@ -1,0 +1,8 @@
+a.collapse-triangle, button.collapse-triangle {
+    &:after {
+        content: "\25B2";
+    }
+    &.collapsed:after {
+        content: "\25BC";
+    }
+}

@@ -39,13 +39,13 @@ class TeamMember(TranslatableModel):
     values. The definition follows the official documentation example:
     https://docs.djangoproject.com/en/2.1/ref/models/fields/#choices
     '''
-    EXPERIENCE = 'XP'
-    IT = 'IT'
-    FUNDRAISING = 'FR'
-    GRAPHICS = 'GR'
-    MEDIA = 'MD'
-    SPEAKERS = 'SP'
-    VENUE_PRODUCTION = 'VP'
+    EXPERIENCE = 'experience'
+    IT = 'it'
+    FUNDRAISING = 'fundraising'
+    GRAPHICS = 'graphics'
+    MEDIA = 'media'
+    SPEAKERS = 'speakers'
+    VENUE_PRODUCTION = 'venue-production'
     TEAM_CHOICES = (
         (EXPERIENCE, 'Experience'),
         (IT, 'IT'),
@@ -60,7 +60,8 @@ class TeamMember(TranslatableModel):
         last=models.CharField(max_length=255, verbose_name='Last name')
     )
     email = models.EmailField()
-    team = models.CharField(max_length=2, choices=TEAM_CHOICES)
+    team = models.CharField(max_length=16, choices=TEAM_CHOICES)
+
     image = VersatileImageField(
         'Image',
         upload_to='static/',

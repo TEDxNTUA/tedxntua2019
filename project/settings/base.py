@@ -17,10 +17,11 @@ INSTALLED_APPS = [
     'project.home',
     'project.partners',
     'project.program',
-    'project.about',
     'project.team',
+    'project.about',
     'project.privacy',
     'project.license',
+    'project.users',
     'versatileimagefield',
     'parler',
     'django.contrib.admin',
@@ -30,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webpack_loader',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [

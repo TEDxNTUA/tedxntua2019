@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 from django.db import models
 from django.dispatch import receiver
 from versatileimagefield.fields import VersatileImageField
@@ -45,15 +47,14 @@ class Partner(TranslatableModel):
     image_height = models.PositiveIntegerField(editable=False, null=True)
     image_width = models.PositiveIntegerField(editable=False, null=True)
 
+    objects = PartnerManager()
+
     def __str__(self):
-        '''Objects of the Partner class are represented as strings by
-        their name
-        '''
+        '''Objects of the Partner class are represented as strings by their name'''
         return self.name
 
-
 @receiver(models.signals.post_save, sender=Partner)
-def WarmPartnerImages(sender, instance, **kwargs):
+def warm_partner_images(sender, instance, **kwargs):
     '''Ensures images are created post-save.
     Image sizes are stored in base.VERSATILEIMAGEFIELD_RENDITION_KEY_SETS.
     Using a thumbnail__AxA rendition key, the image fits in a AxA rectangle by

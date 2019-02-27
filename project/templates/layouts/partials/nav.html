@@ -13,8 +13,8 @@ function change_greek(){
 
 <nav id="nav" class="navbar navbar-expand-lg mx-auto">
     <div class="row-wrapper">
-        <a class="navbar-brand mr-auto" href="#">
-            <img src="{% static "images/tedxntua_logo.png" %}" alt="TEDxNTUA Logo" />
+        <a class="navbar-brand mr-auto" href="/">
+            <img src="{% static "images/tedxntua_logo_blacktext.png" %}" alt="TEDxNTUA Logo" />
         </a>
 
         <div class="language-selector">
@@ -52,28 +52,25 @@ function change_greek(){
     <div class="collapse navbar-collapse" id="navbarHotdog">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">{% trans "home" %}</a>
+                <a class="nav-link" href="/">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="speakers">{% trans "speakers" %}</a>
+                <a class="nav-link" href="/speakers">SPEAKERS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="schedule">{% trans "schedule" %}</a>
+                <a class="nav-link" href="/schedule">SCHEDULE</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="partners">{% trans "partners" %}</a>
+                <a class="nav-link" href="/partners">PARTNERS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="team">{% trans "team" %}</a>
+                <a class="nav-link" href="/team">TEAM</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="about">{% trans "about" %}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact">{% trans "contact" %}</a>
+                <a class="nav-link" href="/about">ABOUT</a>
             </li>
             <li class="nav-item primary-item">
-                <a class="nav-link" href="#">{% trans "tickets" %}</a>
+                <a class="nav-link" href="#">GET TICKETS!</a>
             </li>
         </ul>
     </div>

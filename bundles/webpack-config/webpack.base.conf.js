@@ -14,6 +14,7 @@ module.exports = {
   context: __dirname,
   entry: {
     main: fromRoot('assets/js/index.js'),
+    home: fromRoot('project/home/assets/js/home.js'),
   },
   module: {
     rules: [{
