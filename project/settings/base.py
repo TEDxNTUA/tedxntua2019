@@ -50,7 +50,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # The directories where `{% extends "base.html" %}` directives
         # will search in.
-        'DIRS': [abs_path('project', 'templates')],
+        'DIRS': [abs_path('project', 'templates'), 'project/home/templates/home/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

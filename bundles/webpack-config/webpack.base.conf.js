@@ -15,6 +15,7 @@ module.exports = {
   entry: {
     main: fromRoot('assets/js/index.js'),
     home: fromRoot('project/home/assets/js/home.js'),
+    pipes: fromRoot('project/home/assets/js/pipes.js')
   },
   module: {
     rules: [{

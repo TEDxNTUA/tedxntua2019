@@ -12,7 +12,26 @@
         <p>{% trans "home.content_placeholder" %}</p>
     </article>
 </section>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3">
+          {% include "partials/pipes.html" %}
+        </div>
+        <div class="col-lg-6">
+          <section class="content">
+              <article class="page home">
+
+              </article>
+          </section>
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 {% block scripts %}
 {% render_bundle "home" "js" %}
+{% render_bundle "pipes" "js" %}
 {% endblock %}
