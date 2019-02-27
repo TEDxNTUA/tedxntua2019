@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-11 16:13+0200\n"
+"POT-Creation-Date: 2019-02-27 15:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,50 +22,48 @@ msgstr ""
 msgid "test_message"
 msgstr "This is a test message"
 
-#: project/home/templates/home/index.html:8
-msgid "home.title"
-msgstr "Home page"
-
-#: project/home/templates/home/index.html:10
+#: project/home/templates/home/index.html:12
 msgid "home.content_placeholder"
 msgstr "This is a placeholder"
 
-#: project/settings/base.py:160
+#: project/settings/base.py:165
 msgid "Greek"
 msgstr ""
 
-#: project/settings/base.py:161
+#: project/settings/base.py:166
 msgid "English"
 msgstr ""
 
-#: project/templates/layouts/partials/nav.html:37
+#: project/templates/layouts/partials/nav.html:48
 msgid "home"
 msgstr "Home"
 
-#: project/templates/layouts/partials/nav.html:40
+#: project/templates/layouts/partials/nav.html:51
 msgid "speakers"
 msgstr "Speakers"
 
-#: project/templates/layouts/partials/nav.html:43
+#: project/templates/layouts/partials/nav.html:54
 msgid "schedule"
 msgstr "Schedule"
 
-#: project/templates/layouts/partials/nav.html:46
+#: project/templates/layouts/partials/nav.html:57
 msgid "partners"
 msgstr "Partners"
 
-#: project/templates/layouts/partials/nav.html:49
+#: project/templates/layouts/partials/nav.html:60
 msgid "team"
 msgstr "Team"
 
-#: project/templates/layouts/partials/nav.html:52
+#: project/templates/layouts/partials/nav.html:63
 msgid "about"
 msgstr "About"
 
-#: project/templates/layouts/partials/nav.html:55
-msgid "contact"
-msgstr "Contact"
-
-#: project/templates/layouts/partials/nav.html:58
+#: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Get tickets!"
+
+#~ msgid "home.title"
+#~ msgstr "Home page"
+
+#~ msgid "contact"
+#~ msgstr "Contact"
