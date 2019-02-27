@@ -1,19 +1,9 @@
 {% load static %}
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
-
-<script>
-function change_english(){
-  document.querySelector("form[name="english_form"]").submit();
-}
-function change_greek(){
-  document.querySelector("form[name="greek_form"]").submit();
-}
-</script>
-
 <nav id="nav" class="navbar navbar-expand-lg mx-auto">
     <div class="row-wrapper">
-        <a class="navbar-brand mr-auto" href="/">
+        <a class="navbar-brand mr-auto" href="#">
             <img src="{% static "images/tedxntua_logo_blacktext.png" %}" alt="TEDxNTUA Logo" />
         </a>
 
@@ -23,19 +13,22 @@ function change_greek(){
                 <i class="fas fa-angle-down"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-                <form name="english_form" action="language" method="get">
-                  <input type="hidden" name="language" id="language" value="en"/>
-                  <input type="hidden" name="url" id="url" value={{request.path}} />
-                  <input type="submit" value="Αγγλικά"/>
-                </form>
-
-
-                <form name="greek_form" action="language" method="get">
-                  <input type="hidden" name="language" id="language" value="el"/>
-                  <input type="hidden" name="url" id="url" value={{request.path}} />
-                  <input type="submit" value="Ελληνικά"/>
-                </form>
-
+              <form name="english_form" action="language" method="get">
+                <input type="hidden" name="language" id="language" value="en"/>
+                <input type="hidden" name="url" id="url" value={{request.path}} />
+                <input type="hidden" value="Αγγλικά"/>
+              </form>
+              <form name="greek_form" action="language" method="get">
+                <input type="hidden" name="language" id="language" value="el"/>
+                <input type="hidden" name="url" id="url" value={{request.path}} />
+                <input type="hidden" value="Ελληνικά"/>
+              </form>
+                <a class="dropdown-item" href="#" hreflang="el" onclick="document.forms['greek_form'].submit(); return false;">
+                    Ελληνικά
+                </a>
+                <a class="dropdown-item" href="#" hreflang="en" onclick="document.forms['english_form'].submit(); return false;">
+                    English
+                </a>
             </div>
         </div>
 
@@ -52,25 +45,25 @@ function change_greek(){
     <div class="collapse navbar-collapse" id="navbarHotdog">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/">HOME</a>
+                <a class="nav-link" href="/">{% trans "home" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/speakers">SPEAKERS</a>
+                <a class="nav-link" href="/speakers">{% trans "speakers" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/schedule">SCHEDULE</a>
+                <a class="nav-link" href="/schedule">{% trans "schedule" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/partners">PARTNERS</a>
+                <a class="nav-link" href="/partners">{% trans "partners" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/team">TEAM</a>
+                <a class="nav-link" href="/team">{% trans "team" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about">ABOUT</a>
+                <a class="nav-link" href="/about">{% trans "about" %}</a>
             </li>
             <li class="nav-item primary-item">
-                <a class="nav-link" href="#">GET TICKETS!</a>
+                <a class="nav-link" href="#">{% trans "tickets" %}</a>
             </li>
         </ul>
     </div>
