@@ -39,11 +39,6 @@ INSTALLED_APPS = [
     'webpack_loader',
     ...
 ]
-
-# django-webpack-loader will use this as a base directory for the `BUNDLE_DIR_NAME` configuration.
-STATICFILES_DIRS = (
-    abs_path('bundles'),
-)
 ```
 
 ### Dev
@@ -51,10 +46,15 @@ STATICFILES_DIRS = (
 ```python
 # project/settings/dev.py
 
+# django-webpack-loader will use this as a base directory for the `BUNDLE_DIR_NAME` configuration.
+STATICFILES_DIRS = (
+    abs_path('bundles/build-dev'),
+)
+
 WEBPACK_LOADER = {
     'DEFAULT': {
         # Webpack outputs bundles in bundles/build-dev/ when in development mode.
-        'BUNDLE_DIR_NAME': 'build-dev/',
+        'BUNDLE_DIR_NAME': '/',
         'STATS_FILE': abs_path('bundles', 'webpack-stats.dev.json'),
     }
 }
@@ -65,10 +65,14 @@ WEBPACK_LOADER = {
 ```python
 # project/settings/prod.py
 
+STATICFILES_DIRS = (
+    abs_path('bundles/dist'),
+)
+
 WEBPACK_LOADER = {
     'DEFAULT': {
         # Webpack outputs bundles in bundles/dist/ when in production mode.
-        'BUNDLE_DIR_NAME': 'dist/',
+        'BUNDLE_DIR_NAME': '/',
         'STATS_FILE': abs_path('bundles', 'webpack-stats.prod.json')
     }
 }

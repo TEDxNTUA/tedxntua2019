@@ -60,7 +60,7 @@ class Partner(models.Model):
 
     image = VersatileImageField(
         'Image',
-        upload_to='static/',
+        upload_to='partners/',
         width_field='image_width',
         height_field='image_height'
     )

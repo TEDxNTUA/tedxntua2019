@@ -59,7 +59,7 @@ class TeamMember(models.Model):
 
     image = VersatileImageField(
         'Image',
-        upload_to='static/',
+        upload_to='team/',
         width_field='image_width',
         height_field='image_height'
     )

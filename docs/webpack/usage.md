@@ -88,6 +88,12 @@ npm run build:dev
 >
 > `bundles/build-dev/` and `webpack-stats.dev.json` are not to be committed to the repository and thus they are listed in `bundles/.gitignore`.
 
+To avoid running `npm run build:dev` everytime you make a change you can use the *watch mode* that does this automatically, by running:
+```bash
+cd bundles
+npm run watch
+```
+
 ### Production mode
 
 Generates and stores the bundles in `bundles/dist/`:
@@ -96,6 +102,8 @@ Generates and stores the bundles in `bundles/dist/`:
 cd bundles
 npm run build
 ```
+
+Read [static files management docs](../static_management/index.md) on how to deploy static files when in production mode.
 
 ## Referencing a Webpack bundle in Django templates
 

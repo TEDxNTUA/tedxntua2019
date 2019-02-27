@@ -154,7 +154,7 @@ class Activity(models.Model):
 
     image = VersatileImageField(
         'Image',
-        upload_to='static/',
+        upload_to='activities/',
         width_field='image_width',
         height_field='image_height',
         null=True,
@@ -250,7 +250,7 @@ class Presenter(models.Model):
 
     image = VersatileImageField(
         'Image',
-        upload_to='static/',
+        upload_to='presenters/',
         width_field='image_width',
         height_field='image_height'
     )

@@ -26,4 +26,5 @@ urlpatterns = [
     path('partners/', include('project.partners.urls')),
     path('team/', include('project.team.urls')),
     path('about/', include('project.about.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

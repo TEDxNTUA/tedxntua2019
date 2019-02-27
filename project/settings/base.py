@@ -87,6 +87,9 @@ AUTH_PASSWORD_VALIDATORS = [
 STATIC_URL = env_str('STATIC_URL', '/static/')
 STATIC_ROOT = env_str('STATIC_ROOT', abs_path('static'))
 
+MEDIA_URL = env_str('MEDIA_URL', '/media/')
+MEDIA_ROOT = env_str('MEDIA_ROOT', abs_path('media'))
+
 STATICFILES_DIRS = (
     abs_path('project/static'),
 )
@@ -135,9 +138,9 @@ VERSATILEIMAGEFIELD_SETTINGS = {
     'cache_length': 2592000,
     'cache_name': 'versatileimagefield_cache',
     'jpeg_resize_quality': 70,
-    'sized_directory_name': '__sized__',
-    'filtered_directory_name': '__filtered__',
-    'placeholder_directory_name': '__placeholder__',
+    'sized_directory_name': 'media/__sized__',
+    'filtered_directory_name': 'media/__filtered__',
+    'placeholder_directory_name': 'media/__placeholder__',
     'create_images_on_demand': False,
     'image_key_post_processor': None,
     'progressive_jpeg': False
