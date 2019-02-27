@@ -67,5 +67,5 @@ venv.bak/
 # Yarn Integrity file
 .yarn-integrity
 
-# Images
-__sized__/*
+# User-generated files
+media/
