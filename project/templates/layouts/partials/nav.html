@@ -1,4 +1,16 @@
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<script>
+function change_english(){
+  document.querySelector("form[name="english_form"]").submit();
+}
+function change_greek(){
+  document.querySelector("form[name="greek_form"]").submit();
+}
+</script>
+
 <nav id="nav" class="navbar navbar-expand-lg mx-auto">
     <div class="row-wrapper">
         <a class="navbar-brand mr-auto" href="/">
@@ -11,12 +23,19 @@
                 <i class="fas fa-angle-down"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#" hreflang="el">
-                    Ελληνικά
-                </a>
-                <a class="dropdown-item" href="#" hreflang="en">
-                    English
-                </a>
+                <form name="english_form" action="language" method="get">
+                  <input type="hidden" name="language" id="language" value="en"/>
+                  <input type="hidden" name="url" id="url" value={{request.path}} />
+                  <input type="submit" value="Αγγλικά"/>
+                </form>
+
+
+                <form name="greek_form" action="language" method="get">
+                  <input type="hidden" name="language" id="language" value="el"/>
+                  <input type="hidden" name="url" id="url" value={{request.path}} />
+                  <input type="submit" value="Ελληνικά"/>
+                </form>
+
             </div>
         </div>
 

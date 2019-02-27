@@ -2,33 +2,12 @@ from collections import OrderedDict
 
 from django.db import models
 from django.dispatch import receiver
-
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
+from parler.models import TranslatableModel, TranslatedFields
 
 
-class PartnerManager(models.Manager):
-    def get_partners_by_type(self):
-        '''Table-level method to get all partners grouped by type.
-
-        Returns a dictionary where partner types from Partner.PARTNER_TYPES
-        are the keys and the value is a dictionary with the `title` of
-        the team and a `items` array.
-
-        The order of partner types is the same as in PARTNER_TYPES.
-        '''
-        partners = OrderedDict()
-        for type_, title in Partner.PARTNER_TYPES:
-            partners[type_] = {
-                'title': title,
-                'items': [],
-            }
-
-        for item in self.get_queryset():
-            partners[item.partner_type]['items'].append(item)
-        return partners
-
-class Partner(models.Model):
+class Partner(TranslatableModel):
     '''Model for partners of the TEDxNTUA 2019 organization.
 
     The `partner_type` attribute is represented as a CharField with limited possible
@@ -53,8 +32,9 @@ class Partner(models.Model):
         (MEDIA_PARTNERS, 'Media Partners'),
         (COMMUNITY_PARTNERS, 'Community Partners'),
     )
-
-    name = models.CharField(max_length=255, verbose_name='name')
+    translations = TranslatedFields(
+        name=models.CharField(max_length=255, verbose_name='name')
+    )
     partner_type = models.CharField(max_length=3, choices=PARTNER_TYPES)
     link = models.URLField()
 
@@ -83,6 +63,7 @@ def warm_partner_images(sender, instance, **kwargs):
     Documentation link:
     https://django-versatileimagefield.readthedocs.io/en/latest/overview.html#create-images-wherever-you-need-them
     '''
+
     img_warmer = VersatileImageFieldWarmer(
         instance_or_queryset=instance,
         rendition_key_set='Sizes',

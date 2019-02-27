@@ -1,5 +1,7 @@
 '''Sets default configuration parameters and imports from environment'''
 import dj_database_url
+from django.utils.translation import ugettext_lazy as _
+
 
 from .env import env_bool, env_list, env_setting, abs_path, env_str
 
@@ -21,6 +23,7 @@ INSTALLED_APPS = [
     'project.license',
     'project.users',
     'versatileimagefield',
+    'parler',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +42,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware'
 ]
 
 TEMPLATES = [
@@ -154,3 +158,22 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
         ('large', 'thumbnail__500x500')
     ]
 }
+
+LOCALE_PATHS = ('locale/',)
+
+LANGUAGES = [
+    ('el', _('Greek')),
+    ('en', _('English')),
+]
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'el'},
+    ),
+    'default': {
+        'fallbacks': ['en'],
+        'hide_untranslated': False,
+    }
+}
+PARLER_DEFAULT_LANGUAGE_CODE = 'en'
