@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 
 from .models import Presenter, Activity, Stage
+from django.utils import translation
 
 
 class SpeakersView(View):
@@ -10,6 +11,7 @@ class SpeakersView(View):
     def get(self, request, *args, **kwargs):
         speakers = Presenter.speakers.all()
         return render(request, self.template_name, {'speakers': speakers})
+
 
 class ScheduleView(View):
     template_name = 'program/schedule.html'
@@ -21,3 +23,13 @@ class ScheduleView(View):
             'schedule': schedule,
             'stages': stages,
         })
+
+
+def set_language(request):
+    language = request.GET.get('language')
+    url = request.GET.get('url')
+    print(language)
+    print(url)
+    translation.activate(language)
+    request.session[translation.LANGUAGE_SESSION_KEY] = language
+    return redirect(url)
