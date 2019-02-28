@@ -1,13 +1,17 @@
   //These change the output result
-  const seconds = 5;  //Total duration of the animation
-  const transition = "ease-in-out"; // Tranisiton animation of each path (not total)
+  const seconds = 8;  //Total duration of the animation
+  const transition = "linear"; // Tranisiton animation of each path (not total)
   const max_lines = 50;
   const widthPercentage = 0.2 // Width percentage on screen
   const heightPercentage = 0.8 // Height percentage on screen
+  const colors = [{'b': '#000000', 'f': '#ffffff'}];
   //const scale = 1/1.2 // The bigger the denominator, the bigger the svg
   const actual_margin_left = 12; // Affects first item of viebox
   // end
+
+  var randColor = colors[Math.floor(Math.random() * colors.length)];
   var background_color = window.getComputedStyle(document.body)["background-color"];
+  var _ = require('underscore');
   var svg = document.querySelector('#svgpipes');
   var w = screen.width;
   var h = screen.height;
@@ -18,20 +22,16 @@
   vbox[0] = actual_margin_left;
   newbox = vbox.join(" ");
   svg.setAttribute('viewBox', newbox);
-  var headertop = document.getElementById('header').clientHeight;
   svg.style.marginLeft = 0;
-  svg.style.marginTop = headertop;
   //Listen for screen changes
   window.addEventListener('resize', function(event){
     headertop = document.getElementById('header').clientHeight;
     var w = screen.width;
     var h = screen.height;
-    console.log(w);
     svg.setAttribute('width', widthPercentage*w);
     svg.setAttribute('height', heightPercentage*h);
     svg.setAttribute("transform", "scale(1.0)");
     svg.style.marginLeft = 0;
-    svg.style.marginTop = document.getElementById('header').clientHeight;
     vbox = svg.getAttribute('viewBox').trim().split(" ");
     vbox[0] = actual_margin_left;
     newbox = vbox.join(" ");
@@ -56,6 +56,13 @@ function animate_paths() {
               var len = paths[i].getTotalLength();
               paths[i].style.strokeDashoffset = len;
               paths[i].style.strokeDasharray = len + ',' + len;
+              console.log(paths[i].style['stroke']);
+              if(paths[i].style['stroke'] === 'rgb(193, 227, 210)'){
+                paths[i].style['stroke'] = randColor.b;
+              }
+              else{
+                paths[i].style['stroke'] = randColor.f;
+              }
               TotalLengths[li] += len;
             }
             else{
@@ -76,12 +83,13 @@ function animate_paths() {
               ttw += time_to_excecute;
             }
           }
-          /*
+          k = 0;
           window.onscroll =  _.debounce(function() {
+            k++;
+            if(k==1){
               animate(TotalLengths);
-          }, 250);
-          */
-          animate(TotalLengths);
+            }
+          }, 100);
     }
 
     function animate(TotalLengths) {
