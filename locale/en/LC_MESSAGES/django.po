@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-27 15:58+0200\n"
+"POT-Creation-Date: 2019-02-28 15:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: project/about/templates/about/index.html:10
+#, fuzzy
+#| msgid "about"
+msgid "about.ted.content"
+msgstr ""
+"TED is a nonprofit organization devoted to Ideas Worth Spreading. Started as "
+"a four-day conference in California 30 years ago, TED has grown to support "
+"its mission with multiple initiatives. The two annual TED Conferences invite "
+"the world's leading thinkers and doers to speak for 18 minutes or less. Many "
+"of these talks are then made available, free, at TED.com. TED speakers have "
+"included Bill Gates, Jane Goodall, Elizabeth Gilbert, Sir Richard Branson, "
+"Nandan Nilekani, Philippe Starck, Ngozi Okonjo-Iweala, Sal Khan and Daniel "
+"Kahneman.The annual TED Conference takes place each spring in Vancouver, "
+"British Columbia. TED's media initiatives include TED.com, where new TED "
+"Talks are posted daily; the Open Translation Project, which provides "
+"subtitles and interactive transcripts as well as translations from "
+"volunteers worldwide; the educational initiative TED-Ed. TED has established "
+"the annual TED Prize, where exceptional individuals with a wish to change "
+"the world get help translating their wishes into action; TEDx, which "
+"supports individuals or groups in hosting local, self- organized TED-style "
+"events around the world, and the TED Fellows program, helping world-changing "
+"innovators from around the globe to amplify the impact of their remarkable "
+"projects and activities."
+
+#: project/about/templates/about/index.html:15
+#, fuzzy
+#| msgid "about"
+msgid "about.tedx.content"
+msgstr ""
+"In the spirit of ideas worth spreading, TEDx is a program of local, self-"
+"organized events that bring people together to share a TED-like experience. "
+"At a TEDx event, TED Talks video and live speakers combine to spark deep "
+"discussion and connection. These local, self-organized events are branded "
+"TEDx, where x = independently organized TED event. The TED Conference "
+"provides general guidance for the TEDx program, but individual TEDx events "
+"are self-organized. (Subject to certain rules and regulations.)"
 
 #: project/contact/views.py:7
 msgid "test_message"
@@ -61,6 +98,16 @@ msgstr "About"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Get tickets!"
+
+#, fuzzy
+#~| msgid "about"
+#~ msgid "aboutt"
+#~ msgstr "About"
+
+#, fuzzy
+#~| msgid "about"
+#~ msgid "abouttt"
+#~ msgstr "About"
 
 #~ msgid "home.title"
 #~ msgstr "Home page"
