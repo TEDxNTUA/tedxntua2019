@@ -4,7 +4,7 @@
   const max_lines = 50;
   const widthPercentage = 0.2 // Width percentage on screen
   const heightPercentage = 0.8 // Height percentage on screen
-  const colors = [{'b': '#000000', 'f': '#ffffff'}];
+  const colors = [{'b': '#c1e3d2', 'f': '#323232'}];
   //const scale = 1/1.2 // The bigger the denominator, the bigger the svg
   const actual_margin_left = 12; // Affects first item of viebox
   // end
