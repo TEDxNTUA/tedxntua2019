@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-28 15:50+0200\n"
+"POT-Creation-Date: 2019-03-01 17:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,11 +63,30 @@ msgstr "This is a test message"
 msgid "home.content_placeholder"
 msgstr "This is a placeholder"
 
-#: project/settings/base.py:165
+#: project/home/templates/home/index.html:18
+msgid "enigma.home.text"
+msgstr ""
+"Enigma: that which is difficult to interpret, that which remains a mystery, "
+"something uncertain or inexplicable, a riddle not yet solved. The uncertain, "
+"the paradox, the unsolved. It’s everywhere. From the grandest existential "
+"question, to the tiniest everyday query, enigma is the source of knowledge. "
+"A man-made invention, a problem man places upon himself. An innate need for "
+"answers, which builds superstructures: physics, biology, computer science, "
+"chemistry, astronomy, arts, philosophy, history, psychology, sociology, "
+"religion, politics. Every answer creates a new question, and leads the way "
+"to a new explanation, more updated, more satisfactory, more complete. The "
+"enigma is in search of a solution to what troubles the human mind, and the "
+"enigma is everything that troubles the human mind, at the same time. It’s "
+"the way of facing the world without the possibility of being wrong. It’s a "
+"positive perspective of an uncertain reality. The admiration of the enormous "
+"progress of humanity. An attempt of self-awareness. We can climb the mount "
+"of knowledge, one enigma at a time."
+
+#: project/settings/base.py:166
 msgid "Greek"
 msgstr ""
 
-#: project/settings/base.py:166
+#: project/settings/base.py:167
 msgid "English"
 msgstr ""
 
