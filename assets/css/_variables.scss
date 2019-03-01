@@ -18,7 +18,7 @@ $border-radius-sm: 0;
 $input-btn-focus-width: 0;
 
 // Body
-$body-bg: $secondary;
+$body-bg: white;
 $body-color: $tertiary;
 
 // Typography
@@ -35,11 +35,11 @@ $section-padding-x: 1rem;
 $section-padding-y: 1rem;
 
 // Navbar
-$navbar-default-bg: $body-bg;
+$navbar-default-bg: $tertiary;
 $navbar-scrolled-border: rgba(0, 0, 0, .2);
 $logo-height: 3.2rem;
-$navlink-color: lighten($body-color, 20%);
-$navlink-hover-color: $body-color;
+$navlink-color: white;
+$navlink-hover-color: $secondary;
 $navlink-padding: .375rem;
 $hotdog-color: lighten($body-color, 20%);
 
