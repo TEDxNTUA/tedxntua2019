@@ -3,25 +3,25 @@
 {% get_current_language as LANGUAGE_CODE %}
 <nav id="nav" class="navbar navbar-expand-lg mx-auto">
     <div class="row-wrapper">
-        <a class="navbar-brand mr-auto" href="#">
-            <img src="{% static "images/tedxntua_logo_blacktext.png" %}" alt="TEDxNTUA Logo" />
+        <a class="navbar-brand mr-auto" href="/">
+            <img src="{% static "images/tedxntua_logo_whitetext.png" %}" alt="TEDxNTUA Logo" />
         </a>
 
         <div class="language-selector">
             <button class="btn dropdown-toggle nav-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                EN
+                {{ LANGUAGE_CODE | upper}}
                 <i class="fas fa-angle-down"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
               <form name="english_form" action="language" method="get">
                 <input type="hidden" name="language" id="language" value="en"/>
                 <input type="hidden" name="url" id="url" value={{request.path}} />
-                <input type="hidden" value="Αγγλικά"/>
+                <input type="hidden" value="en"/>
               </form>
               <form name="greek_form" action="language" method="get">
                 <input type="hidden" name="language" id="language" value="el"/>
                 <input type="hidden" name="url" id="url" value={{request.path}} />
-                <input type="hidden" value="Ελληνικά"/>
+                <input type="hidden" value="el"/>
               </form>
                 <a class="dropdown-item" href="#" hreflang="el" onclick="document.forms['greek_form'].submit(); return false;">
                     Ελληνικά
