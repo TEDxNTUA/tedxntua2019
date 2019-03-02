@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-01 17:42+0200\n"
+"POT-Creation-Date: 2019-03-02 13:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: project/about/templates/about/index.html:10
-#, fuzzy
-#| msgid "about"
 msgid "about.ted.content"
 msgstr ""
 "TED is a nonprofit organization devoted to Ideas Worth Spreading. Started as "
@@ -43,8 +41,6 @@ msgstr ""
 "projects and activities."
 
 #: project/about/templates/about/index.html:15
-#, fuzzy
-#| msgid "about"
 msgid "about.tedx.content"
 msgstr ""
 "In the spirit of ideas worth spreading, TEDx is a program of local, self-"
@@ -52,18 +48,14 @@ msgstr ""
 "At a TEDx event, TED Talks video and live speakers combine to spark deep "
 "discussion and connection. These local, self-organized events are branded "
 "TEDx, where x = independently organized TED event. The TED Conference "
-"provides general guidance for the TEDx program, but individual TEDx events "
+"provides general guidance for the TEDx program, but individual TEDx event "
 "are self-organized. (Subject to certain rules and regulations.)"
 
 #: project/contact/views.py:7
 msgid "test_message"
 msgstr "This is a test message"
 
-#: project/home/templates/home/index.html:12
-msgid "home.content_placeholder"
-msgstr "This is a placeholder"
-
-#: project/home/templates/home/index.html:18
+#: project/home/templates/home/index.html:25
 msgid "enigma.home.text"
 msgstr ""
 "Enigma: that which is difficult to interpret, that which remains a mystery, "
@@ -82,11 +74,11 @@ msgstr ""
 "progress of humanity. An attempt of self-awareness. We can climb the mount "
 "of knowledge, one enigma at a time."
 
-#: project/settings/base.py:166
+#: project/settings/base.py:165
 msgid "Greek"
 msgstr ""
 
-#: project/settings/base.py:167
+#: project/settings/base.py:166
 msgid "English"
 msgstr ""
 
@@ -117,6 +109,9 @@ msgstr "About"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Get tickets!"
+
+#~ msgid "home.content_placeholder"
+#~ msgstr "This is a placeholder"
 
 #, fuzzy
 #~| msgid "about"
