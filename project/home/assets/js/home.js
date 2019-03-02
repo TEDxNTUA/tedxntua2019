@@ -13,14 +13,10 @@ const canvas = document.getElementById("enigma-animation")
  * we need to set canvas' width and height attributes
  * so that it is drawable
  */
-canvas.style.width = "100%"
-canvas.style.height = "800px"
-
-
 const ww = canvas.width = canvas.offsetWidth,
       wh = canvas.height = canvas.offsetHeight
 
-const CUBE_SIZE = 135,
+const CUBE_SIZE = 96,
       HALF = CUBE_SIZE / 2,
       SEVENTH = CUBE_SIZE / 7,
       EIGHTH = CUBE_SIZE / 8,
@@ -36,14 +32,10 @@ camera.lookAt(0, 0, 0)
 
 let renderer = new THREE.WebGLRenderer({ canvas, alpha: true })
 renderer.setSize(ww, wh)
-renderer.setClearColor(WHITE, 1)
-
-const controls = new OrbitControls(camera, renderer.domElement)
 
 let makeMesh = (shape, color, x, y, z, rx, ry, rz, s, depth, withEdges = false) => {
     let geometry = new THREE.ExtrudeBufferGeometry(shape, { depth, bevelEnabled: false })
     let mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color }))
-    controls.enableZoom = false;
     mesh.position.set(x, y, z)
     mesh.rotation.set(rx, ry, rz)
     mesh.scale.set(s, s, s)
@@ -408,7 +400,7 @@ let speeds = [],
     starts = [],
     curr = 0
 for(let i = 0; i < 6; ++i) {
-    speeds.push(1 / 20)
+    speeds.push(1 / 36)
     curr += 50
     starts.push(curr)
 }
