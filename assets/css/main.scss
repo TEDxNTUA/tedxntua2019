@@ -6,7 +6,10 @@
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+@import "~compass-mixins/lib/compass/css3";
 
+// Animate
+@import "animate";
 
 /** GENERAL GUIDELINES **/
 
@@ -58,9 +61,10 @@
 // INDIVIDUAL PAGE STYLES
 @import "~@/home/assets/css/home";
 @import "~@/about/assets/css/about";
+@import '~@/program/assets/css/speakers'
+
 
 
 /*
  * GENERAL MEDIA QUERIES
  */
-
