@@ -1,7 +1,31 @@
 /* HOME */
+$enigma-container-height: 540px;
 
 article.home {
-    canvas#enigma-animation {
+    .enigma-animation-container {
+        position: relative;
+        height: $enigma-container-height;
         width: 100%;
+        .circle, canvas#enigma-animation {
+            position: absolute;
+            top: 0;
+        }
+        canvas#enigma-animation {
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+        /*
+         * Circle will take up all the height of the container
+         * and will be centered.
+         */
+        .circle {
+            background-color: $secondary;
+            border-radius: 50%;
+            left: calc(50% - #{$enigma-container-height / 2});
+            height: $enigma-container-height;
+            width: $enigma-container-height;
+        }
     }
 }

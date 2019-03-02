@@ -6,7 +6,10 @@
 {% block content %}
 <section class="content">
     <article class="page home">
-        <canvas id="enigma-animation" width="800" height="540"></canvas>
+      <div class="enigma-animation-container">
+          <canvas id="enigma-animation" width="800" height="540"></canvas>
+          <div class="circle"></div>
+      </div>
         <h1 class="page-heading">Home page</h1>
 
         <p>{% trans "home.content_placeholder" %}</p>
@@ -22,7 +25,6 @@
           <section class="content">
               <article class="page home">
                 <p class="text-justify center" style="margin:5rem;">
-                  {% trans "enigma.home.text" %}
                   </p>
               </article>
           </section>

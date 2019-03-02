@@ -1,5 +1,4 @@
 const THREE = require("three")
-const OrbitControls = require("three-orbit-controls")(THREE)
 
 const GCYAN_LIGHT = 0xC1E3D3,
       GCYAN_GRAY  = 0x91A49B,
@@ -9,9 +8,11 @@ const GCYAN_LIGHT = 0xC1E3D3,
 
 const canvas = document.getElementById("enigma-animation")
 
-canvas.style.width = "100%"
-canvas.style.height = "540px"
-
+/**
+ * canvas has width: 100%, height: 100% as CSS
+ * we need to set canvas' width and height attributes
+ * so that it is drawable
+ */
 const ww = canvas.width = canvas.offsetWidth,
       wh = canvas.height = canvas.offsetHeight
 
@@ -29,11 +30,8 @@ let camera = new THREE.OrthographicCamera(-ww / 4, ww / 4, wh / 4, -wh / 4, 0.1,
 camera.position.set(CAMERA_DIST, CAMERA_DIST, CAMERA_DIST)
 camera.lookAt(0, 0, 0)
 
-let renderer = new THREE.WebGLRenderer({ canvas })
+let renderer = new THREE.WebGLRenderer({ canvas, alpha: true })
 renderer.setSize(ww, wh)
-renderer.setClearColor(GCYAN_LIGHT, 1)
-
-const controls = new OrbitControls(camera, renderer.domElement)
 
 let makeMesh = (shape, color, x, y, z, rx, ry, rz, s, depth, withEdges = false) => {
     let geometry = new THREE.ExtrudeBufferGeometry(shape, { depth, bevelEnabled: false })
@@ -143,8 +141,6 @@ let init = () => {
 
 
     /*** N GROUP ***/
-    let nGroup = new THREE.Group()
-
     let nShape = shapeFrom2dPairs([
         0, 0,
         0, -7,
@@ -199,7 +195,6 @@ let init = () => {
 
 
     /*** G GROUP ***/
-    let gGroup = new THREE.Group()
 
     /**
      * M's width (3 eighths) is split to fifths and fourths.
@@ -288,8 +283,6 @@ let init = () => {
 
 
     /*** A GROUP ***/
-    let aGroup = new THREE.Group()
-
     let aShape = shapeFrom2dPairs([
         0, 0,
         0, -7,
