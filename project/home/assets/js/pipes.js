@@ -56,7 +56,6 @@ function animate_paths() {
               var len = paths[i].getTotalLength();
               paths[i].style.strokeDashoffset = len;
               paths[i].style.strokeDasharray = len + ',' + len;
-              console.log(paths[i].style['stroke']);
               if(paths[i].style['stroke'] === 'rgb(193, 227, 210)'){
                 paths[i].style['stroke'] = randColor.b;
               }
