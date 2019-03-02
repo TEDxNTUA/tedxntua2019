@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-02 13:45+0200\n"
+"POT-Creation-Date: 2019-03-02 16:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,6 +56,26 @@ msgid "test_message"
 msgstr "This is a test message"
 
 #: project/home/templates/home/index.html:25
+msgid "enigma_is"
+msgstr "An enigma is "
+
+#: project/home/templates/home/index.html:28
+msgid "enigma_opt_1"
+msgstr "mysterious"
+
+#: project/home/templates/home/index.html:29
+msgid "enigma_opt_2"
+msgstr "uncertain"
+
+#: project/home/templates/home/index.html:30
+msgid "enigma_opt_3"
+msgstr "inexplicable"
+
+#: project/home/templates/home/index.html:31
+msgid "enigma_opt_4"
+msgstr "fascinating"
+
+#: project/home/templates/home/index.html:36
 msgid "enigma.home.text"
 msgstr ""
 "Enigma: that which is difficult to interpret, that which remains a mystery, "
