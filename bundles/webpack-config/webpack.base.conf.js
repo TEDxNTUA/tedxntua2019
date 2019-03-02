@@ -15,7 +15,9 @@ module.exports = {
   entry: {
     main: fromRoot('assets/js/index.js'),
     home: fromRoot('project/home/assets/js/home.js'),
-    pipes: fromRoot('project/home/assets/js/pipes.js')
+    pipes: fromRoot('project/home/assets/js/pipes.js'),
+    eni: fromRoot('assets/js/movingEni.js'),
+    speakers: fromRoot('project/program/assets/js/speakers.js')
   },
   module: {
     rules: [{
