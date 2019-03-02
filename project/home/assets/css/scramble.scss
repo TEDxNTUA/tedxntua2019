@@ -1,0 +1,51 @@
+$container-height: 540px;
+.container {
+  position: relative;
+  height: $container-height;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.textTed {
+  font-weight: 100;
+  font-size: 40px;
+  color: #212529;
+}
+.textEnigma {
+  font-weight: 100;
+  font-size: 40px;
+  color: #212529;
+}
+.textDate {
+  font-weight: 100;
+  font-size: 40px;
+  color: #212529;
+}
+.textVenue {
+  font-weight: 100;
+  font-size: 40px;
+  color: #212529;
+}
+.textAddress {
+  font-weight: 100;
+  font-size: 40px;
+  color: #212529;
+}
+.dud {
+  color: #F19386;
+}
+
+
+.info div {
+			display: inline-block;
+			padding: .5rem 1rem;
+			margin: 0;
+			border-width: 0 1px;
+			&:first-child {
+				border-left: 0;
+			}
+			&:last-child {
+				border-right: 0;
+			}
+		}

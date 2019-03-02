@@ -10,6 +10,18 @@
           <canvas id="enigma-animation" width="800" height="540"></canvas>
           <div class="circle"></div>
       </div>
+      <div class="enigma-animation-container" >
+        <div class="info text-center">
+          <div class="textTed"></div>
+          <div class="textEnigma"></div>
+        </div>
+        <br>
+        <div class="info text-center">
+          <div class="textDate"></div>
+          <div class="textVenue"></div>
+          <div class="textAddress"></div>
+        </div>
+      </div>
         <h1 class="page-heading">Home page</h1>
 
         <p>{% trans "home.content_placeholder" %}</p>
@@ -39,4 +51,5 @@
 {% block scripts %}
 {% render_bundle "home" "js" %}
 {% render_bundle "pipes" "js" %}
+{% render_bundle "scramble" "js" %}
 {% endblock %}
