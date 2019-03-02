@@ -400,7 +400,7 @@ let speeds = [],
     starts = [],
     curr = 0
 for(let i = 0; i < 6; ++i) {
-    speeds.push(1 / 36)
+    speeds.push(1/9)
     curr += 50
     starts.push(curr)
 }
@@ -502,6 +502,26 @@ let animate = () => {
 
 init()
 animate()
+let opacity = 0
+
+function fadeFunction() {
+   if (opacity < 1) {
+      opacity += .1;
+      setTimeout(function(){fadeFunction()}, 100);
+   }
+   document.getElementById("enigma-circle").style.opacity = opacity;
+}
+
+let id = setInterval(function(){
+  if (animations[5].remaining == 0){
+    setTimeout(function(){
+      fadeFunction()
+    }, 1200);
+    clearInterval(id)
+  }
+}, 1000);
+
+
 
 let flag = 0
 
