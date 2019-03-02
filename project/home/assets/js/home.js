@@ -10,12 +10,13 @@ const GCYAN_LIGHT = 0xC1E3D3,
 const canvas = document.getElementById("enigma-animation")
 
 canvas.style.width = "100%"
-canvas.style.height = "540px"
+canvas.style.height = "800px"
+
 
 const ww = canvas.width = canvas.offsetWidth,
       wh = canvas.height = canvas.offsetHeight
 
-const CUBE_SIZE = 96,
+const CUBE_SIZE = 135,
       HALF = CUBE_SIZE / 2,
       SEVENTH = CUBE_SIZE / 7,
       EIGHTH = CUBE_SIZE / 8,
@@ -31,13 +32,14 @@ camera.lookAt(0, 0, 0)
 
 let renderer = new THREE.WebGLRenderer({ canvas })
 renderer.setSize(ww, wh)
-renderer.setClearColor(GCYAN_LIGHT, 1)
+renderer.setClearColor(WHITE, 1)
 
 const controls = new OrbitControls(camera, renderer.domElement)
 
 let makeMesh = (shape, color, x, y, z, rx, ry, rz, s, depth, withEdges = false) => {
     let geometry = new THREE.ExtrudeBufferGeometry(shape, { depth, bevelEnabled: false })
     let mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color }))
+    controls.enableZoom = false;
     mesh.position.set(x, y, z)
     mesh.rotation.set(rx, ry, rz)
     mesh.scale.set(s, s, s)
@@ -407,7 +409,7 @@ let speeds = [],
     starts = [],
     curr = 0
 for(let i = 0; i < 6; ++i) {
-    speeds.push(1 / 36)
+    speeds.push(1 / 20)
     curr += 50
     starts.push(curr)
 }
@@ -456,8 +458,46 @@ let animations = [
     }, 1 / speeds[5], starts[5]),
 ]
 
-let times = 0
+let forward_animations = animations
+let backward_animations = [
+    makeAnimation(() => {
+        ePivot.position.add(v3(0, -speeds[5] * CUBE_SIZE, 0))
+        nPivot.position.add(v3(0, -speeds[5] * CUBE_SIZE, 0))
+    }, 1 / speeds[5], starts[0]),
+    makeAnimation(() => {
+        //gPivot.rotation.set(0, 0, 0)
+        //aPivot.rotation.set(0, 0, 0)
+        gPivot.rotation.x += speeds[4] * (+Math.PI / 2)
+        aPivot.rotation.x += speeds[4] * (+Math.PI / 2)
+    }, 1 / speeds[4], starts[1]),
+    makeAnimation(() => {
+        //ePivot.rotation.set(0, 0, 0)
+        //nPivot.rotation.set(0, 0, 0)
+        ePivot.rotation.x += speeds[3] * (-Math.PI / 2)
+        nPivot.rotation.x += speeds[3] * (-Math.PI / 2)
+    }, 1 / speeds[3], starts[2]),
+    makeAnimation(() => {
+        //ePivot.rotation.set(-Math.PI / 2, 0, 0)
+        //aPivot.rotation.set(Math.PI / 2, 0, 0)
+        ePivot.rotation.z += speeds[2] * (+Math.PI / 2)
+        aPivot.rotation.z += speeds[2] * (-Math.PI / 2)
+    }, 1 / speeds[2], starts[3]),
+    makeAnimation(() => {
+        //nPivot.rotation.set(-Math.PI / 2, 0, 0)
+        //gPivot.rotation.set(Math.PI / 2, 0, 0)
+        nPivot.rotation.z += speeds[1] * (-Math.PI / 2)
+        gPivot.rotation.z += speeds[1] * (+Math.PI / 2)
+    }, 1 / speeds[1], starts[4]),
+    makeAnimation(() => {
+        //ePivot.rotation.set(-Math.PI / 2, 0, Math.PI / 2)
+        //gPivot.rotation.set(Math.PI / 2, 0, Math.PI / 2)
+        ePivot.rotation.y += speeds[0] * (+Math.PI / 2)
+        gPivot.rotation.y += speeds[0] * (-Math.PI / 2)
+    }, 1 / speeds[0], starts[5]),
+]
 
+
+let times = 0
 let animate = () => {
     for(let anim of animations) {
         if(times > anim.start) {
@@ -471,3 +511,13 @@ let animate = () => {
 
 init()
 animate()
+
+let flag = 0
+
+let clean_values = () => {
+  speeds = []
+  times = 0
+  for (let i=0; i<6; i++){
+    speeds.push(1/20);
+  }
+}
