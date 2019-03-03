@@ -6,7 +6,10 @@
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+@import "~compass-mixins/lib/compass/css3";
 
+// Animate
+@import "animate";
 
 /** GENERAL GUIDELINES **/
 
@@ -59,6 +62,8 @@
 @import "~@/home/assets/css/home";
 @import "~@/home/assets/css/scramble";
 @import "~@/about/assets/css/about";
+@import '~@/program/assets/css/speakers'
+
 
 
 /*

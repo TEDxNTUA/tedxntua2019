@@ -1,12 +1,37 @@
 {% extends "base.html" %}
+{% load render_bundle from webpack_loader %}
 {% block title %}Speakers{% endblock %}
 {% block description %}This is the speakers page{% endblock %}
 {% block content %}
-<section class="content">
-    <article class="page">
-        <h1 class="page-heading">Speakers</h1>
 
-        <p>Content goes here.</p>
-    </article>
-</section>
+
+<article class="page speakers">
+  {% for speaker in speakers %}
+  <section class="content">
+      <div class="card">
+          <div class="card-img-top">
+            <div class="portrait">
+              <a href="{{speaker.link}}" target="_blank">
+              <div class="fill cover-img">
+                <div class="fill hover">
+                  <div class="fill cover-img hover-img"> </div>
+                  </div>
+                </div>
+               </a>
+             </div>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title"> {{speaker}}</h2>
+              <h5 class="card-text">{{speaker.occupation}}</h5>
+            </div>
+      </div>
+    {% endfor %}
+  </section>
+</article>
+
+
+{% endblock %}
+
+{% block scripts %}
+{% render_bundle "speakers" "js" %}
 {% endblock %}

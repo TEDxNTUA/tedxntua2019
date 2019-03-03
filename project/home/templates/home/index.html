@@ -4,47 +4,51 @@
 {% block title %}Home{% endblock %}
 {% block description %}This is the home page{% endblock %}
 {% block content %}
-<section class="content">
-    <article class="page home">
+<article class="page home">
+  <section class="content">
       <div class="enigma-animation-container">
           <canvas id="enigma-animation" width="800" height="540"></canvas>
-          <div class="circle"></div>
+          <div id="enigma-circle" class="circle"></div>
       </div>
-      <div class="enigma-animation-container" >
-        <div class="info text-center">
-          <div class="textTed"></div>
-          <div class="textEnigma"></div>
-        </div>
-        <br>
-        <div class="info text-center">
-          <div class="textDate"></div>
-          <div class="textVenue"></div>
-          <div class="textAddress"></div>
-        </div>
-      </div>
-        <h1 class="page-heading">Home page</h1>
+    </section>
 
-        <p>{% trans "home.content_placeholder" %}</p>
-    </article>
-</section>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 d-none-sm">
           {% include "partials/pipes.html" %}
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6 col-12">
+
           <section class="content">
-              <article class="page home">
-                <p class="text-justify center" style="margin:5rem;">
-                  </p>
-              </article>
-          </section>
+            <div class="enigma">
+              <div class="enigma__container">
+                <p class="enigma__container__text">
+                  {% trans "enigma_is" %}
+                </p>
+                <ul class="enigma__container__list">
+                  <li class="enigma__container__list__item">{% trans "enigma_opt_1" %}</li>
+                  <li class="enigma__container__list__item">{% trans "enigma_opt_2" %}</li>
+                  <li class="enigma__container__list__item">{% trans "enigma_opt_3" %}</li>
+                  <li class="enigma__container__list__item">{% trans "enigma_opt_4" %}</li>
+                </ul>
+              </div>
+              </div>
+            <p class="wow slideInLeft text-justify">
+               {% trans "enigma.home.text" %}
+            </p>
+            </section>
+            <section class="content">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.6271396946668!2d23.688869951188522!3d37.96249120901013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bc8ab9f42a2b%3A0xf99828caaaee1fc!2sHellenic+Cosmos+Cultural+Centre!5e0!3m2!1sen!2sgr!4v1551531961345" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </section>
         </div>
-        <div class="col-lg-3">
-        </div>
+      </div>
     </div>
-</div>
+
+</article>
+
+
+
+
 
 
 {% endblock %}

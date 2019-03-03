@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-01 17:42+0200\n"
+"POT-Creation-Date: 2019-03-02 16:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,11 +65,27 @@ msgstr ""
 msgid "test_message"
 msgstr "Αυτο είναι ένα μήνυμα για testing"
 
-#: project/home/templates/home/index.html:12
-msgid "home.content_placeholder"
-msgstr "Ένας placeholder"
+#: project/home/templates/home/index.html:25
+msgid "enigma_is"
+msgstr "Ένα αίνιγμα είναι κάτι "
 
-#: project/home/templates/home/index.html:18
+#: project/home/templates/home/index.html:28
+msgid "enigma_opt_1"
+msgstr " μυστήριο"
+
+#: project/home/templates/home/index.html:29
+msgid "enigma_opt_2"
+msgstr " αβέβαιο"
+
+#: project/home/templates/home/index.html:30
+msgid "enigma_opt_3"
+msgstr " παράδοξο"
+
+#: project/home/templates/home/index.html:31
+msgid "enigma_opt_4"
+msgstr " συναρπαστικό"
+
+#: project/home/templates/home/index.html:36
 msgid "enigma.home.text"
 msgstr ""
 "Αίνιγμα: καθετί που είναι δύσκολο να ερμηνευτεί ή παραμένει μυστήριο, κάτι "
@@ -88,11 +104,11 @@ msgstr ""
 "θαυμάζεις την πρόοδο της ανθρωπότητας. Μια απόπειρα αυτογνωσίας.Γιατί η "
 "γνώση δομείται με ένα αίνιγμα τη φορά."
 
-#: project/settings/base.py:166
+#: project/settings/base.py:165
 msgid "Greek"
 msgstr ""
 
-#: project/settings/base.py:167
+#: project/settings/base.py:166
 msgid "English"
 msgstr ""
 
@@ -123,6 +139,9 @@ msgstr "Σχετικά με εμάς"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Κάνε κράτηση!"
+
+#~ msgid "home.content_placeholder"
+#~ msgstr "Ένας placeholder"
 
 #~ msgid "abouttt"
 #~ msgstr "Σχετικά με εμάς"

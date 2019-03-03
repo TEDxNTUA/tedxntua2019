@@ -1,5 +1,6 @@
 import "../css/main.scss"
 import "bootstrap"
 import "@fortawesome/fontawesome-free/js/all"
+import WOW from "wow.js/dist/wow.js"
 
-console.log("Hello world!")
+new WOW().init();

@@ -400,7 +400,7 @@ let speeds = [],
     starts = [],
     curr = 0
 for(let i = 0; i < 6; ++i) {
-    speeds.push(1 / 36)
+    speeds.push(1/9)
     curr += 50
     starts.push(curr)
 }
@@ -449,8 +449,46 @@ let animations = [
     }, 1 / speeds[5], starts[5]),
 ]
 
-let times = 0
+let forward_animations = animations
+let backward_animations = [
+    makeAnimation(() => {
+        ePivot.position.add(v3(0, -speeds[5] * CUBE_SIZE, 0))
+        nPivot.position.add(v3(0, -speeds[5] * CUBE_SIZE, 0))
+    }, 1 / speeds[5], starts[0]),
+    makeAnimation(() => {
+        //gPivot.rotation.set(0, 0, 0)
+        //aPivot.rotation.set(0, 0, 0)
+        gPivot.rotation.x += speeds[4] * (+Math.PI / 2)
+        aPivot.rotation.x += speeds[4] * (+Math.PI / 2)
+    }, 1 / speeds[4], starts[1]),
+    makeAnimation(() => {
+        //ePivot.rotation.set(0, 0, 0)
+        //nPivot.rotation.set(0, 0, 0)
+        ePivot.rotation.x += speeds[3] * (-Math.PI / 2)
+        nPivot.rotation.x += speeds[3] * (-Math.PI / 2)
+    }, 1 / speeds[3], starts[2]),
+    makeAnimation(() => {
+        //ePivot.rotation.set(-Math.PI / 2, 0, 0)
+        //aPivot.rotation.set(Math.PI / 2, 0, 0)
+        ePivot.rotation.z += speeds[2] * (+Math.PI / 2)
+        aPivot.rotation.z += speeds[2] * (-Math.PI / 2)
+    }, 1 / speeds[2], starts[3]),
+    makeAnimation(() => {
+        //nPivot.rotation.set(-Math.PI / 2, 0, 0)
+        //gPivot.rotation.set(Math.PI / 2, 0, 0)
+        nPivot.rotation.z += speeds[1] * (-Math.PI / 2)
+        gPivot.rotation.z += speeds[1] * (+Math.PI / 2)
+    }, 1 / speeds[1], starts[4]),
+    makeAnimation(() => {
+        //ePivot.rotation.set(-Math.PI / 2, 0, Math.PI / 2)
+        //gPivot.rotation.set(Math.PI / 2, 0, Math.PI / 2)
+        ePivot.rotation.y += speeds[0] * (+Math.PI / 2)
+        gPivot.rotation.y += speeds[0] * (-Math.PI / 2)
+    }, 1 / speeds[0], starts[5]),
+]
 
+
+let times = 0
 let animate = () => {
     for(let anim of animations) {
         if(times > anim.start) {
@@ -464,3 +502,33 @@ let animate = () => {
 
 init()
 animate()
+let opacity = 0
+
+function fadeFunction() {
+   if (opacity < 1) {
+      opacity += .1;
+      setTimeout(function(){fadeFunction()}, 100);
+   }
+   document.getElementById("enigma-circle").style.opacity = opacity;
+}
+
+let id = setInterval(function(){
+  if (animations[5].remaining == 0){
+    setTimeout(function(){
+      fadeFunction()
+    }, 1200);
+    clearInterval(id)
+  }
+}, 1000);
+
+
+
+let flag = 0
+
+let clean_values = () => {
+  speeds = []
+  times = 0
+  for (let i=0; i<6; i++){
+    speeds.push(1/20);
+  }
+}
