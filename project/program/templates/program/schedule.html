@@ -4,9 +4,78 @@
 {% block content %}
 <section class="content">
     <article class="page">
-        <h1 class="page-heading">Schedule</h1>
+      <article class="schedule">
+        <section class="heading">
+          <h1>Schedule</h1>
+        </section>
+        <section class="content">
+                  <table class="table table-hover">
+        								<thead>
+        									<tr>
+        										<th scope="col">Time</th>
+        										<th scope="col">Main stage</th>
+        										<th scope="col">Performances</th>
+        										<th scope="col">Workshops</th>
+        									</tr>
+        								</thead>
 
-        <p>Content goes here.</p>
+        								<tbody>
+                        {% for time, row in schedule.items %}
+                          <tr data-toggle="collapse" data-target=".talks-row-{{forloop.counter0}}" class="collapsed" aria-expanded="false">
+                            <td class="time">
+              								<div class="cell-content">
+              									<time>{{time}}</time>
+              								</div>
+              							</td>
+                            {% for stage, event in row.items %}
+                            <td class="event">
+                              {% if event %}
+          											<div class="cell-content media">
+          												<img class="align-self-center mr-3" src="{{row.main.image}}" alt="">
+          												<div class="media-body">
+          													<h5>
+          														{{event.title}}
+          													</h5>
+          													<h6>
+          														<p>{{event.subtitle}} ({{event.start.hour}}:{{event.start.minute}}-{{event.end.hour}}:{{event.end.minute}})</p>
+          													</h6>
+          												</div>
+          											</div>
+                              {% else %}
+                                <div class="cell-content">
+                                </div>
+                              {% endif %}
+        										</td>
+                            {% endfor %}
+                          <tr class="collapse-row hidden">
+                            <td>
+                              <div class="cell-content talks-row-{{forloop.counter0}} collapse" style="">
+                                <div class="more"></div>
+                              </div>
+                            </td>
+                            {% for stage, event in row.items %}
+                            <td>
+                              {% if event %}
+                              <div class="cell-content talks-row-{{forloop.counter0}} collapse" style="">
+                                  <div class="more">
+                                    <p>
+                                      {{event.description}}
+                                    </p>
+                                  </div>
+                              </div>
+                              {% else %}
+          											<div class="cell-content talks-row-{{forloop.counter0}} collapse" style="">
+          												<div class="more"></div>
+          											</div>
+                              {% endif %}
+                            </td>
+                            {% endfor %}
+        									</tr>
+                    {% endfor %}
+                  </tbody>
+              </table>
+      		</section>
     </article>
+  </article>
 </section>
 {% endblock %}

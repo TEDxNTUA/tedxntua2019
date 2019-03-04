@@ -19,6 +19,9 @@ class ScheduleView(View):
     def get(self, request):
         schedule = Activity.objects.get_schedule()
         stages = Stage.get_verbose_names()
+        print("eee")
+        print(list(schedule.items())[0][1])
+        print(stages)
         return render(request, self.template_name, {
             'schedule': schedule,
             'stages': stages,
