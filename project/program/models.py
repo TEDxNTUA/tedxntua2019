@@ -19,6 +19,7 @@ import logging
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.dispatch import receiver
+from django.utils.translation import ugettext_lazy as _
 
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
@@ -40,9 +41,9 @@ class Stage(Enum):
     def get_verbose_names(cls):
         '''The stage labels that will be shown in the schedule page'''
         return {
-            cls.MAIN.value: 'Main stage',
-            cls.PERFORMANCE.value: 'Performances',
-            cls.SIDE.value: 'Side events',
+            cls.MAIN.value: _('Main stage'),
+            cls.PERFORMANCE.value: _('Performances'),
+            cls.SIDE.value: _('Side events'),
         }
 
     @classmethod
@@ -192,11 +193,25 @@ class Activity(models.Model):
         '''
         return f'{self.title} ({self.get_activity_type_display()})'
 
+    @property
+    def start_time(self):
+        return f'{self.start.hour:02d}:{self.start.minute:02d}'
+
+    @property
+    def end_time(self):
+        return f'{self.end.hour:02d}:{self.end.minute:02d}'
+
+    @property
+    def time_span(self):
+        return f'{self.start_time}-{self.end_time}'
+
     def clean(self):
         '''Ensures that only one activity starts at a certain time and stage'''
         same_time_activities = Activity.objects.filter(start=self.start)
         for other in same_time_activities:
-            if Stage.from_activity(self) == Stage.from_activity(other):
+            if (self.id != other.id
+                and Stage.from_activity(self) == Stage.from_activity(other)):
+                # If it's not the same activity and they're happening at the same stage
                 raise ValidationError('There exists another activity that \
                                        starts at the same time and stage')
 

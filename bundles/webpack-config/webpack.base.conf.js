@@ -17,7 +17,7 @@ module.exports = {
     home: fromRoot('project/home/assets/js/home.js'),
     pipes: fromRoot('project/home/assets/js/pipes.js'),
     eni: fromRoot('assets/js/movingEni.js'),
-    speakers: fromRoot('project/program/assets/js/speakers.js')
+    speakers: fromRoot('project/program/assets/js/speakers.js'),
     scramble: fromRoot('project/home/assets/js/scramble.js')
   },
   module: {
