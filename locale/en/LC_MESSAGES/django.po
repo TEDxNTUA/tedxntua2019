@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-05 16:49+0200\n"
+"POT-Creation-Date: 2019-03-05 22:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,6 +93,36 @@ msgstr ""
 "positive perspective of an uncertain reality. The admiration of the enormous "
 "progress of humanity. An attempt of self-awareness. We can climb the mount "
 "of knowledge, one enigma at a time."
+
+#: project/partners/models.py:50
+msgid "Grand Sponsors"
+msgstr "Grand Sponsors"
+
+#: project/partners/models.py:51
+msgid "Grand Carrier Sponsors"
+msgstr "Grand Carrier Sponsors"
+
+#: project/partners/models.py:52
+msgid "Grand Hospitality Sponsors"
+msgstr "Grand Hospitality Sponsors"
+
+#: project/partners/models.py:53
+msgid "Sponsors"
+msgstr "Sponsors"
+
+#: project/partners/models.py:54
+msgid "Supporters"
+msgstr "Supporters"
+
+#: project/partners/models.py:55
+#, fuzzy
+#| msgid "partners"
+msgid "Media Partners"
+msgstr "Media Partners"
+
+#: project/partners/models.py:56
+msgid "Community Partners"
+msgstr "Community Partners"
 
 #: project/program/models.py:44
 msgid "Main stage"

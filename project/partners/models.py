@@ -1,13 +1,14 @@
 from collections import OrderedDict
-
+from django.utils.translation import ugettext_lazy as _
 from django.db import models
 from django.dispatch import receiver
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 from parler.models import TranslatableModel, TranslatedFields
+from parler.managers import TranslatableQuerySet, TranslatableManager
 
 
-class PartnerManager(models.Manager):
+class PartnerManager(TranslatableManager):
     def get_partners_by_type(self):
         '''Table-level method to get all partners grouped by type.
         Returns a dictionary where partner types from Partner.PARTNER_TYPES
@@ -38,19 +39,21 @@ class Partner(TranslatableModel):
     the official documentation example:
     https://docs.djangoproject.com/en/2.1/ref/models/fields/#urlfield
     '''
-    GRAND_SPONSORS_PLUS = 'GSP'
     GRAND_SPONSORS = 'GS'
+    GRAND_CARRIER_SPONSORS = 'GCS'
+    GRAND_HOSPITALITY_SPONSORS = 'GHS'
     SPONSORS = 'SPO'
     SUPPORTERS = 'SUP'
     MEDIA_PARTNERS = 'MP'
     COMMUNITY_PARTNERS = 'CP'
     PARTNER_TYPES = (
-        (GRAND_SPONSORS_PLUS, 'Grand Sponsors Plus'),
-        (GRAND_SPONSORS, 'Grand Sponsors'),
-        (SPONSORS, 'Sponsors'),
-        (SUPPORTERS, 'Supporters'),
-        (MEDIA_PARTNERS, 'Media Partners'),
-        (COMMUNITY_PARTNERS, 'Community Partners'),
+        (GRAND_SPONSORS, _('Grand Sponsors')),
+        (GRAND_CARRIER_SPONSORS, _('Grand Carrier Sponsors')),
+        (GRAND_HOSPITALITY_SPONSORS, _('Grand Hospitality Sponsors')),
+        (SPONSORS, _('Sponsors')),
+        (SUPPORTERS, _('Supporters')),
+        (MEDIA_PARTNERS, _('Media Partners')),
+        (COMMUNITY_PARTNERS, _('Community Partners')),
     )
     translations = TranslatedFields(
         name=models.CharField(max_length=255, verbose_name='name')

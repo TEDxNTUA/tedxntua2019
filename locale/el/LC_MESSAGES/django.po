@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-05 16:49+0200\n"
+"POT-Creation-Date: 2019-03-05 22:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,6 +103,34 @@ msgstr ""
 "κάνεις λάθος. Μια αισιόδοξη ματιά στην αβέβαιη πραγματικότητα. Η απόλαυση να "
 "θαυμάζεις την πρόοδο της ανθρωπότητας. Μια απόπειρα αυτογνωσίας.Γιατί η "
 "γνώση δομείται με ένα αίνιγμα τη φορά."
+
+#: project/partners/models.py:50
+msgid "Grand Sponsors"
+msgstr "Μεγάλοι Χορηγοί"
+
+#: project/partners/models.py:51
+msgid "Grand Carrier Sponsors"
+msgstr "Μεγάλοι Χορηγοί Μεταφορών"
+
+#: project/partners/models.py:52
+msgid "Grand Hospitality Sponsors"
+msgstr "Μεγάλοι Χορηγοί Φιλοξενίας"
+
+#: project/partners/models.py:53
+msgid "Sponsors"
+msgstr "Χορηγοί"
+
+#: project/partners/models.py:54
+msgid "Supporters"
+msgstr "Υποστηρικτές"
+
+#: project/partners/models.py:55
+msgid "Media Partners"
+msgstr "Χορηγοί Επικοινωνίας"
+
+#: project/partners/models.py:56
+msgid "Community Partners"
+msgstr "Συνεργάτες Κοινότητας"
 
 #: project/program/models.py:44
 msgid "Main stage"
