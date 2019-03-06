@@ -5,13 +5,9 @@
 {% block content %}
 <section class="content">
     <article class="schedule page">
-        <section class="heading">
-            <h1>{% trans "schedule" %}</h1>
-        </section>
-        <section class="content">
-            {% include "./schedule_mobile.html" %}
-            {% include "./schedule_desktop.html" %}
-        </section>
+        <h1 class="page-heading">{% trans "schedule" %}</h1>
+        {% include "./schedule_mobile.html" %}
+        {% include "./schedule_desktop.html" %}
     </article>
 </section>
 {% endblock %}

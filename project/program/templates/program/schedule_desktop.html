@@ -23,7 +23,11 @@
             <td class="event">
                 {% if event %}
                 <div class="cell-content media">
-                    <img class="align-self-center mr-3" src="{{event.image.url}}" alt="">
+                    {% if event.image %}
+                        <img src="{{event.image.url}}" alt="">
+                    {% else %}
+                        <div class="image-placeholder"></div>
+                    {% endif %}
                     <div class="media-body">
                         <h5>
                             {{event.title}}
