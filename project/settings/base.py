@@ -127,6 +127,9 @@ LOGGING = {
         'simple': {
             'format': '%(levelname)s %(message)s'
         },
+        'verbose': {
+            'format': '%(levelname)-8s %(asctime)s %(name)s.%(funcName)s:%(lineno)s - %(message)s'
+        },
     },
     'loggers': {
         '': {
