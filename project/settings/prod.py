@@ -8,7 +8,8 @@ from .env import abs_path
 LOGGING['handlers']['file'] = {
     'level': env_setting('LOG_LEVEL', 'INFO'),
     'class': 'logging.FileHandler',
-    'filename': abs_path('logs', 'debug.log')
+    'filename': abs_path('logs', 'debug.log'),
+    'formatter': 'verbose',
 }
 
 LOGGING['loggers']['']['handlers'].append('file')
