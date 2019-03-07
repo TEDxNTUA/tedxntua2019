@@ -1,7 +1,7 @@
 const path = require('path')
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
+var webpack = require("webpack");
 
 const DEV_MODE = process.env.NODE_ENV !== 'production'
 
@@ -16,8 +16,8 @@ module.exports = {
     main: fromRoot('assets/js/index.js'),
     home: fromRoot('project/home/assets/js/home.js'),
     pipes: fromRoot('project/home/assets/js/pipes.js'),
-    eni: fromRoot('assets/js/movingEni.js'),
-    speakers: fromRoot('project/program/assets/js/speakers.js')
+    eni: fromRoot('project/home/assets/js/movingEni.js'),
+    speakers: fromRoot('project/program/assets/js/speakers.js'),
   },
   module: {
     rules: [{
@@ -31,7 +31,14 @@ module.exports = {
       ]
     }]
   },
-  plugins: [],
+  plugins: [
+    new webpack.ProvidePlugin({
+    $: 'jquery',
+   '$': 'jquery',
+   jquery: 'jquery',
+   jQuery: 'jquery',
+ }),
+  ],
   resolve: {
     alias: {
       // This enables us to use imports like
