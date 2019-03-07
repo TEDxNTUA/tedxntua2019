@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-02 16:03+0200\n"
+"POT-Creation-Date: 2019-03-07 16:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,27 +65,27 @@ msgstr ""
 msgid "test_message"
 msgstr "Αυτο είναι ένα μήνυμα για testing"
 
-#: project/home/templates/home/index.html:25
+#: project/home/templates/home/index.html:26
 msgid "enigma_is"
 msgstr "Ένα αίνιγμα είναι κάτι "
 
-#: project/home/templates/home/index.html:28
+#: project/home/templates/home/index.html:29
 msgid "enigma_opt_1"
 msgstr " μυστήριο"
 
-#: project/home/templates/home/index.html:29
+#: project/home/templates/home/index.html:30
 msgid "enigma_opt_2"
 msgstr " αβέβαιο"
 
-#: project/home/templates/home/index.html:30
+#: project/home/templates/home/index.html:31
 msgid "enigma_opt_3"
 msgstr " παράδοξο"
 
-#: project/home/templates/home/index.html:31
+#: project/home/templates/home/index.html:32
 msgid "enigma_opt_4"
 msgstr " συναρπαστικό"
 
-#: project/home/templates/home/index.html:36
+#: project/home/templates/home/index.html:37
 msgid "enigma.home.text"
 msgstr ""
 "Αίνιγμα: καθετί που είναι δύσκολο να ερμηνευτεί ή παραμένει μυστήριο, κάτι "
@@ -104,11 +104,11 @@ msgstr ""
 "θαυμάζεις την πρόοδο της ανθρωπότητας. Μια απόπειρα αυτογνωσίας.Γιατί η "
 "γνώση δομείται με ένα αίνιγμα τη φορά."
 
-#: project/settings/base.py:165
+#: project/settings/base.py:168
 msgid "Greek"
 msgstr ""
 
-#: project/settings/base.py:166
+#: project/settings/base.py:169
 msgid "English"
 msgstr ""
 
