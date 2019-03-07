@@ -1,11 +1,11 @@
-// ——————————————————————————————————————————————————
-// TextScramble
-// ——————————————————————————————————————————————————
-
 class TextScramble {
   constructor(el) {
     this.el = el
-    this.chars = '!<>-_\\/[]{}—=+*^?#________'
+    // let thought = String.fromCodePoint(0x1F4AD)
+    let thought = '_'
+    // let eyes = String.fromCodePoint(0xFE0F)
+    // let hundred = String.fromCodePoint(0x1F4AF)
+    this.chars = ['_','+','-', '/', '^', '*', '&', thought]
     this.update = this.update.bind(this)
   }
   setText(newText) {
@@ -17,7 +17,7 @@ class TextScramble {
       const from = oldText[i] || ''
       const to = newText[i] || ''
       const start = Math.floor(Math.random() * 40)
-      const end = start + Math.floor(Math.random() * 15)
+      const end = start + Math.floor(Math.random() * 178)
       this.queue.push({ from, to, start, end })
     }
     cancelAnimationFrame(this.frameRequest)
@@ -68,6 +68,7 @@ const phrases = [
   'Peiraios 254, Tavros'
 ]
 
+
 var ted = document.querySelector('.textTed')
 var enigma = document.querySelector('.textEnigma')
 var date = document.querySelector('.textDate')
@@ -75,19 +76,7 @@ var venue = document.querySelector('.textVenue')
 var address = document.querySelector('.textAddress')
 var fx0 = new TextScramble(ted)
 var fx1 = new TextScramble(enigma)
-var fx2 = new TextScramble(date)
-var fx3 = new TextScramble(venue)
-var fx4 = new TextScramble(address)
-
-time = 900;
-setTimeout(function(){fx0.setText(phrases[0])}, time);
-time += 800;
+let time = 0
 setTimeout(function(){fx1.setText(phrases[1])}, time);
-time += 900;
-setTimeout(function(){fx2.setText(phrases[2])}, time);
-time += 900;
-setTimeout(function(){fx3.setText(phrases[3])}, time);
-time += 900;
-setTimeout(function(){fx4.setText(phrases[4])}, time);
-
+setTimeout(function(){fx0.setText(phrases[0])}, time);
 next()

@@ -16,7 +16,10 @@ const canvas = document.getElementById("enigma-animation")
 const ww = canvas.width = canvas.offsetWidth,
       wh = canvas.height = canvas.offsetHeight
 
-const CUBE_SIZE = 96,
+const speed = 1/18;
+const increment = 32;
+
+const CUBE_SIZE = 80,
       HALF = CUBE_SIZE / 2,
       SEVENTH = CUBE_SIZE / 7,
       EIGHTH = CUBE_SIZE / 8,
@@ -400,8 +403,8 @@ let speeds = [],
     starts = [],
     curr = 0
 for(let i = 0; i < 6; ++i) {
-    speeds.push(1/9)
-    curr += 50
+    speeds.push(speed)
+    curr += increment
     starts.push(curr)
 }
 
@@ -516,7 +519,7 @@ let id = setInterval(function(){
   if (animations[5].remaining == 0){
     setTimeout(function(){
       fadeFunction()
-    }, 1200);
+    }, speed);
     clearInterval(id)
   }
 }, 1000);
