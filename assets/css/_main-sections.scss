@@ -10,6 +10,17 @@ section.content {
 	text-align: center;
 }
 
+.seperator{
+  margin-top: 1rem;
+  height: 1rem;
+  width: 100%;
+}
+
+line{
+  stroke: $ted;
+  stroke-width: 2;
+}
+
 article.page {
 	padding-top: $section-padding-y;
 	padding-bottom: $section-padding-y;
