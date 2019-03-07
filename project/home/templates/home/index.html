@@ -14,11 +14,10 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-3 col-md-3 d-none-sm">
-          {% include "partials/pipes.html" %}
+        <div class="col-lg-3 d-none-sm">
+          {% include "./partials/pipes.html" %}
         </div>
         <div class="col-lg-6 col-md-6 col-12">
-
           <section class="content">
             <div class="enigma">
               <div class="enigma__container">
@@ -32,15 +31,20 @@
                   <li class="enigma__container__list__item">{% trans "enigma_opt_4" %}</li>
                 </ul>
               </div>
-              </div>
+            </div>
             <p class="wow slideInLeft text-justify">
                {% trans "enigma.home.text" %}
             </p>
             </section>
-            <section class="content">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.6271396946668!2d23.688869951188522!3d37.96249120901013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bc8ab9f42a2b%3A0xf99828caaaee1fc!2sHellenic+Cosmos+Cultural+Centre!5e0!3m2!1sen!2sgr!4v1551531961345" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </section>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 d-none-sm">
+          {% include "./partials/pipes1.html" %}
+        </div>
+        <section class="content">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.6271396946668!2d23.688869951188522!3d37.96249120901013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bc8ab9f42a2b%3A0xf99828caaaee1fc!2sHellenic+Cosmos+Cultural+Centre!5e0!3m2!1sen!2sgr!4v1551531961345" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </section>
       </div>
     </div>
 
@@ -55,5 +59,4 @@
 {% block scripts %}
 {% render_bundle "home" "js" %}
 {% render_bundle "pipes" "js" %}
-{% render_bundle "scramble" "js" %}
 {% endblock %}
