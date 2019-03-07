@@ -1,12 +1,13 @@
 {% extends "base.html" %}
-{% block title %}Schedule{% endblock %}
-{% block description %}This is the schedule page{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "schedule" %}{% endblock %}
+{% block description %}{% trans "schedule.description" %}{% endblock %}
 {% block content %}
 <section class="content">
-    <article class="page">
-        <h1 class="page-heading">Schedule</h1>
-
-        <p>Content goes here.</p>
+    <article class="schedule page">
+        <h1 class="page-heading">{% trans "schedule" %}</h1>
+        {% include "./schedule_mobile.html" %}
+        {% include "./schedule_desktop.html" %}
     </article>
 </section>
 {% endblock %}

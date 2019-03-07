@@ -1,0 +1,662 @@
+/* HOME PAGE */
+
+article.home {
+	background: #202020;
+	color: #FAFAFA;
+
+	h1, h2, h3, h4, h5, h6 {
+		text-align: center;
+	}
+
+	/* lighten links on hover, since home is dark-themed */
+	a:hover {
+		color: saturate($primary, 20%);
+	}
+
+	.home-sections {
+		margin-top: 2rem;
+	}
+
+	#leftStripe, #rightStripe {
+		width: 80%;
+		height: 100%;
+		position: absolute;
+		background-image: url("/images/stripeFull-mini.png");
+		background-size: 100% auto;
+		background-repeat: repeat-y;
+	}
+
+	#rightStripe {
+		margin-left: 2rem;
+        transform: scaleX(-1);
+	}
+
+	section {
+		width: 100%;
+		font-size: .9em;
+		&:not(#hero) {
+			margin: 1rem 0;
+		}
+		h2 {
+			color: $primary;
+			font-size: 2rem;
+			font-weight: bold;
+			margin-bottom: .5em;
+		}
+		h3 {
+			font-size: 1.5rem;
+		}
+		.container-fluid {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.section-intro {
+			display: block;
+			margin-bottom: 1.5rem;
+			align-items: stretch;
+		}
+		.description {
+			text-align: justify;
+		}
+		.section-intro .description {
+			margin-bottom: 1rem;
+			flex: 1;
+		}
+		.fa-chevron-right {
+			font-size: .85rem;
+			padding-left: .15rem;
+		}
+	}
+	#hero {
+		/* remove top inset shadow from #hero, keep only bottom */
+		color: white;
+		border-bottom: 0;
+		background: #202020;
+		height: 480px;
+		position: relative;
+		.section-content {
+			position: relative;
+			z-index: 2;
+		}
+		h1 {
+			margin-top: 10rem;
+			font-size: 2.25rem;
+			font-weight: bold;
+		}
+		.info {
+			/* hide space characters between the links */
+			font-size: 0;
+		}
+		.info a {
+			display: inline-block;
+			font-size: 1.15rem;
+			border-style: solid;
+			border-color: white;
+			border-width: 0 0 1px 0;
+			padding: .25rem .5rem;
+			color: white;
+			span {
+				display: block;
+			}
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+		.info a.blink span {
+			animation: blink 1s;
+		}
+		.tickets {
+			margin-top: 2.5rem;
+		}
+		.tickets a {
+			background-color: $primary;
+			color: white;
+			font-size: 1.15rem;
+			padding: 1rem 2.5rem;
+			&:hover {
+				background-color: saturate($primary, 10%);
+			}
+			&:active {
+				font-size: 1.1rem;
+			}
+		}
+		canvas#canvas {
+			padding-left: 0;
+    		padding-right: 0;
+    		margin-left: auto;
+    		margin-right: auto;
+    		height:220px;
+    		width: 50%;
+		    display: none;
+		}
+
+		canvas#lorenz {
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -666px;
+			margin-left: -400px;
+			z-index: 1;
+		}
+		svg#logo-animation {
+			display: none;
+			position: absolute;
+			top: 10%;
+			left: 0;
+			height: 90%;
+			width: 100%;
+			z-index: 1;
+			stroke: #E62B1E;
+			stroke-width: 10;
+			stroke-linejoin: miter;
+			fill: none;
+
+			#one, #two, #three, #four {
+				animation: zoom 1s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+				animation-play-state: paused;
+				transform: scale(0, 0);
+				animation-fill-mode: forwards;
+			}
+
+			#two {
+				animation-delay: 0.5s;
+			}
+
+			#three {
+				animation-delay: 1.0s;
+			}
+
+			#four {
+				animation-delay: 1.3s;
+			}
+
+			.secondary {
+				stroke: #E66557;
+			}
+		}
+		&.live {
+			position: static;
+			height: auto;
+			font-size: .85rem;
+			.section-content {
+				position: static;
+				/* 	outer height of nav = 4rem (height) + 1.2rem (padding) = 5.2rem */
+				padding-top: 5.2rem;
+			}
+			h2 {
+				font-size: 3em;
+				margin-bottom: .2em;
+			}
+			.liveInfo {
+				width: 100%;
+				max-width: 540px;
+				margin: 0 auto;
+				text-align: center;
+				h4 {
+					color: $primary;
+					font-size: 1.2em;
+					margin-bottom: .25em;
+				}
+				h5 {
+					font-size: 1em;
+				}
+				h6 {
+					margin-top: .15rem;
+					font-weight: normal;
+					font-size: .8em;
+				}
+				h5, h6, p {
+					margin-bottom: 0;
+				}
+				a {
+					color: inherit;
+				}
+				.container-fluid {
+					margin-bottom: 1.2em;
+				}
+				.col:not(:last-child) {
+					border-right: 1px solid #999;
+				}
+			}
+			.live-container {
+				overflow: visible;
+				width: 80vw;
+				max-width: 100%;
+				margin: 0 auto;
+				.close {
+					display: none;
+					position: absolute;
+					top: -2rem;
+					left: -2rem;
+					font-size: 2rem;
+					color: white;
+					cursor: pointer;
+					z-index: 9999;
+					opacity: .75;
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+			&.popup {
+				.live-container {
+					position: fixed;
+					bottom: 3vw;
+					right: 3vw;
+					width: 39vw;
+					max-width: 576px;
+					z-index: 9998;
+					iframe#live {
+						opacity: .9;
+						&:hover {
+							opacity: 1;
+						}
+					}
+					.close {
+						display: inline-block;
+					}
+				}
+			}
+		}
+
+	}
+
+	#chaos {
+		h2 img {
+			width: auto;
+			height: 0;
+			margin-left: 0.2rem;
+			margin-top: -0.2rem;
+			opacity: 0;
+			transition: opacity .8s, height .8s;
+		}
+		.cursor {
+			animation: cursor 1s infinite;
+		}
+		.typed + img {
+			height: 2rem;
+			opacity: 1;
+		}
+	}
+
+	#speakers {
+
+		a .photo1 {
+			display: block;
+		}
+
+		a .photo2 {
+			display: none;
+		}
+
+		a:hover .photo1 {
+			display: none;
+		}
+
+		a:hover .photo2 {
+			display: block;
+		}
+
+		.speaker-container {
+			img {
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+			}
+			a {
+				background-color: transparent;
+				transition: background-color .5s;
+				text-align: center;
+				display: block;
+				color: black;
+				position: relative;
+				width: 100%;
+				padding-bottom: 100%;
+				font-size: .9rem;
+			}
+			.speaker-info {
+				position: absolute;
+				bottom: 1.25em;
+				z-index: 2;
+				color: white;
+				padding: 0 10px;
+				width: 100%;
+				text-shadow: 0px 1px 3px rgba(0, 0, 0, 1),
+							 0px 1px 5px rgba(0, 0, 0, 0.6);
+				h3 {
+					font-size: 1.15em;
+					line-height: 1;
+					margin-bottom: .2rem;
+				}
+				p {
+					font-size: .75em;
+					line-height: 1.25;
+					margin-bottom: 0;
+				}
+			}
+		}
+		h3.hostess {
+			color: $primary;
+			margin-top: 1.5rem;
+			font-weight: bold;
+		}
+		/* change following 10px values to your desired value of padding between the columns */
+		.row {
+			margin-left: -10px;
+			margin-right: -10px;
+			justify-content: center;
+		}
+		.col {
+			padding: 10px;
+		}
+	}
+	#schedule {
+		.card-columns {
+			column-count: 1;
+			column-gap: 0;
+			color: white;
+		}
+		.card {
+			background-color: rgba(255, 255, 255, .5);
+		}
+		.card-header {
+			padding: .25rem 1rem 0;
+			font-size: .8rem;
+			font-weight: bold;
+		}
+		.card-header.talk {
+			background-color: #533B4D;
+		}
+		.card-header.performance {
+			background-color: #AD343E;
+		}
+		.card-header.workshop {
+			background-color: #313E50;
+		}
+		.card-body {
+			color: black;
+			border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+			padding: 1rem;
+			h4 {
+				font-size: 1.15rem;
+				margin-bottom: .25rem;
+			}
+		}
+		.media-body {
+			font-size: .9rem;
+		}
+	}
+	#auspices {
+		a {
+			color: black;
+			display: block;
+			max-width: 280px;
+			width: 60%;
+			margin: 0 auto;
+		}
+		img {
+			width: 100%;
+			height: auto;
+			transition: transform .5s;
+		}
+		a:hover img {
+			transform: scale(1.05);
+		}
+	}
+	#map {
+		.map {
+			width: 100%;
+			/* fallback for browsers that don't support vw */
+			height: 400px;
+			/* map has a width of 66.67vw and we want an aspect ratio of 21:9 */
+			height: 28.57vw;
+			min-height: 400px;
+			border: 4px solid $primary;
+		}
+		.venue-gallery {
+			margin-top: 1rem;
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+/* HOME ANIMATIONS */
+@import "animations";
+
+/*
+ * MEDIA QUERIES
+ */
+
+@include media-breakpoint-up(sm) {
+	article.home {
+		section {
+			font-size: 1em;
+		}
+		#hero h1 {
+			font-size: 3rem;
+		}
+		#hero .info a {
+			margin: 0 6rem;
+		}
+		#hero.live .section-content {
+			/* 	outer height of nav = 4.2rem (height) + 1.2rem (padding) = 5.4rem */
+			padding-top: 5.4rem;
+		}
+		#speakers {
+			.speaker-container {
+				a {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	article.home {
+		section {
+			font-size: 1.25em;
+			h2 {
+				font-size: 2.5rem;
+			}
+			h3 {
+				font-size: 2rem;
+			}
+			.section-intro {
+				display: flex;
+			}
+			.section-intro .description {
+				padding-right: 2rem;
+				margin-bottom: 0;
+			}
+		}
+		#hero:not(.live) {
+			height: 720px;
+			.section-content {
+				opacity: 0;
+				bottom: -2rem;
+				transition: opacity 3s, bottom 3s;
+				transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+				&.slideIn {
+					opacity: 1;
+					bottom: 0;
+				}
+			}
+			h1 {
+				margin-top: 25rem;
+				font-size: 3.5rem;
+				font-weight: bold;
+			}
+			canvas#lorenz, svg#logo-animation {
+				display: block;
+			}
+		}
+		#hero .info br {
+			display: none;
+		}
+		#hero .info a {
+			display: inline-block;
+			padding: .5rem 1rem;
+			margin: 0;
+			border-width: 0 1px;
+			&:first-child {
+				border-left: 0;
+			}
+			&:last-child {
+				border-right: 0;
+			}
+		}
+		#chaos {
+			h2 img {
+				margin-left: 0.3rem;
+			}
+			.typed + img {
+				/* match article.home section h2 font size */
+				height: 2.5rem;
+			}
+		}
+		#schedule {
+			.card-columns {
+				column-count: 2;
+				column-gap: .8rem;
+			}
+		}
+		#speakers {
+			.speaker-container {
+				a {
+					font-size: 1.25rem;
+				}
+			}
+		}
+		#map {
+			.row.bottom {
+				/* fallback for browsers that don't support vw */
+				height: 320px;
+				/* on >= md home uses an 8-of-12 width layout => 66.67vw */
+				/* we want the top col-6 (33.33vw) images to have an aspect ratio of 16:9 */
+				/* thus 33.33vw * 9 / 16 = 18.75vw */
+				height: 18.75vw;
+				min-height: 320px;
+				img {
+					min-height: 320px;
+				}
+			}
+			.col {
+				object-fit: cover;
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	header.home {
+		background: transparent;
+		padding-top: 1rem;
+		transition: padding-top .5s, background-color .5s;
+		&.scrolled {
+			background-color: #1C1C1C;
+		}
+	}
+	article.home {
+		section h2 {
+			font-size: 3.5rem;
+		}
+		section h3 {
+			font-size: 2.5rem;
+		}
+		#hero {
+			h1 {
+				font-size: 4rem;
+			}
+			.info a, .tickets a {
+				font-size: 1.25rem;
+			}
+			.info a {
+				padding: .5rem 1.2rem;
+			}
+			.tickets a:active {
+				font-size: 1.2rem;
+			}
+		}
+		#chaos {
+			h2 img {
+				margin-left: 0.5rem;
+			}
+			.typed + img {
+				/* match article.home section h2 font size */
+				height: 3.5rem;
+			}
+		}
+		#map {
+			/* apply styles to top row too */
+			.row {
+				height: 320px;
+				height: 18.75vw;
+				min-height: 320px;
+				img {
+					min-height: 320px;
+				}
+			}
+		}
+	}
+	article.about, article.sponsors {
+		section.content .col {
+			margin-bottom: 0;
+		}
+		section.content .row {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	article.home {
+		#speakers {
+			.speaker-container {
+				a {
+					/* font size gets smaller from lg to xl since we move to a 4-column layout */
+					font-size: 1rem;
+				}
+			}
+		}
+		#map {
+			.col-md-12 {
+				position: relative;
+				img {
+					position: absolute;
+					top: -160px;
+					top: -9.375vw;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1366px) {
+	article.home {
+		#hero.live .section-content {
+			/* 	outer height of nav = 4.8rem (height) + 1.2rem (padding) = 6rem */
+			padding-top: 6rem;
+		}
+		#speakers {
+			.speaker-container {
+				a {
+					font-size: 1.25rem;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (orientation: portrait) {
+	article.home #hero.live.popup .live-container {
+		width: 84vw;
+	}
+}

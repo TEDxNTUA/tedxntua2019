@@ -15,6 +15,22 @@ article.sponsors {
 		max-width: 420px;
 	}
 	img.grid-image {
-		max-width: 90%;
+			max-width: 90%;
+		}
+	img.grid-image.hover-zoom {
+		transition: all 200ms ease-in;
+		transform: scale(1);
+		&:hover {
+			transform: scale(1.05);
+			padding: auto;
+			z-index: 2;
+		}
+	}
+	/* VERTICAL ALIGN HELPER */
+
+	.vertical-align {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }

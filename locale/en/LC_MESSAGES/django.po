@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-07 16:43+0200\n"
+"POT-Creation-Date: 2019-03-07 17:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,27 +55,27 @@ msgstr ""
 msgid "test_message"
 msgstr "This is a test message"
 
-#: project/home/templates/home/index.html:26
+#: project/home/templates/home/index.html:25
 msgid "enigma_is"
 msgstr "An enigma is "
 
-#: project/home/templates/home/index.html:29
+#: project/home/templates/home/index.html:28
 msgid "enigma_opt_1"
 msgstr "mysterious"
 
-#: project/home/templates/home/index.html:30
+#: project/home/templates/home/index.html:29
 msgid "enigma_opt_2"
 msgstr "uncertain"
 
-#: project/home/templates/home/index.html:31
+#: project/home/templates/home/index.html:30
 msgid "enigma_opt_3"
 msgstr "inexplicable"
 
-#: project/home/templates/home/index.html:32
+#: project/home/templates/home/index.html:31
 msgid "enigma_opt_4"
 msgstr "fascinating"
 
-#: project/home/templates/home/index.html:37
+#: project/home/templates/home/index.html:36
 msgid "enigma.home.text"
 msgstr ""
 "Enigma: that which is difficult to interpret, that which remains a mystery, "
@@ -94,6 +94,63 @@ msgstr ""
 "progress of humanity. An attempt of self-awareness. We can climb the mount "
 "of knowledge, one enigma at a time."
 
+#: project/partners/models.py:50
+msgid "Grand Sponsors"
+msgstr "Grand Sponsors"
+
+#: project/partners/models.py:51
+msgid "Grand Carrier Sponsors"
+msgstr "Grand Carrier Sponsors"
+
+#: project/partners/models.py:52
+msgid "Grand Hospitality Sponsors"
+msgstr "Grand Hospitality Sponsors"
+
+#: project/partners/models.py:53
+msgid "Sponsors"
+msgstr "Sponsors"
+
+#: project/partners/models.py:54
+msgid "Supporters"
+msgstr "Supporters"
+
+#: project/partners/models.py:55
+#, fuzzy
+#| msgid "partners"
+msgid "Media Partners"
+msgstr "Media Partners"
+
+#: project/partners/models.py:56
+msgid "Community Partners"
+msgstr "Community Partners"
+
+#: project/program/models.py:44
+msgid "Main stage"
+msgstr "Main stage"
+
+#: project/program/models.py:45
+msgid "Performances"
+msgstr "Performances"
+
+#: project/program/models.py:46
+msgid "Side events"
+msgstr "Side events"
+
+#: project/program/templates/program/schedule.html:3
+#: project/program/templates/program/schedule.html:8
+#: project/templates/layouts/partials/nav.html:54
+msgid "schedule"
+msgstr "Schedule"
+
+#: project/program/templates/program/schedule.html:4
+msgid "schedule.description"
+msgstr ""
+
+#: project/program/templates/program/schedule_desktop.html:7
+#: project/program/templates/program/schedule_mobile.html:25
+msgid "schedule_time"
+msgstr "Time"
+
 #: project/settings/base.py:168
 msgid "Greek"
 msgstr ""
@@ -109,10 +166,6 @@ msgstr "Home"
 #: project/templates/layouts/partials/nav.html:51
 msgid "speakers"
 msgstr "Speakers"
-
-#: project/templates/layouts/partials/nav.html:54
-msgid "schedule"
-msgstr "Schedule"
 
 #: project/templates/layouts/partials/nav.html:57
 msgid "partners"

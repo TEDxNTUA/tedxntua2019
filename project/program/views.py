@@ -22,6 +22,7 @@ class ScheduleView(View):
         return render(request, self.template_name, {
             'schedule': schedule,
             'stages': stages,
+            'day': '2019-04-06',
         })
 
 

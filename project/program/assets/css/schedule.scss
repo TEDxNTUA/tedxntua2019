@@ -2,9 +2,13 @@
 
 article.schedule {
 	font-size: .85rem;
-
 	.nav-slider {
-		font-size: 1.25em;
+		border-bottom: 4px solid $primary;
+		justify-content: center;
+		.nav-link.active {
+			background-color: $primary;
+			color: $body-color;
+		}
 	}
 	h5 {
 		font-size: 1.25em;
@@ -16,18 +20,20 @@ article.schedule {
 	table, .table {
 		border-collapse: separate;
 		border-spacing: 0;
+		text-align: left;
 	}
 	tbody tr:not(.collapse-row) {
 		cursor: pointer;
 	}
 	thead {
-		background-color: $secondary;
+		background-color: $tertiary;
 		color: white;
 		font-size: 1.25em;
 	}
 	thead th {
-		width: 100%;
 		border-bottom: 0;
+		border-top: 0;
+		width: 100%;
 	}
 	thead th:first-child {
 		width: auto;
@@ -46,9 +52,18 @@ article.schedule {
 		font-weight: 500;
 	}
 	td img {
-		width: 40%;
+		align-self: center;
+		margin-right: 1rem;
 		height: auto;
 		max-width: 120px;
+		width: 40%;
+	}
+	td .image-placeholder {
+		align-self: stretch;
+		background: linear-gradient(#DDDDDD, #FAFAFA);
+		margin-right: 1rem;
+		max-width: 120px;
+		width: 40%;
 	}
 	td ul, td ol {
 		padding-left: 1em;
@@ -101,8 +116,8 @@ article.schedule {
 
 @include media-breakpoint-up(sm) {
 	article.schedule {
-		.nav-pills {
-			margin-bottom: 3rem;
+		.nav-slider {
+			font-size: 1.25em;
 		}
 	}
 }

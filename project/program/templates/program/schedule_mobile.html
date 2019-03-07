@@ -1,0 +1,82 @@
+{% load i18n %}
+{% load schedule_extras %} {# see templatetags/schedule_extras.py for docs #}
+
+<div class="tabbed-schedule d-block d-lg-none">
+    <ul class="nav nav-slider" id="slider-tab" role="tablist">
+    {% for stage, stage_name in stages.items %}
+        <li class="nav-item">
+            <a class="nav-link{% if forloop.first %} active{% endif %}"
+               id="slide-{{stage}}-tab" href="#{{stage}}-tab"
+               data-toggle="tab" role="tab"
+               aria-controls="{{stage}}-tab" aria-selected="{{forloop.first|yesno:"true,false" }}">
+                {{stage_name}}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <div class="tab-content" id="slide-tabContent">
+
+    {% for stage, stage_name in stages.items %}
+        <div class="tab-pane fade{% if forloop.first %} show active{% endif %}" id="{{stage}}-tab" role="tabpanel" aria-labelledby="slide-{{stage}}-tab">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">{% trans "schedule_time" %}</th>
+                        <th scope="col" class="{{stage}}-stage">{{stage_name}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for time, row in schedule.items %}
+                    {% with row_id=forloop.counter|make_row_id:stage %}
+                    {% with event=row|lookup:stage %}
+                    {% if event %}
+                    <tr data-toggle="collapse" data-target=".{{row_id}}" class="collapsed" aria-expanded="false">
+                        <td class="time">
+                            <div class="cell-content">
+                                <time datetime="{{day}} {{time}}">{{time}}</time>
+                            </div>
+                        </td>
+                        <td class="event">
+                            <div class="cell-content media">
+                                {% if event.image %}
+                                    <img src="{{event.image.url}}" alt="">
+                                {% else %}
+                                    <div class="image-placeholder"></div>
+                                {% endif %}
+                                <div class="media-body">
+                                    <h5>
+                                        {{event.title}}
+                                    </h5>
+                                    <h6>
+                                        {{event.subtitle}} ({{event.time_span}})
+                                    </h6>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="collapse-row hidden">
+                        <td>
+                            <div class="cell-content {{row_id}} collapse">
+                                <div class="more"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="cell-content {{row_id}} collapse">
+                                <div class="more">{{event.description}}</div>
+                            </div>
+                            <div class="cell-content {{row_id}} collapse">
+                                <div class="more"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endwith %}
+                    {% endwith %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
+    </div>
+</div>

@@ -9,7 +9,7 @@
 @import "~compass-mixins/lib/compass/css3";
 
 // Animate
-@import "animate";
+//@import "animate";
 
 /** GENERAL GUIDELINES **/
 
@@ -60,8 +60,12 @@
 
 // INDIVIDUAL PAGE STYLES
 @import "~@/home/assets/css/home";
+// This is non-scoped and affects all containers etc. Plz fix
+//@import "~@/home/assets/css/scramble";
 @import "~@/about/assets/css/about";
-@import '~@/program/assets/css/speakers'
+@import "~@/program/assets/css/speakers";
+@import "~@/program/assets/css/schedule";
+@import "~@/partners/assets/css/partners";
 
 
 
