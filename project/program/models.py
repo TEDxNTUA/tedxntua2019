@@ -61,7 +61,7 @@ class Stage(Enum):
 
 # Activity model & managers
 
-class ActivityManager(models.Manager):
+class ActivityManager(TranslatableManager):
     '''The main manager of the Activity model providing class-level
     functionality'''
     def get_schedule(self):
@@ -90,11 +90,6 @@ class ActivityManager(models.Manager):
             ...
         }
         '''
-        def _get_slot(activity):
-            '''Get slot of activity in the form of hh:mm'''
-            hour = activity.start.hour
-            minute = activity.start.minute
-            return f'{hour:02}:{minute:02}'
 
         slots = {}
         # Initialize each line to contain None for each stage
@@ -102,7 +97,7 @@ class ActivityManager(models.Manager):
 
         for activity in Activity.objects.all():
             # Get time slot
-            slot = _get_slot(activity)
+            slot = activity.start_time
             # Get stage name
             stage = Stage.from_activity(activity)
             if stage is None:
@@ -120,7 +115,7 @@ class ActivityManager(models.Manager):
         return slots
 
 
-class ActivityTypeManager(models.Manager):
+class ActivityTypeManager(TranslatableManager):
     '''
     Abstract class for managers that return activities of specific type,
     e.g. talks, performances, etc.
@@ -133,7 +128,7 @@ class ActivityTypeManager(models.Manager):
         return super().get_queryset().filter(activity_type=self.type_)
 
 
-class Activity(models.Model):
+class Activity(TranslatableModel):
     '''
     A thing happening in the event, ie. a talk, a performance, a workshop
     or the hosting of the event.
@@ -157,9 +152,11 @@ class Activity(models.Model):
     start = models.TimeField()
     end = models.TimeField()
 
-    title = models.CharField(max_length=255)
-    subtitle = models.TextField()
-    description = models.TextField()
+    translations = TranslatedFields(
+        title = models.CharField(max_length=255),
+        subtitle = models.TextField(),
+        description = models.TextField(),
+        )
 
     image = VersatileImageField(
         'Image',

@@ -9,6 +9,7 @@ class SpeakersView(View):
     template_name = 'program/speakers.html'
 
     def get(self, request, *args, **kwargs):
+
         speakers = Presenter.speakers.all()
         return render(request, self.template_name, {'speakers': speakers})
 
