@@ -4,11 +4,15 @@ from django.utils import translation
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.http import HttpResponse
+from project.program.models import Presenter
 
 
 
 class HomeView(TemplateView):
     template_name = 'home/index.html'
+    def get(self, request, *args, **kwargs):
+        speakers = Presenter.speakers.all()
+        return render(request, self.template_name, {'speakers': speakers})
 
 
 def set_language(request):

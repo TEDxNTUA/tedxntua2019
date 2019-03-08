@@ -1,26 +1,45 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
+{% load home_extras %} {# see templatetags/home_extras.py for docs #}
 {% load render_bundle from webpack_loader %}
 {% block title %}Home{% endblock %}
 {% block description %}This is the home page{% endblock %}
 {% block content %}
 <article class="page home">
   <section class="content">
-      <div class="enigma-animation-container">
-          <canvas id="enigma-animation" width="800" height="540"></canvas>
-          <div id="enigma-circle" class="circle"></div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-md-3">
+            <div class="container side-container blink">
+                <a href="about#about-tedx" class="textTed"></a>
+              </div>
+            </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="enigma-animation-container">
+                <canvas id="enigma-animation" width="800" height="540"></canvas>
+                <div id="enigma-circle" class="circle"></div>
+            </div>
+            <a href="#map-section" class="textVenue blink"></a>
+            </div>
+
+            <div class="col-lg-3 col-md-3">
+                <a href="#enigma-section" class="textEnigma container side-container blink"></a>
+            </div>
+
+          </div>
       </div>
     </section>
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-3 d-none-sm">
+        <div class="col-lg-3 col-md-3">
         </div>
         <div class="col-lg-6 col-md-6 col-12">
-          <section class="content">
+          <section id="enigma-section" class="content">
             <div class="enigma">
               <div class="enigma__container">
-                <p class="enigma__container__text">
+                <p id="enigma_text" class="enigma__container__text">
                   {% trans "enigma_is" %}
                 </p>
                 <ul class="enigma__container__list">
@@ -31,32 +50,72 @@
                 </ul>
               </div>
             </div>
-            <p class="wow slideInLeft text-justify">
+            <p id="enigma-text" class="wow slideInLeft text-justify">
                {% trans "enigma.home.text" %}
             </p>
             </section>
         </div>
       </div>
+    </div>
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-3 d-none-sm">
+        <div class="col d-none d-md-block col-md-2">
         </div>
-        <div class="col-lg-6 col-md-6 col-12">
-          <section class="content">
-            
-          </section>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 d-none-sm">
-        </div>
-        <div class="col-lg-6 col-md-6 col-12">
-          <section class="content">
+        <div class="col col-12 col-md-8">
+          <section id="speakers">
+            <h2>{% trans "speakers" %}</h2>
+            <div class="container-fluid speaker-container">
+              {% for row in speakers|splitByFour %}
+                  <div class="row">
+                    {% for speaker in row %}
+                    <div class="col col-6 col-xl-4">
+                        <a href="/speakers">
+                          <img class="photo" src="{{ speaker.image.url}}">
+                          <div class="speaker-info">
+                            <h3>{{ speaker.fullname }}</h3>
+                            <p class="m-0">{{ speaker.occupation }}</p>
+                          </div>
+                        </a>
+                    </div>
+                  </div>
+                  {% endfor %}
+              {% endfor %}
+            </div>
+           </section>
+           <section id="auspices" class="angle-brackets">
+  					<h2>{% trans "auspices" %}</h2>
+  					<a href="https://www.ntua.gr">
+  						<img class="img-fluid" src="{% static "images/pyrforos.svg" %}"/>
+  					</a>
+    			 </section>
+           <section id="map">
+  					<h2>{%trans "map.venue" %}</h2>
+  					<p class="description">
+  						{% trans "map.desc" %}
+  					</p>
+  					<div class="map-container">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.6271396946668!2d23.688869951188522!3d37.96249120901013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bc8ab9f42a2b%3A0xf99828caaaee1fc!2sHellenic+Cosmos+Cultural+Centre!5e0!3m2!1sen!2sgr!4v1551531961345" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </section>
+  					</div>
+  					<div class="container-fluid venue-gallery">
+  						<div class="row top no-gutters">
+  							<div class="col col-12 col-md-6">
+  								<img src="{% static "images/venue/1.jpg" %}">
+  							</div>
+  							<div class="col col-12 col-md-6">
+  								<img src="{% static "images/venue/2.jpg" %}">
+  							</div>
+  						</div>
+  						<div class="row bottom no-gutters">
+  							<div class="col col-12 col-md-12">
+  								<img src="{% static "images/venue/3.jpg" %}">
+  							</div>
+  						</div>
+  					</div>
+				   </section>
+          </div>
         </div>
       </div>
     </div>
-
 </article>
 
 
@@ -67,4 +126,6 @@
 {% endblock %}
 {% block scripts %}
 {% render_bundle "home" "js" %}
+<!-- {% render_bundle "pipes" "js" %} -->
+{% render_bundle "scramble" "js" %}
 {% endblock %}

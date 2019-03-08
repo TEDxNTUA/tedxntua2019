@@ -52,6 +52,23 @@ h1, h2, h3, h4, h5{
   color: $secondary;
 }
 
+.blink{
+  animation: blinker 1s linear $animation_time;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.side-container{
+  display: none;
+}
+@media only screen and (min-width: 1200px) {
+  .side-container{
+    display: block;
+  }
+}
 /*
  * MEDIA QUERIES
  */

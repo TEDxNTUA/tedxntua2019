@@ -1,51 +1,43 @@
-$container-height: 540px;
-.container {
-  position: relative;
-  height: $container-height;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+.side-container{
+  position:relative;
+  top: 50%;
 }
 .textTed {
-  font-weight: 100;
-  font-size: 40px;
-  color: #212529;
+  font-size: 50px;
+  font-family: $font-stack;
+  color: $secondary;
 }
-.textEnigma {
-  font-weight: 100;
-  font-size: 40px;
-  color: #212529;
+
+.textTed:hover{
+    animation: blinker 1s linear;
 }
+
+.textEnigma{
+  font-size: 50px;
+  font-family: $font-stack;
+  color: $secondary;
+}
+
+.textEnigma:hover{
+    animation: blinker 1s linear;
+}
+
 .textDate {
   font-weight: 100;
   font-size: 40px;
-  color: #212529;
 }
+
 .textVenue {
-  font-weight: 100;
   font-size: 40px;
-  color: #212529;
+  color: $primary;
+  padding-top: 4rem;
 }
+
 .textAddress {
   font-weight: 100;
   font-size: 40px;
-  color: #212529;
 }
+
 .dud {
   color: #F19386;
 }
-
-
-.info div {
-			display: inline-block;
-			padding: .5rem 1rem;
-			margin: 0;
-			border-width: 0 1px;
-			&:first-child {
-				border-left: 0;
-			}
-			&:last-child {
-				border-right: 0;
-			}
-		}
