@@ -71,6 +71,15 @@ class TeamMember(TranslatableModel):
     image_height = models.PositiveIntegerField(editable=False, null=True)
     image_width = models.PositiveIntegerField(editable=False, null=True)
 
+    image_fun = VersatileImageField(
+        'Image',
+        upload_to='team/',
+        width_field='image_width',
+        height_field='image_height'
+    )
+    image_fun_height = models.PositiveIntegerField(editable=False, null=True)
+    image_fun_width = models.PositiveIntegerField(editable=False, null=True)
+
     objects = TeamMemberManager()
 
     @property
