@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-08 21:37+0200\n"
+"POT-Creation-Date: 2019-03-08 23:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: project/about/templates/about/index.html:10
+#: project/about/templates/about/index.html:11
 msgid "about.ted.content"
 msgstr ""
 "Το TED είναι ένας μη κερδοσκοπικός οργανισμός αφοσιωμένος σε Ιδέες που "
@@ -42,7 +42,7 @@ msgstr ""
 "πρωτοπόρους που θέλουν να αλλάξουν τον κόσμο να ενισχύσουν τον αντίκτυπο των "
 "αξιοσημείωτων έργων τους, όπως και των δραστηριοτήτων τους."
 
-#: project/about/templates/about/index.html:15
+#: project/about/templates/about/index.html:18
 msgid "about.tedx.content"
 msgstr ""
 "Η δράση των φοιτητών και της λοιπής ακαδημαϊκής κοινότητας του Πολυτεχνείου "
@@ -113,11 +113,9 @@ msgstr "Ομιλητές"
 
 #: project/home/templates/home/index.html:88
 msgid "auspices"
-msgstr ""
+msgstr "Υπό την αίγίδα του ΕΜΠ"
 
 #: project/home/templates/home/index.html:94
-#, fuzzy
-#| msgid "venue"
 msgid "map.venue"
 msgstr "Χάρτης & Χώρος"
 

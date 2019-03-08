@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-08 21:37+0200\n"
+"POT-Creation-Date: 2019-03-08 23:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: project/about/templates/about/index.html:10
+#: project/about/templates/about/index.html:11
 msgid "about.ted.content"
 msgstr ""
 "TED is a nonprofit organization devoted to Ideas Worth Spreading. Started as "
@@ -40,7 +40,7 @@ msgstr ""
 "innovators from around the globe to amplify the impact of their remarkable "
 "projects and activities."
 
-#: project/about/templates/about/index.html:15
+#: project/about/templates/about/index.html:18
 msgid "about.tedx.content"
 msgstr ""
 "In the spirit of ideas worth spreading, TEDx is a program of local, self-"
@@ -103,11 +103,9 @@ msgstr "Speakers"
 
 #: project/home/templates/home/index.html:88
 msgid "auspices"
-msgstr ""
+msgstr "Under the auspices of NTUA"
 
 #: project/home/templates/home/index.html:94
-#, fuzzy
-#| msgid "venue"
 msgid "map.venue"
 msgstr "Map & Venue"
 
