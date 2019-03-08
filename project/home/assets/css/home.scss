@@ -1,6 +1,7 @@
 /* HOME */
 $enigma-container-height: 540px;
 
+
 article.home {
     #speakers {
       h2 {
@@ -76,6 +77,7 @@ article.home {
   			margin: 0 auto;
   		}
   		img {
+        margin-top: 2rem;
   			width: 100%;
   			height: auto;
   			transition: transform .5s;
