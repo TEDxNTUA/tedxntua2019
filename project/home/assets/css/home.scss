@@ -32,10 +32,13 @@ article.home {
     }
 }
 
+#enigma-text{
+  margin-top: 4rem;
+  font-size: 110%;
+}
 .enigma {
   position: absolute;
   left: 50%;
-  padding-bottom: 6rem;
   transform: translate(-50%, -50%);
   overflow: hidden;
   font-size: 35px;
@@ -84,9 +87,7 @@ article.home {
 
     &__list {
       margin-top: 0;
-      padding-left: 350px;
       text-align: left;
-      // text-align: center;
       list-style: none;
       color: $primary;
       -webkit-animation-name: change;
@@ -99,6 +100,7 @@ article.home {
       &__item {
         line-height:40px;
         margin:0;
+        padding-left: 15rem;
       }
     }
   }
