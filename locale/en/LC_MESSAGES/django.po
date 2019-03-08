@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-08 02:16+0200\n"
+"POT-Creation-Date: 2019-03-08 21:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,27 +55,27 @@ msgstr ""
 msgid "test_message"
 msgstr "This is a test message"
 
-#: project/home/templates/home/index.html:41
+#: project/home/templates/home/index.html:47
 msgid "enigma_is"
 msgstr "Enigma is "
 
-#: project/home/templates/home/index.html:44
+#: project/home/templates/home/index.html:50
 msgid "enigma_opt_1"
 msgstr "mysterious"
 
-#: project/home/templates/home/index.html:45
+#: project/home/templates/home/index.html:51
 msgid "enigma_opt_2"
 msgstr "uncertain"
 
-#: project/home/templates/home/index.html:46
+#: project/home/templates/home/index.html:52
 msgid "enigma_opt_3"
 msgstr "inexplicable"
 
-#: project/home/templates/home/index.html:47
+#: project/home/templates/home/index.html:53
 msgid "enigma_opt_4"
 msgstr "fascinating"
 
-#: project/home/templates/home/index.html:52
+#: project/home/templates/home/index.html:58
 msgid "enigma.home.text"
 msgstr ""
 "Enigma: that which is difficult to interpret, that which remains a mystery, "
@@ -95,9 +95,25 @@ msgstr ""
 "of humanity. <br> <br> An attempt of self-awareness. <br> <br>  We can climb "
 "the mount of knowledge, one enigma at a time."
 
-#: project/home/templates/home/index.html:64
-msgid "venue"
+#: project/home/templates/home/index.html:68
+#: project/program/templates/program/speakers.html:11
+#: project/templates/layouts/partials/nav.html:51
+msgid "speakers"
+msgstr "Speakers"
+
+#: project/home/templates/home/index.html:88
+msgid "auspices"
+msgstr ""
+
+#: project/home/templates/home/index.html:94
+#, fuzzy
+#| msgid "venue"
+msgid "map.venue"
 msgstr "Map & Venue"
+
+#: project/home/templates/home/index.html:96
+msgid "map.desc"
+msgstr ""
 
 #: project/partners/models.py:50
 msgid "Grand Sponsors"
@@ -156,6 +172,12 @@ msgstr ""
 msgid "schedule_time"
 msgstr "Time"
 
+#: project/program/templates/program/speakers.html:31
+#, fuzzy
+#| msgid "speakers"
+msgid "speakers.bio"
+msgstr "Speakers"
+
 #: project/settings/base.py:168
 msgid "Greek"
 msgstr ""
@@ -167,10 +189,6 @@ msgstr ""
 #: project/templates/layouts/partials/nav.html:48
 msgid "home"
 msgstr "Home"
-
-#: project/templates/layouts/partials/nav.html:51
-msgid "speakers"
-msgstr "Speakers"
 
 #: project/templates/layouts/partials/nav.html:57
 msgid "partners"
