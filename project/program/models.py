@@ -26,10 +26,10 @@ from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 from parler.models import TranslatableModel, TranslatedFields
 from parler.managers import TranslatableQuerySet, TranslatableManager
 
+
 logger = logging.getLogger(__name__)
 
 # Stage non-database model
-
 
 class Stage(Enum):
     '''Enum class that represents the event stages'''
@@ -209,8 +209,8 @@ class Activity(TranslatableModel):
             if (self.id != other.id
                 and Stage.from_activity(self) == Stage.from_activity(other)):
                 # If it's not the same activity and they're happening at the same stage
-                raise ValidationError('There exists another activity that \
-                                       starts at the same time and stage')
+                raise ValidationError('There exists another activity that ' \
+                                      'starts at the same time and stage')
 
     class Meta:
         verbose_name_plural = 'Activities'
@@ -240,6 +240,20 @@ def warm_activity_images(sender, instance, **kwargs):
         logger.info('No image file added for this activity')
 
 
+class PresenterManager(TranslatableManager):
+    '''Class-level functionality'''
+    def get_speakers(self):
+        '''Returns a list of all speakers with their talk info.
+
+        Unlike the rest of the models file, here we make the assumption
+        that each speaker is presenting only a single talk.
+        '''
+        speakers = self.get_queryset().filter(activity__activity_type=Activity.TALK)
+        for speaker in speakers:
+            speaker.talk = speaker.activity_set.first()
+        return speakers
+
+
 # Presenter model & managers
 
 class PresenterTypeManager(TranslatableManager):
@@ -251,8 +265,8 @@ class PresenterTypeManager(TranslatableManager):
         super().__init__()
         self.type_ = type_
 
-    # def get_queryset(self):
-    #     return super().get_queryset().filter(activity__activity_type=self.type_)
+    def get_queryset(self):
+        return super().get_queryset().filter(activity__activity_type=self.type_)
 
 
 class Presenter(TranslatableModel):
@@ -285,13 +299,10 @@ class Presenter(TranslatableModel):
 
     # Managers are an easy way to create custom filters for queries.
     #
-    # If a models.Manager() is declared in a model, then the `objects` default manager
-    # is discarded. We added it explicitly in case it comes in handy.
-    #
     # Documentation link:
     # https://docs.djangoproject.com/el/2.1/topics/db/managers/
 
-    objects = TranslatableManager()
+    objects = PresenterManager()
     speakers = PresenterTypeManager(Activity.TALK)
     performers = PresenterTypeManager(Activity.PERFORMANCE)
     workshop_presenters = PresenterTypeManager(Activity.WORKSHOP)
