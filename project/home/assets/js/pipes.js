@@ -1,41 +1,45 @@
   //These change the output result
-  const seconds = 10;  //Total duration of the animation
+  const seconds = 8;  //Total duration of the animation
   const transition = "linear"; // Tranisiton animation of each path (not total)
-  const max_lines = 50;
-  const widthPercentage = 0.2 // Width percentage on screen
-  const heightPercentage = 0.8 // Height percentage on screen
+  const max_lines = 1000;
   const colors = [{'b': '#c1e3d2', 'f': '#323232'}];
   //const scale = 1/1.2 // The bigger the denominator, the bigger the svg
-  const actual_margin_left = 0.07; // Affects first item of viebox
-  // endz
-  startTime = -100;
-  var columns = document.querySelectorAll(".col-lg-6");
-  median = 0;
-  minimum = columns[0].clientHeight;
-  maximum = columns[0].clientHeight;
-  for(i=0; i<columns.length; i++){
-    median += columns[i].clientHeight;
-    if(columns[i].clientHeight < minimum){
-      minimum = columns[i];
-    }
-    if(columns[i].clientHeight > maximum){
-      maximum = columns[i].clientHeight;
-    }
-  }
-  median = median/columns.length;
-  var randColor = colors[Math.floor(Math.random() * colors.length)];
+  const perScreen = 2; // pipe svgs per screen
+  var num = 7; // number of svgs to render
+
+  var Color = colors[0];
   var background_color = window.getComputedStyle(document.body)["background-color"];
   var _ = require('underscore');
   var svgs = document.querySelectorAll('svg');
+  var enigma_height = document.querySelector('.enigma-animation-container').clientHeight
+  var footer_height = document.querySelector('#footer').clientHeight
+  var whole_doc = $(document).height();
+  var screen_height = $(window).height();
+  pipestotal = whole_doc - enigma_height - footer_height;
+  num = Math.floor((pipestotal/screen_height)*perScreen) //compute num (comment out if num is set by hand)
+  var some_big_date = new Date(2025, 0, 1);
+  var timescalled = [];
+  var startTime = [];
+  for(y=0; y<2*num; y++){
+    timescalled.push(0);
+  }
+  for(y=0; y<2*num; y++){
+    startTime.push(some_big_date);
+  }
+
   for(i=0; i<svgs.length; i++){
     var svg = svgs[i];
-    var h = maximum;
     var w = svg.parentElement.clientWidth;
+    var h = screen_height/perScreen;
     svg.setAttribute('width', w);
     svg.setAttribute('height', h);
     //svg.setAttribute('preserveAspectRatio', 'none');
     svg.style.marginLeft = 0;
   }
+  var footer_left = svgs[0].parentElement.clientWidth;
+  var ourfooter = document.querySelector('#footer');
+  ourfooter.style["margin-left"] = footer_left + "px";
+
 function animate_paths() {
           var paths = document.querySelectorAll('path');
           var TotalLengths = new Array(max_lines).fill(0); // TotalLength of line
@@ -56,10 +60,10 @@ function animate_paths() {
               paths[i].style.strokeDashoffset = len;
               paths[i].style.strokeDasharray = len + ',' + len;
               if(paths[i].style['stroke'] === 'rgb(193, 227, 210)'){
-                paths[i].style['stroke'] = randColor.b;
+                paths[i].style['stroke'] = Color.b;
               }
               else{
-                paths[i].style['stroke'] = randColor.f;
+                paths[i].style['stroke'] = Color.f;
               }
               if(paths[i].parentElement.parentElement.id === 'svgpipes1'){
                 TotalLengths[li] += len;
@@ -83,6 +87,7 @@ function animate_paths() {
               ttw += time_to_excecute;
             }
           }
+          svgs = document.querySelectorAll('svg');
           $(window).on('resize scroll', function() {
             for(i=1; i<=svgs.length; i++){
               if(isInViewport(document.querySelector('#svgpipes' + i))){
@@ -103,94 +108,65 @@ function animate_paths() {
     function chooseAnimation(i, TotalLengths){
 
       if(i==1){
-        animate1(TotalLengths);
-
+        animate(TotalLengths, i);
       }
-      else if(i==2){
-        var endTime = new Date()
-        if(((endTime - startTime)/1000 > seconds)){
-          animate2(TotalLengths);
-        }
-      }
-      else if(i==3){
-        console.log('ee')
-        var endTime1 = new Date()
-        if(((endTime1 - startTime)/1000 > 2*seconds)){
-          animate3(TotalLengths);
+      else if(i>1){
+        if(((new Date() - startTime[i-1])/1000 > seconds)){
+          animate(TotalLengths, i);
         }
       }
     }
-    function animate1(TotalLengths) {
-      animate1 = function(){};
-      startTime = new Date()
-      var mysvg = document.querySelector('#svgpipes1');
-      var paths = mysvg.querySelectorAll('path');
-      for (i = 0; i < paths.length; ++i) {
-          var length = paths[i].getTotalLength();
-          // Set up the starting positions
-          paths[i].style.strokeDasharray = length + ' ' + length;
-          paths[i].style.strokeDashoffset = length;
-          // Trigger a layout so styles are calculated & the browser
-          // picks up the starting position before animating
-          paths[i].getBoundingClientRect();
-          // Define our transition
-          var li = paths[i].getAttribute('l');
-          var total = TotalLengths[li]; // Get TotalLength of current paths, line
-          time_to_excecute = (length/total)*seconds; // paths animation duration
-          paths[i].style['transition-property'] = 'stroke-dashoffset';
-          paths[i].style['transition-duration'] = time_to_excecute + "s";
-          paths[i].style['transition-timing-function'] = transition;
-          // Go!
-          paths[i].style.strokeDashoffset = '0';
+    function animate(TotalLengths, i) {
+      timescalled[i]++;
+      if(timescalled[i] == 1){
+        if(startTime[i].getTime() === some_big_date.getTime()){
+          startTime[i] = new Date();
+        }
+        var mysvg = document.querySelector('#svgpipes' + i);
+        var paths = mysvg.querySelectorAll('path');
+        for (i = 0; i < paths.length; ++i) {
+            var length = paths[i].getTotalLength();
+            // Set up the starting positions
+            paths[i].style.strokeDasharray = length + ' ' + length;
+            paths[i].style.strokeDashoffset = length;
+            // Trigger a layout so styles are calculated & the browser
+            // picks up the starting position before animating
+            paths[i].getBoundingClientRect();
+            // Define our transition
+            var li = paths[i].getAttribute('l');
+            var total = TotalLengths[li]; // Get TotalLength of current paths, line
+            time_to_excecute = (length/total)*seconds; // paths animation duration
+            paths[i].style['transition-property'] = 'stroke-dashoffset';
+            paths[i].style['transition-duration'] = time_to_excecute + "s";
+            paths[i].style['transition-timing-function'] = transition;
+            // Go!
+            paths[i].style.strokeDashoffset = '0';
+        }
       }
-      return 0;
     }
 
-    function animate2(TotalLengths) {
-      animate2 = function(){};
-      var mysvg = document.querySelector('#svgpipes2');
-      var paths = mysvg.querySelectorAll('path');
-      for (i = 0; i < paths.length; ++i) {
-          var length = paths[i].getTotalLength();
-          // Set up the starting positions
-          paths[i].style.strokeDasharray = length + ' ' + length;
-          paths[i].style.strokeDashoffset = length;
-          // Trigger a layout so styles are calculated & the browser
-          // picks up the starting position before animating
-          paths[i].getBoundingClientRect();
-          // Define our transition
-          var li = paths[i].getAttribute('l');
-          var total = TotalLengths[li]; // Get TotalLength of current paths, line
-          time_to_excecute = (length/total)*seconds; // paths animation duration
-          paths[i].style['transition-property'] = 'stroke-dashoffset';
-          paths[i].style['transition-duration'] = time_to_excecute + "s";
-          paths[i].style['transition-timing-function'] = transition;
-          // Go!
-          paths[i].style.strokeDashoffset = '0';
+    function make_svgs(number, callback){
+      for(w=2; w<=number; w++){
+        var current = w;
+        var currentString = "";
+        for(j=0; j<current; j++){
+          currentString += "--0";
         }
-    }
-    function animate3(TotalLengths) {
-      animate3 = function(){};
-      var mysvg = document.querySelector('#svgpipes3');
-      var paths = mysvg.querySelectorAll('path');
-      for (i = 0; i < paths.length; ++i) {
-          var length = paths[i].getTotalLength();
-          // Set up the starting positions
-          paths[i].style.strokeDasharray = length + ' ' + length;
-          paths[i].style.strokeDashoffset = length;
-          // Trigger a layout so styles are calculated & the browser
-          // picks up the starting position before animating
-          paths[i].getBoundingClientRect();
-          // Define our transition
-          var li = paths[i].getAttribute('l');
-          var total = TotalLengths[li]; // Get TotalLength of current paths, line
-          time_to_excecute = (length/total)*seconds; // paths animation duration
-          paths[i].style['transition-property'] = 'stroke-dashoffset';
-          paths[i].style['transition-duration'] = time_to_excecute + "s";
-          paths[i].style['transition-timing-function'] = transition;
-          // Go!
-          paths[i].style.strokeDashoffset = '0';
+        var oldsvg = document.querySelector('#svgpipes1');
+        var newsvg = oldsvg.cloneNode(true);
+        var parent = document.querySelector('#svgpipes1').parentElement;
+        newsvg.setAttribute('id', 'svgpipes' + current);
+        var newpaths = newsvg.querySelectorAll('path');
+        for (i = 0; i < newpaths.length; ++i) {
+          newpaths[i].setAttribute('id', newpaths[i].getAttribute('id') + currentString);
         }
+        parent.appendChild(newsvg);
+      }
+      if(w==number+1){
+        callback()
+      }
     }
 
-animate_paths();
+make_svgs(num, function(){
+  animate_paths();
+});

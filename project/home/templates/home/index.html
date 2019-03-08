@@ -14,7 +14,7 @@
             <div class="container side-container blink">
                 <a href="about#about-tedx" class="textTed"></a>
               </div>
-            </div>
+          </div>
           <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="enigma-animation-container">
                 <canvas id="enigma-animation" width="800" height="540"></canvas>
@@ -28,14 +28,18 @@
             </div>
 
           </div>
-      </div>
-    </section>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-3 col-md-3">
         </div>
-        <div class="col-lg-6 col-md-6 col-12">
+    </section>
+<div class="container-fluid">
+  <div class="col d-none d-md-block col-md-2">
+    <div id="leftStripe">
+      {% include "partials/pipes.html" %}
+    </div>
+  </div>
+      <div class="row">
+        <div class="col d-none d-md-block col-md-2">
+        </div>
+        <div class="col col-12 col-md-8">
           <section id="enigma-section" class="content">
             <div class="enigma">
               <div class="enigma__container">
@@ -56,8 +60,6 @@
             </section>
         </div>
       </div>
-    </div>
-    <div class="container-fluid">
       <div class="row">
         <div class="col d-none d-md-block col-md-2">
         </div>
@@ -114,7 +116,6 @@
 				   </section>
           </div>
         </div>
-      </div>
     </div>
 </article>
 
@@ -126,6 +127,6 @@
 {% endblock %}
 {% block scripts %}
 {% render_bundle "home" "js" %}
-<!-- {% render_bundle "pipes" "js" %} -->
+{% render_bundle "pipes" "js" %}
 {% render_bundle "scramble" "js" %}
 {% endblock %}

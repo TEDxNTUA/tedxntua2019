@@ -79,4 +79,3 @@ var fx1 = new TextScramble(enigma)
 let time = 0
 setTimeout(function(){fx1.setText(phrases[1])}, time);
 setTimeout(function(){fx0.setText(phrases[0])}, time);
-next()
