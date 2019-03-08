@@ -5,4 +5,4 @@ from .models import Presenter, Activity
 from parler.admin import TranslatableAdmin
 
 admin.site.register(Presenter, TranslatableAdmin)
-admin.site.register(Activity)
+admin.site.register(Activity, TranslatableAdmin)

@@ -33,6 +33,17 @@
                             {{event.title}}
                         </h5>
                         <h6>
+                            {% for presenter in event.presenters.all %}
+                            {% comment %}
+                                just an example on how to differentiate between
+                                talks, performances etc. edit as you wish
+                            {% endcomment %}
+                                {% if event.activity_type == "T" %}
+                                    <a href="/speakers/{{presenter.id}}">{{presenter.fullname}}</a>
+                                {% else %}
+                                    {{presenter.fullname}}
+                                {% endif %}
+                            {% endfor %}
                             {{event.subtitle}} ({{event.time_span}})
                         </h6>
                     </div>
