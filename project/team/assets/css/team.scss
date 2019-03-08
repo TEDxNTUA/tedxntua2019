@@ -1,24 +1,22 @@
 .body{
-  --translate-x: 30px;
+  --translate-x: 300px;
   --translate-y: -20px;
 }
 .card{
+   width: 80%;
    margin: 0 auto;
+   height: 200px;
    position: relative;
    overflow: hidden;
    background-color: lighten($primary, 20);
-   color: $tertiary;
-}
-
-.card-title, .card-text {
-  color: $tertiary;
+   margin-bottom: 2rem;
 }
 
 .card-img-top{
 
    &:hover{
       .hover{
-         @include opacity(0.5);
+         @include opacity(0.7);
       }
       .hover-img{
          @include transform(translate(var(--translate-x), var(--translate-y)));
@@ -60,5 +58,11 @@
    @include background-size(cover);
    background-position: top center;
    background-repeat: no-repeat;
-   background-image: url('/media/presenters/erlend_kastler_NXPtD65.png');
+}
+
+
+.cover-img2{
+   @include background-size(cover);
+   background-position: top center;
+   background-repeat: no-repeat;
 }
