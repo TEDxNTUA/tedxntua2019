@@ -108,6 +108,11 @@ article.home {
 			}
 		}
 	}
+  #leftStripe, #rightStripe {
+  width: 80%;
+  height: 100%;
+  position: absolute;
+}
 
     .enigma-animation-container {
         margin-top: 4rem;
