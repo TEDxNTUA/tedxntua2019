@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-08 23:24+0200\n"
+"POT-Creation-Date: 2019-03-09 14:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,67 +61,108 @@ msgstr ""
 "ενός δικτύου επαφών και συνεργασίας του χώρου του ΕΜΠ με αυτών της "
 "βιομηχανίας και της νεανικής επιχειρηματικότητας."
 
+#: project/about/templates/about/index.html:25
+#, fuzzy
+#| msgid "about.tedx.content"
+msgid "about.tedxntua.content"
+msgstr ""
+"Η δράση των φοιτητών και της λοιπής ακαδημαϊκής κοινότητας του Πολυτεχνείου "
+"αποκαλύπτει τη διάθεση για έρευνα και δημιουργικότητα που υπάρχει στο χώρο. "
+"Πρόκειται για ένα δυναμικό σκέψης ικανό να παράγει καινοτόμες ιδέες, με "
+"άξονες την εξέλιξη και την πρωτοπορία.Ωστόσο, η διασπορά των αποφοίτων σε "
+"θύλακες απασχόλησης σε όλο τον κόσμο, ο κατακερματισμός των εργασιακών "
+"αντικειμένων, η εξατομίκευση, η αναζήτηση ατομικών διεξόδων, αλλά κυρίως η "
+"γενικότερη κρίση οικονομίας και θεσμών, το τελευταίο διάστημα, έχουν "
+"αποδυναμώσει τη συλλογικότητά του.Το TEDxNTUA αποτελεί μία οργανωμένη "
+"προσπάθεια για τη δημιουργία και την εδραίωση μιας δυναμικής πλατφόρμας "
+"ανταλλαγής ιδεών σε ζητήματα που αφορούν την επιχειρηματικότητα και την "
+"τεχνολογία. Ταυτόχρονα, μετατρέπει την κοινότητα του ΕΜΠ σε ένα ζωντανό, "
+"εξωστρεφή οργανισμό, θέτοντας στο κέντρο του προβληματισμού του την "
+"εργασιακή και επιστημονική ιδιότητα των μελών του, προωθώντας τη σύσταση "
+"ενός δικτύου επαφών και συνεργασίας του χώρου του ΕΜΠ με αυτών της "
+"βιομηχανίας και της νεανικής επιχειρηματικότητας."
+
 #: project/contact/views.py:7
 msgid "test_message"
 msgstr "Αυτο είναι ένα μήνυμα για testing"
 
-#: project/home/templates/home/index.html:47
+#: project/home/templates/home/index.html:25
+msgid "venue_name1"
+msgstr "Κέντρο Πολιτισμού Ελληνικός Κόσμος"
+
+#: project/home/templates/home/index.html:26
+msgid "venue_name2"
+msgstr "Πειραιώς 254"
+
+#: project/home/templates/home/index.html:27
+msgid "venue_name3"
+msgstr "Ταύρος"
+
+#: project/home/templates/home/index.html:55
 msgid "enigma_is"
 msgstr "Aίνιγμα είναι κάτι "
 
-#: project/home/templates/home/index.html:50
+#: project/home/templates/home/index.html:58
 msgid "enigma_opt_1"
 msgstr " μυστήριο"
 
-#: project/home/templates/home/index.html:51
+#: project/home/templates/home/index.html:59
 msgid "enigma_opt_2"
 msgstr " αβέβαιο"
 
-#: project/home/templates/home/index.html:52
+#: project/home/templates/home/index.html:60
 msgid "enigma_opt_3"
 msgstr " παράδοξο"
 
-#: project/home/templates/home/index.html:53
+#: project/home/templates/home/index.html:61
 msgid "enigma_opt_4"
 msgstr " συναρπαστικό"
 
-#: project/home/templates/home/index.html:58
+#: project/home/templates/home/index.html:66
 msgid "enigma.home.text"
 msgstr ""
-"Αίνιγμα: καθετί που είναι δύσκολο να ερμηνευτεί ή παραμένει μυστήριο, κάτι "
-"αβέβαιο ή ανεξήγητο, ένα αναπάντητο ερώτημα. <br> <br> Το <i>διφορούμενο</"
-"i>, το <i>παράδοξο</i>, το <i>ανεξιχνίαστο</i>. <br> <br> Υπάρχει παντού "
-"γύρω μας. Είτε πρόκειται για το μεγαλύτερο υπαρξιακό ερώτημα είτε για την "
-"πιο μικρή καθημερινή απορία, το αίνιγμα είναι η πηγή όλης της γνώσης. Ένα "
-"κατασκεύασμα του ανθρώπου, ένα πρόβλημα που θέτει ο ίδιος στον εαυτό του. Η "
-"έμφυτη ανάγκη για απαντήσεις, που χτίζει ολόκληρα οικοδομήματα: φυσική, "
-"βιολογία, πληροφορική, χημεία, αστρονομία, τέχνη, φιλοσοφία, ιστορία, "
-"ψυχολογία, κοινωνιολογία, θρησκεία, πολιτική. Κάθε απάντηση γεννά ένα νέο "
-"ερώτημα και ανοίγει το δρόμο προς τηναναζήτηση μιας εξήγησης πιο σύγχρονης, "
-"πιο ικανοποιητικής, πιο ολοκληρωμένης. <br> <br> Το αίνιγμα ψάχνει τη λύση "
-"σε όσα απασχολούν τη συνείδηση, και αίνιγμα είναι ό,τι απασχολεί τη "
-"συνείδηση. Είναι ο τρόπος να αντικρίζεις τον κόσμο χωρίς να κάνεις λάθος. "
-"Μια αισιόδοξη ματιά στην αβέβαιη πραγματικότητα. <br> <br> Η απόλαυση να "
-"θαυμάζεις την πρόοδο της ανθρωπότητας. Μια απόπειρα αυτογνωσίας. <br> <br> "
-"Γιατί η γνώση δομείται με ένα αίνιγμα τη φορά."
+"<span class='primary_text'>Αίνιγμα</span>: καθετί που είναι δύσκολο να "
+"ερμηνευτεί ή παραμένει μυστήριο, κάτι αβέβαιο ή ανεξήγητο, ένα αναπάντητο "
+"ερώτημα. <br> <br> Το <i>διφορούμενο</i>, το <i>π<span "
+"class='primary_text'>α</span>ράδοξο</i>, το <i>ανεξιχνίαστο</i>. <br> <br> "
+"Υπάρχει παντού γύρω μας. Ε<span class='primary_text'>ί</span>τε πρόκειται "
+"για το μεγαλύτερο υπαρξιακό ερώτημα είτε για την πιο μικρή καθημερινή "
+"απορία, το αίνιγμα είναι η πηγή όλης της γνώσης. Ένα κατασκεύασμα του "
+"ανθρώπου, ένα πρόβλημα που θέτει ο ίδιος στον εαυτό του. Η έμφυτη ανάγκη για "
+"απα<span class='primary_text'>ν</span>τήσεις, που χτίζει ολόκληρα "
+"οικοδομήματα: φυσική, βιολογία, πληροφορική, χημεία, αστρονομία, τέχνη, "
+"φιλοσοφία, ιστορία, ψυχολογία, κοινων<span class='primary_text'>ι</"
+"span>ολογία, θρησκεία, πολιτική. Κάθε απάντηση γεννά ένα νέο ερώτημα και "
+"ανοίγει το δρόμο προς τηναναζήτηση μιας εξήγησης πιο σύγχρονης, πιο "
+"ικανοποιητικής, πιο ολοκληρωμένης. <br> <br> Το αίνιγμα ψάχνει τη λύση σε "
+"όσα απασχολούν τη συνείδηση, και αίνιγμα είναι ό,τι απασχολεί τη συνείδηση. "
+"Είναι ο τρόπος να αντικρίζεις τον κόσμο χωρίς να κάνεις λάθος. Μια αισιόδοξη "
+"ματιά στην αβέβαιη πρα<span class='primary_text'>γ</span>ματικότητα. <br> "
+"<br> Η απόλαυση να θαυ<span class='primary_text'>μ</span>άζεις την πρόοδο "
+"της ανθρωπότητας. Μια απόπειρα αυτογνωσίας. <br> <br> Γι<span "
+"class='primary_text'>α</span>τί η γνώση δομείται με ένα αίνιγμα τη φορά."
 
-#: project/home/templates/home/index.html:68
+#: project/home/templates/home/index.html:76
 #: project/program/templates/program/speakers.html:11
 #: project/templates/layouts/partials/nav.html:51
 msgid "speakers"
 msgstr "Ομιλητές"
 
-#: project/home/templates/home/index.html:88
-msgid "auspices"
-msgstr "Υπό την αίγίδα του ΕΜΠ"
+#: project/home/templates/home/index.html:97
+msgid "to-be"
+msgstr "Θα ανακοινωθούν σύντομα!"
 
-#: project/home/templates/home/index.html:94
+#: project/home/templates/home/index.html:107
 msgid "map.venue"
 msgstr "Χάρτης & Χώρος"
 
-#: project/home/templates/home/index.html:96
+#: project/home/templates/home/index.html:109
 msgid "map.desc"
 msgstr ""
+
+#: project/home/templates/home/index.html:131
+msgid "auspices"
+msgstr "Υπό την αίγίδα του ΕΜΠ"
 
 #: project/partners/models.py:50
 msgid "Grand Sponsors"
@@ -178,7 +219,7 @@ msgstr ""
 msgid "schedule_time"
 msgstr "Ώρα"
 
-#: project/program/templates/program/speakers.html:31
+#: project/program/templates/program/speakers.html:32
 #, fuzzy
 #| msgid "speakers"
 msgid "speakers.bio"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-08 23:24+0200\n"
+"POT-Creation-Date: 2019-03-09 14:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,67 +51,101 @@ msgstr ""
 "provides general guidance for the TEDx program, but individual TEDx event "
 "are self-organized. (Subject to certain rules and regulations.)"
 
+#: project/about/templates/about/index.html:25
+#, fuzzy
+#| msgid "about.tedx.content"
+msgid "about.tedxntua.content"
+msgstr ""
+"In the spirit of ideas worth spreading, TEDx is a program of local, self-"
+"organized events that bring people together to share a TED-like experience. "
+"At a TEDx event, TED Talks video and live speakers combine to spark deep "
+"discussion and connection. These local, self-organized events are branded "
+"TEDx, where x = independently organized TED event. The TED Conference "
+"provides general guidance for the TEDx program, but individual TEDx event "
+"are self-organized. (Subject to certain rules and regulations.)"
+
 #: project/contact/views.py:7
 msgid "test_message"
 msgstr "This is a test message"
 
-#: project/home/templates/home/index.html:47
+#: project/home/templates/home/index.html:25
+msgid "venue_name1"
+msgstr "Hellenic Cosmos Cultural Centre"
+
+#: project/home/templates/home/index.html:26
+msgid "venue_name2"
+msgstr "Peiraios 274"
+
+#: project/home/templates/home/index.html:27
+msgid "venue_name3"
+msgstr "Tavros"
+
+#: project/home/templates/home/index.html:55
 msgid "enigma_is"
 msgstr "Enigma is "
 
-#: project/home/templates/home/index.html:50
+#: project/home/templates/home/index.html:58
 msgid "enigma_opt_1"
 msgstr "mysterious"
 
-#: project/home/templates/home/index.html:51
+#: project/home/templates/home/index.html:59
 msgid "enigma_opt_2"
 msgstr "uncertain"
 
-#: project/home/templates/home/index.html:52
+#: project/home/templates/home/index.html:60
 msgid "enigma_opt_3"
 msgstr "inexplicable"
 
-#: project/home/templates/home/index.html:53
+#: project/home/templates/home/index.html:61
 msgid "enigma_opt_4"
 msgstr "fascinating"
 
-#: project/home/templates/home/index.html:58
+#: project/home/templates/home/index.html:66
 msgid "enigma.home.text"
 msgstr ""
-"Enigma: that which is difficult to interpret, that which remains a mystery, "
-"something uncertain or inexplicable, a riddle not yet solved. <br> <br> The "
-"<i>uncertain</i>, the <i>paradox</i>, the <i>unsolved</i>. <br> <br> It’s "
-"everywhere. From the grandest existential question, to the tiniest everyday "
-"query, enigma is the source of knowledge. <br> <br>A man-made invention, a "
-"problem man places upon himself. An innate need for answers, which builds "
-"superstructures: physics, biology, computer science, chemistry, astronomy, "
-"arts, philosophy, history, psychology, sociology, religion, politics. <br> "
-"<br> Every answer creates a new question, and leads the way to a new "
-"explanation, more updated, more satisfactory, more complete. The enigma is "
-"in search of a solution to what troubles the human mind, and the enigma is "
-"everything that troubles the human mind, at the same time. It’s the way of "
-"facing the world without the possibility of being wrong. It’s a positive "
-"perspective of an uncertain reality. The admiration of the enormous progress "
-"of humanity. <br> <br> An attempt of self-awareness. <br> <br>  We can climb "
-"the mount of knowledge, one enigma at a time."
+"<span class='primary_text'>Enigma</span>: that which is difficult to "
+"interpret, that which remains a mystery, something uncertain or "
+"inexplicable, a riddle not yet solved. <br> <br> The <i>unc<span "
+"class='primary_text'>e</span>rtain</i>, the <i>paradox</i>, the <i>unsolved</"
+"i>. <br> <br> It’s everywhere. From the grandest existe<span "
+"class='primary_text'>n</span>tial question, to the tiniest everyday query, "
+"enigma is the source of knowledge. <br> <br>A man-made invention, a problem "
+"man places upon himself. An innate need for answers, which builds "
+"superstructures: physics, biology, computer science, chem<span "
+"class='primary_text'>i</span>stry, astronomy, arts, philosophy, history, "
+"psychology, sociology, religion, politics. <br> <br> Every answer creates a "
+"new question, and leads the way to a new explanation, more updated, more "
+"satisfactory, more complete. The enigma is in search of a solution to what "
+"troubles the human mind, and the enigma is everything that troubles the "
+"human mind, at the same time. It’s the way of facin<span "
+"class='primary_text'>g</span> the world without the possibility of being "
+"wrong. It’s a positive perspective of an uncertain reality. The admiration "
+"of the enormous progress of humanity. <br> <br> An atte<span "
+"class='primary_text'>m</span>pt of self-awareness. <br> <br>  We can climb "
+"the mount of knowledge, one enigma at <span class='primary_text'>a</span> "
+"time."
 
-#: project/home/templates/home/index.html:68
+#: project/home/templates/home/index.html:76
 #: project/program/templates/program/speakers.html:11
 #: project/templates/layouts/partials/nav.html:51
 msgid "speakers"
 msgstr "Speakers"
 
-#: project/home/templates/home/index.html:88
-msgid "auspices"
-msgstr "Under the auspices of NTUA"
+#: project/home/templates/home/index.html:97
+msgid "to-be"
+msgstr "To be announced"
 
-#: project/home/templates/home/index.html:94
+#: project/home/templates/home/index.html:107
 msgid "map.venue"
 msgstr "Map & Venue"
 
-#: project/home/templates/home/index.html:96
+#: project/home/templates/home/index.html:109
 msgid "map.desc"
 msgstr ""
+
+#: project/home/templates/home/index.html:131
+msgid "auspices"
+msgstr "Under the auspices of NTUA"
 
 #: project/partners/models.py:50
 msgid "Grand Sponsors"
@@ -170,7 +204,7 @@ msgstr ""
 msgid "schedule_time"
 msgstr "Time"
 
-#: project/program/templates/program/speakers.html:31
+#: project/program/templates/program/speakers.html:32
 #, fuzzy
 #| msgid "speakers"
 msgid "speakers.bio"
