@@ -6824,6 +6824,9 @@ article.home #map {
     text-align: center; }
   article.home #map p {
     text-align: justify; }
+  article.home #map li {
+    display: list-item;
+    text-align: left; }
   article.home #map .map {
     width: 100%;
     /* fallback for browsers that don't support vw */
@@ -7103,13 +7106,22 @@ article.home .enigma-animation-container {
   color: #F19386; }
 
 /* ABOUT PAGE */
-article.about #about-ted, article.about #about-tedx, article.about #about-tedxntua {
+article.about #about-ted, article.about #about-tedx, article.about #about-tedxntua, article.about #about-img {
   margin: 0 auto;
   max-width: 768px; }
-  article.about #about-ted .page-heading, article.about #about-tedx .page-heading, article.about #about-tedxntua .page-heading {
+  article.about #about-ted .page-heading, article.about #about-tedx .page-heading, article.about #about-tedxntua .page-heading, article.about #about-img .page-heading {
     color: #F19386; }
-  article.about #about-ted p, article.about #about-tedx p, article.about #about-tedxntua p {
+  article.about #about-ted p, article.about #about-tedx p, article.about #about-tedxntua p, article.about #about-img p {
     text-align: justify; }
+
+article.about .grid-image {
+  margin: 0 auto;
+  max-width: 100%; }
+
+article.about .vertical-align {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 /*
  * MEDIA QUERIES
