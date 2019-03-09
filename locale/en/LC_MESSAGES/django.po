@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-09 19:18+0200\n"
+"POT-Creation-Date: 2019-03-09 22:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: project/about/templates/about/index.html:11
+#: project/about/templates/about/index.html:14
 msgid "about.ted.content"
 msgstr ""
 "TED is a nonprofit organization devoted to Ideas Worth Spreading. Started as "
@@ -40,7 +40,7 @@ msgstr ""
 "innovators from around the globe to amplify the impact of their remarkable "
 "projects and activities."
 
-#: project/about/templates/about/index.html:18
+#: project/about/templates/about/index.html:22
 msgid "about.tedx.content"
 msgstr ""
 "In the spirit of ideas worth spreading, TEDx is a program of local, self-"
@@ -51,7 +51,7 @@ msgstr ""
 "provides general guidance for the TEDx program, but individual TEDx event "
 "are self-organized. (Subject to certain rules and regulations.)"
 
-#: project/about/templates/about/index.html:25
+#: project/about/templates/about/index.html:37
 msgid "about.tedxntua.content"
 msgstr ""
 "The various activities of the students and the academic community in general "
@@ -75,43 +75,43 @@ msgstr ""
 msgid "test_message"
 msgstr "This is a test message"
 
-#: project/home/templates/home/index.html:27
+#: project/home/templates/home/index.html:28
 msgid "venue_name1"
 msgstr "Hellenic Cosmos Cultural Centre"
 
-#: project/home/templates/home/index.html:28
+#: project/home/templates/home/index.html:29
 msgid "venue_name2"
 msgstr "Peiraios 274"
 
-#: project/home/templates/home/index.html:29
+#: project/home/templates/home/index.html:30
 msgid "venue_name3"
 msgstr "Tavros"
 
-#: project/home/templates/home/index.html:56
+#: project/home/templates/home/index.html:58
 msgid "enigma_alt"
 msgstr "TEDxNTUA Enigma "
 
-#: project/home/templates/home/index.html:60
+#: project/home/templates/home/index.html:62
 msgid "enigma_is"
 msgstr "Enigma is "
 
-#: project/home/templates/home/index.html:63
+#: project/home/templates/home/index.html:65
 msgid "enigma_opt_1"
 msgstr "mysterious"
 
-#: project/home/templates/home/index.html:64
+#: project/home/templates/home/index.html:66
 msgid "enigma_opt_2"
 msgstr "uncertain"
 
-#: project/home/templates/home/index.html:65
+#: project/home/templates/home/index.html:67
 msgid "enigma_opt_3"
 msgstr "inexplicable"
 
-#: project/home/templates/home/index.html:66
+#: project/home/templates/home/index.html:68
 msgid "enigma_opt_4"
 msgstr "fascinating"
 
-#: project/home/templates/home/index.html:71
+#: project/home/templates/home/index.html:73
 msgid "enigma.home.text"
 msgstr ""
 "<span class='primary_text'>Enigma</span>: that which is difficult to "
@@ -136,30 +136,37 @@ msgstr ""
 "the mount of knowledge, one enigma at <span class='primary_text'>a</span> "
 "time."
 
-#: project/home/templates/home/index.html:81
+#: project/home/templates/home/index.html:83
 #: project/program/templates/program/speakers.html:11
 #: project/templates/layouts/partials/nav.html:51
 msgid "speakers"
 msgstr "Speakers"
 
-#: project/home/templates/home/index.html:102
+#: project/home/templates/home/index.html:104
 #: project/program/templates/program/schedule.html:13
 #: project/program/templates/program/speakers.html:40
 msgid "to-be"
 msgstr "To be announced"
 
-#: project/home/templates/home/index.html:112
+#: project/home/templates/home/index.html:114
 msgid "map.venue"
 msgstr "Map & Venue"
 
-#: project/home/templates/home/index.html:114
+#: project/home/templates/home/index.html:116
 msgid "map.desc"
 msgstr ""
 "TEDxNTUA event will take place in Hellenic Cosmos Cultural Centre. The venue "
 "address is Peiraios 254, Tavros. The place is 10 minutes walking distance "
-"from Kallithea's station, green line."
+"from Kallithea's station, green line. Access via Bus:"
 
-#: project/home/templates/home/index.html:136
+#: project/home/templates/home/index.html:119
+msgid "map.access1"
+msgstr ""
+"049, 914 (<a href='http://telematics.oasa.gr/en/#stationInfo_450040_%CE%A3%CE"
+"%A7%CE%9F%CE%9B%CE%97%20%CE%9A%CE%91%CE%9B%CE%A9%CE%9D%20%CE%A4%CE%95%CE"
+"%A7%CE%9D%CE%A9%CE%9D' target='_blank'>SCHOLI KALON TECHNON</a> stop)"
+
+#: project/home/templates/home/index.html:143
 msgid "auspices"
 msgstr "Under the auspices of NTUA"
 
@@ -253,6 +260,22 @@ msgstr "About"
 msgid "tickets"
 msgstr "Get tickets!"
 
+#, fuzzy
+#~| msgid "map.desc"
+#~ msgid "map.access2"
+#~ msgstr ""
+#~ "TEDxNTUA event will take place in Hellenic Cosmos Cultural Centre. The "
+#~ "venue address is Peiraios 254, Tavros. The place is 10 minutes walking "
+#~ "distance from Kallithea's station, green line."
+
+#, fuzzy
+#~| msgid "map.desc"
+#~ msgid "map.access3"
+#~ msgstr ""
+#~ "TEDxNTUA event will take place in Hellenic Cosmos Cultural Centre. The "
+#~ "venue address is Peiraios 254, Tavros. The place is 10 minutes walking "
+#~ "distance from Kallithea's station, green line."
+
 #~ msgid "home.content_placeholder"
 #~ msgstr "This is a placeholder"
 
@@ -268,6 +291,3 @@ msgstr "Get tickets!"
 
 #~ msgid "home.title"
 #~ msgstr "Home page"
-
-#~ msgid "contact"
-#~ msgstr "Contact"

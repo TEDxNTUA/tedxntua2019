@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-09 19:18+0200\n"
+"POT-Creation-Date: 2019-03-09 22:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: project/about/templates/about/index.html:11
+#: project/about/templates/about/index.html:14
 msgid "about.ted.content"
 msgstr ""
 "Το TED είναι ένας μη κερδοσκοπικός οργανισμός αφοσιωμένος σε Ιδέες που "
@@ -42,7 +42,7 @@ msgstr ""
 "πρωτοπόρους που θέλουν να αλλάξουν τον κόσμο να ενισχύσουν τον αντίκτυπο των "
 "αξιοσημείωτων έργων τους, όπως και των δραστηριοτήτων τους."
 
-#: project/about/templates/about/index.html:18
+#: project/about/templates/about/index.html:22
 msgid "about.tedx.content"
 msgstr ""
 "Στο πνεύμα των Ιδεών που Αξίζει να Διαδοθούν, το TEDx είναι ένα πρόγραμμα "
@@ -54,7 +54,7 @@ msgstr ""
 "γενικές οδηγίες για το πρόγραμμα TEDx, αλλά τα μεμονωμένα γεγονότα TEDx "
 "είναι αυτόνομα οργανωμένα. (Σύμφωνα με ορισμένους κανόνες και κανονισμούς.)"
 
-#: project/about/templates/about/index.html:25
+#: project/about/templates/about/index.html:37
 msgid "about.tedxntua.content"
 msgstr ""
 "Η δράση των φοιτητών και της λοιπής ακαδημαϊκής κοινότητας του Πολυτεχνείου "
@@ -77,43 +77,43 @@ msgstr ""
 msgid "test_message"
 msgstr "Αυτο είναι ένα μήνυμα για testing"
 
-#: project/home/templates/home/index.html:27
+#: project/home/templates/home/index.html:28
 msgid "venue_name1"
 msgstr "Κέντρο Πολιτισμού Ελληνικός Κόσμος"
 
-#: project/home/templates/home/index.html:28
+#: project/home/templates/home/index.html:29
 msgid "venue_name2"
 msgstr "Πειραιώς 254"
 
-#: project/home/templates/home/index.html:29
+#: project/home/templates/home/index.html:30
 msgid "venue_name3"
 msgstr "Ταύρος"
 
-#: project/home/templates/home/index.html:56
+#: project/home/templates/home/index.html:58
 msgid "enigma_alt"
 msgstr "Το αίνιγμα του TEDxNTUA"
 
-#: project/home/templates/home/index.html:60
+#: project/home/templates/home/index.html:62
 msgid "enigma_is"
 msgstr "Aίνιγμα είναι κάτι "
 
-#: project/home/templates/home/index.html:63
+#: project/home/templates/home/index.html:65
 msgid "enigma_opt_1"
 msgstr " μυστήριο"
 
-#: project/home/templates/home/index.html:64
+#: project/home/templates/home/index.html:66
 msgid "enigma_opt_2"
 msgstr " αβέβαιο"
 
-#: project/home/templates/home/index.html:65
+#: project/home/templates/home/index.html:67
 msgid "enigma_opt_3"
 msgstr " παράδοξο"
 
-#: project/home/templates/home/index.html:66
+#: project/home/templates/home/index.html:68
 msgid "enigma_opt_4"
 msgstr " συναρπαστικό"
 
-#: project/home/templates/home/index.html:71
+#: project/home/templates/home/index.html:73
 msgid "enigma.home.text"
 msgstr ""
 "<span class='primary_text'>Αίνιγμα</span>: καθετί που είναι δύσκολο να "
@@ -137,32 +137,39 @@ msgstr ""
 "της ανθρωπότητας. Μια απόπειρα αυτογνωσίας. <br> <br> Γι<span "
 "class='primary_text'>α</span>τί η γνώση δομείται με ένα αίνιγμα τη φορά."
 
-#: project/home/templates/home/index.html:81
+#: project/home/templates/home/index.html:83
 #: project/program/templates/program/speakers.html:11
 #: project/templates/layouts/partials/nav.html:51
 msgid "speakers"
 msgstr "Ομιλητές"
 
-#: project/home/templates/home/index.html:102
+#: project/home/templates/home/index.html:104
 #: project/program/templates/program/schedule.html:13
 #: project/program/templates/program/speakers.html:40
 msgid "to-be"
 msgstr "Θα ανακοινωθούν σύντομα"
 
-#: project/home/templates/home/index.html:112
+#: project/home/templates/home/index.html:114
 msgid "map.venue"
 msgstr "Χάρτης & Χώρος"
 
-#: project/home/templates/home/index.html:114
+#: project/home/templates/home/index.html:116
 msgid "map.desc"
 msgstr ""
 "Το αίνιγμα του TEDxNTUA θα εκτυλιχθεί φέτος στο Κέντρο Πολιτισμού «Ελληνικός "
 "Κόσμος». Το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» βρίσκεται στη διεύθυνση "
 "Πειραιώς 254, Ταύρος. Η πρόσβαση από το κέντρο είναι πολύ εύκολη. Είναι "
 "μόλις 10 λεπτά περπάτημα από τον ηλεκτρικό σταθμό Καλλιθέα της πράσινης "
-"γραμμής. "
+"γραμμής. Πρόσβαση με Λεωφορείο:"
 
-#: project/home/templates/home/index.html:136
+#: project/home/templates/home/index.html:119
+msgid "map.access1"
+msgstr ""
+"049, 914 (στάση <a href='http://telematics.oasa.gr/#stationInfo_450040_%CE"
+"%A3%CE%A7%CE%9F%CE%9B%CE%97%20%CE%9A%CE%91%CE%9B%CE%A9%CE%9D%20%CE%A4%CE"
+"%95%CE%A7%CE%9D%CE%A9%CE%9D' target='_blank'>ΣΧΟΛΗ ΚΑΛΩΝ ΤΕΧΝΩΝ</a>)"
+
+#: project/home/templates/home/index.html:143
 msgid "auspices"
 msgstr "Υπό την αίγίδα του ΕΜΠ"
 
@@ -253,6 +260,27 @@ msgstr "Σχετικά με εμάς"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Κάνε κράτηση!"
+
+
+#, fuzzy
+#~| msgid "map.desc"
+#~ msgid "map.access2"
+#~ msgstr ""
+#~ "Το αίνιγμα του TEDxNTUA θα εκτυλιχθεί φέτος στο Κέντρο Πολιτισμού "
+#~ "«Ελληνικός Κόσμος». Το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» βρίσκεται στη "
+#~ "διεύθυνση Πειραιώς 254, Ταύρος. Η πρόσβαση από το κέντρο είναι πολύ "
+#~ "εύκολη. Είναι μόλις 10 λεπτά περπάτημα από τον ηλεκτρικό σταθμό Καλλιθέα "
+#~ "της πράσινης γραμμής. "
+
+#, fuzzy
+#~| msgid "map.desc"
+#~ msgid "map.access3"
+#~ msgstr ""
+#~ "Το αίνιγμα του TEDxNTUA θα εκτυλιχθεί φέτος στο Κέντρο Πολιτισμού "
+#~ "«Ελληνικός Κόσμος». Το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» βρίσκεται στη "
+#~ "διεύθυνση Πειραιώς 254, Ταύρος. Η πρόσβαση από το κέντρο είναι πολύ "
+#~ "εύκολη. Είναι μόλις 10 λεπτά περπάτημα από τον ηλεκτρικό σταθμό Καλλιθέα "
+#~ "της πράσινης γραμμής. "
 
 #~ msgid "home.content_placeholder"
 #~ msgstr "Ένας placeholder"

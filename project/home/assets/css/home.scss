@@ -128,6 +128,10 @@ article.home {
       p {
         text-align: justify;
       }
+      li {
+            display: list-item;
+            text-align: left;
+      }
 		.map {
 			width: 100%;
 			/* fallback for browsers that don't support vw */
