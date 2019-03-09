@@ -3,6 +3,7 @@ $enigma-container-height: 540px;
 
 article.home {
     #speakers {
+      padding: 50px;
       h2 {
         font-size: 2.5rem;
         text-align: center;
@@ -64,6 +65,7 @@ article.home {
        }
     }
     #auspices {
+      padding: 50px;
       h2 {
         font-size: 2.5rem;
         text-align: center;
@@ -86,6 +88,7 @@ article.home {
   		}
     }
     #map {
+      padding: 50px;
       h2 {
         font-size: 2.5rem;
         text-align: center;
@@ -195,6 +198,9 @@ article.home {
 }
 
 #enigma-text{
+  .primary_text{
+    color: $primary;
+  }
   margin-top: 4rem;
   font-size: 110%;
 }
