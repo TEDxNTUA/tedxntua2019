@@ -1,7 +1,7 @@
 /* ABOUT PAGE */
 
 article.about {
-	#about-ted, #about-tedx, #about-tedxntua {
+	#about-ted, #about-tedx, #about-tedxntua, #about-img {
 		.page-heading {
 			color:$primary;
 		}
@@ -11,6 +11,15 @@ article.about {
 			text-align: justify;
 		}
 	}
+	.grid-image {
+		  margin: 0 auto;
+      max-width: 100%;
+	}
+	.vertical-align {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 }
 
 /*
