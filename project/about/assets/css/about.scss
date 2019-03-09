@@ -1,7 +1,10 @@
 /* ABOUT PAGE */
 
 article.about {
-	#about-ted, #about-tedx {
+	#about-ted, #about-tedx, #about-tedxntua {
+		.page-heading {
+			color:$primary;
+		}
 		margin: 0 auto;
 		max-width: 768px;
 		p {
