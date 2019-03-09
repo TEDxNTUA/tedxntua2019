@@ -1,6 +1,42 @@
 /* HOME */
 $enigma-container-height: 540px;
 
+#venue-home{
+  color: $secondary;
+}
+
+// .venue-seperator{
+//   color: $primary;
+//   font-size: 200%;
+// }
+
+
+.flex-list {
+    position: relative;
+    margin: 1em;
+}
+.flex-list ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -1px;
+}
+.flex-list li {
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: .25em 0;
+    padding: 0 0.25rem;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.flex-list ul{
+  list-style-type: none;
+}
+
+
 article.home {
     #speakers {
       padding: 50px;
@@ -330,12 +366,32 @@ article.home {
   83.3%,95.96% {transform:translate3d(0,-25%,0);}
 }
 
+
+/* mobile first */
+#enigma-alt{
+  display: block;
+}
+#enigma-section{
+  .enigma{
+    display: none;
+  }
+}
 .circle{
   display: none;
 }
 
-@media only screen and (min-width: 600px){
+/* media queries */
+@media only screen and (min-width: 620px){
   .circle{
     display: block;
+  }
+
+  #enigma-alt{
+    display: none;
+  }
+  #enigma-section{
+    .enigma{
+      display: block;
+    }
   }
 }
