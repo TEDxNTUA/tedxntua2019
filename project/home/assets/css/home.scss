@@ -5,11 +5,6 @@ $enigma-container-height: 540px;
   color: $secondary;
 }
 
-// .venue-seperator{
-//   color: $primary;
-//   font-size: 200%;
-// }
-
 
 .flex-list {
     position: relative;
@@ -34,6 +29,7 @@ $enigma-container-height: 540px;
 
 .flex-list ul{
   list-style-type: none;
+  padding: 0;
 }
 
 
