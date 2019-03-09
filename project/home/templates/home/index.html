@@ -66,23 +66,34 @@
         <div class="col col-12 col-md-8">
           <section id="speakers">
             <h2>{% trans "speakers" %}</h2>
+            {% if speakers %}
             <div class="container-fluid speaker-container">
-              {% for row in speakers|splitByFour %}
-                  <div class="row">
-                    {% for speaker in row %}
-                    <div class="col col-6 col-xl-4">
-                        <a href="/speakers">
-                          <img class="photo" src="{{ speaker.image.url}}">
-                          <div class="speaker-info">
-                            <h3>{{ speaker.fullname }}</h3>
-                            <p class="m-0">{{ speaker.occupation }}</p>
-                          </div>
-                        </a>
+                {% for row in speakers|splitByFour %}
+                    <div class="row">
+                      {% for speaker in row %}
+                      <div class="col col-6 col-xl-4">
+                          <a href="/speakers">
+                            <img class="photo" src="{{ speaker.image.url}}">
+                            <div class="speaker-info">
+                              <h3>{{ speaker.fullname }}</h3>
+                              <p class="m-0">{{ speaker.occupation }}</p>
+                            </div>
+                          </a>
+                      </div>
                     </div>
-                  </div>
-                  {% endfor %}
-              {% endfor %}
+                    {% endfor %}
+                {% endfor %}
             </div>
+            {% else %}
+            <div id="tba">
+              <h2 class="tba_text">To be announced</h2>
+              <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+              </div>
+            </div>
+           {% endif %}
            </section>
            <section id="auspices" class="angle-brackets">
   					<h2>{% trans "auspices" %}</h2>
