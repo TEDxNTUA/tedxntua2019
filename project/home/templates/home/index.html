@@ -20,12 +20,15 @@
                 <canvas id="enigma-animation" width="800" height="540"></canvas>
                 <div id="enigma-circle" class="circle"></div>
             </div>
+
             <p class="textDate blink">16.04.2019</p>
-            <p class="info text-center">
-              <a href="/schedule"><span>{% trans "venue_name1" %}</span></a>
-              <a href="#map"><span>{% trans "venue_name2" %}</span></a>
-              <a href="#map"><span>{% trans "venue_name3" %}</span></a>
-            </p>
+          <div class="flex-list">
+            <ul>
+                <li>{% trans "venue_name1" %}</li>
+                <li>{% trans "venue_name2" %}</li>
+                <li>{% trans "venue_name3" %}</li>
+            </ul>
+            </div>
 
             </div>
 
@@ -49,6 +52,8 @@
         </div>
         <div class="col col-12 col-md-8">
           <section id="enigma-section" class="content">
+
+            <h2 id="enigma-alt">{% trans "enigma_alt" %}</h2>
             <div class="enigma">
               <div class="enigma__container">
                 <p id="enigma_text" class="enigma__container__text">
@@ -72,7 +77,7 @@
         <div class="col d-none d-md-block col-md-2">
         </div>
         <div class="col col-12 col-md-8">
-          <section id="speakers">
+          <section class="content" id="speakers">
             <h2>{% trans "speakers" %}</h2>
             {% if speakers %}
             <div class="container-fluid speaker-container">
@@ -103,7 +108,7 @@
             </div>
            {% endif %}
            </section>
-           <section id="map">
+           <section class="content" id="map">
   					<h2>{%trans "map.venue" %}</h2>
   					<p class="description">
   						{% trans "map.desc" %}
