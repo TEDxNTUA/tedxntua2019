@@ -5,13 +5,12 @@
 {% block content %}
 <section class="content">
     <article class="schedule page">
-        <h1 class="page-heading">{% trans "schedule" %}</h1>
       {% if schedule %}
         {% include "./schedule_mobile.html" %}
         {% include "./schedule_desktop.html" %}
       {% else %}
       <div id="tba">
-        <h2 class="tba_text">To be announced</h2>
+        <h2 class="tba_text">{% trans "to-be" %}</h2>
         <div class="spinner">
           <div class="bounce1"></div>
           <div class="bounce2"></div>
