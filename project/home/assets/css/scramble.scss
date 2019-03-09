@@ -5,7 +5,8 @@
 .textTed {
   font-size: 50px;
   font-family: $font-stack;
-  color: $secondary;
+  color: $primary;
+  // font-style: italic;
 }
 
 .textTed:hover{
@@ -13,9 +14,10 @@
 }
 
 .textEnigma{
+  // font-style: italic;
   font-size: 50px;
   font-family: $font-stack;
-  color: $secondary;
+  color: $primary;
 }
 
 .textEnigma:hover{
@@ -25,18 +27,21 @@
 .textDate {
   font-weight: 100;
   font-size: 40px;
+  padding-top: 2rem;
+  color: $primary;
 }
 
 .textVenue {
   font-size: 40px;
   color: $primary;
-  padding-top: 4rem;
+  // padding-top: 4rem;
 }
 
 .textAddress {
   font-weight: 100;
   font-size: 40px;
 }
+
 
 .dud {
   color: #F19386;

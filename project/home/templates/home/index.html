@@ -20,11 +20,19 @@
                 <canvas id="enigma-animation" width="800" height="540"></canvas>
                 <div id="enigma-circle" class="circle"></div>
             </div>
-            <a href="#map-section" class="textVenue blink"></a>
+            <p class="textDate blink">16.04.2019</p>
+            <p class="info text-center">
+              <a href="/schedule"><span>{% trans "venue_name1" %}</span></a>
+              <a href="#map"><span>{% trans "venue_name2" %}</span></a>
+              <a href="#map"><span>{% trans "venue_name3" %}</span></a>
+            </p>
+
             </div>
 
             <div class="col-lg-3 col-md-3">
-                <a href="#enigma-section" class="textEnigma container side-container blink"></a>
+              <div class="container side-container blink">
+                    <a href="#enigma-section" class="textEnigma container side-container"></a>
+                </div>
             </div>
 
           </div>
@@ -54,7 +62,7 @@
                 </ul>
               </div>
             </div>
-            <p id="enigma-text" class="wow slideInLeft text-justify">
+            <p id="enigma-text" class="text-justify">
                {% trans "enigma.home.text" %}
             </p>
             </section>
@@ -85,8 +93,8 @@
                 {% endfor %}
             </div>
             {% else %}
-            <div id="tba">
-              <h2 class="tba_text">To be announced</h2>
+            <div class="text-center" id="tba">
+              <h2 class="tba_text">{% trans "to-be" %}</h2>
               <div class="spinner">
                 <div class="bounce1"></div>
                 <div class="bounce2"></div>
