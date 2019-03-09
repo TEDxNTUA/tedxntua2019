@@ -1,7 +1,6 @@
 /* HOME */
 $enigma-container-height: 540px;
 
-
 article.home {
     #speakers {
       h2 {
@@ -323,4 +322,14 @@ article.home {
   49.98%,62.64% {transform:translate3d(0,-75%,0);}
   66.64%,79.3% {transform:translate3d(0,-50%,0);}
   83.3%,95.96% {transform:translate3d(0,-25%,0);}
+}
+
+.circle{
+  display: none;
+}
+
+@media only screen and (min-width: 600px){
+  .circle{
+    display: block;
+  }
 }

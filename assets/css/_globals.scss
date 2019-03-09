@@ -64,11 +64,11 @@ h1, h2, h3, h4, h5{
 .side-container{
   display: none;
 }
+
+
+/* media queries */
 @media only screen and (min-width: 1200px) {
   .side-container{
     display: block;
   }
 }
-/*
- * MEDIA QUERIES
- */
