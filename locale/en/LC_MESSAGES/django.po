@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-09 18:49+0200\n"
+"POT-Creation-Date: 2019-03-09 19:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -143,6 +143,8 @@ msgid "speakers"
 msgstr "Speakers"
 
 #: project/home/templates/home/index.html:102
+#: project/program/templates/program/schedule.html:13
+#: project/program/templates/program/speakers.html:40
 msgid "to-be"
 msgstr "To be announced"
 
@@ -204,7 +206,6 @@ msgid "Side events"
 msgstr "Side events"
 
 #: project/program/templates/program/schedule.html:3
-#: project/program/templates/program/schedule.html:8
 #: project/templates/layouts/partials/nav.html:54
 msgid "schedule"
 msgstr "Schedule"
