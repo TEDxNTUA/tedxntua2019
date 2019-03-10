@@ -10,6 +10,9 @@ $enigma-container-height: 540px;
     position: relative;
     margin: 1em;
 }
+.flex-list:hover{
+  animation: blinker 1s linear;
+}
 .flex-list ul {
     display: flex;
     flex-direction: row;
