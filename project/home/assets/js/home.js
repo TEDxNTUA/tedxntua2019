@@ -33,7 +33,7 @@ let camera = new THREE.OrthographicCamera(-ww / 4, ww / 4, wh / 4, -wh / 4, 0.1,
 camera.position.set(CAMERA_DIST, CAMERA_DIST, CAMERA_DIST)
 camera.lookAt(0, 0, 0)
 
-let renderer = new THREE.WebGLRenderer({ canvas, alpha: true })
+let renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true })
 renderer.setSize(ww, wh)
 
 let makeMesh = (shape, color, x, y, z, rx, ry, rz, s, depth, withEdges = false) => {
