@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-09 22:47+0200\n"
+"POT-Creation-Date: 2019-03-10 16:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,13 +137,14 @@ msgstr ""
 "time."
 
 #: project/home/templates/home/index.html:83
+#: project/program/templates/program/schedule.html:9
 #: project/program/templates/program/speakers.html:11
 #: project/templates/layouts/partials/nav.html:51
 msgid "speakers"
 msgstr "Speakers"
 
 #: project/home/templates/home/index.html:104
-#: project/program/templates/program/schedule.html:13
+#: project/program/templates/program/schedule.html:31
 #: project/program/templates/program/speakers.html:40
 msgid "to-be"
 msgstr "To be announced"
@@ -156,17 +157,22 @@ msgstr "Map & Venue"
 msgid "map.desc"
 msgstr ""
 "TEDxNTUA event will take place in Hellenic Cosmos Cultural Centre. The venue "
-"address is Peiraios 254, Tavros. The place is 10 minutes walking distance "
-"from Kallithea's station, green line. Access via Bus:"
+"address is Peiraios 254, Tavros. Access via:"
 
 #: project/home/templates/home/index.html:119
 msgid "map.access1"
 msgstr ""
-"049, 914 (<a href='http://telematics.oasa.gr/en/#stationInfo_450040_%CE%A3%CE"
-"%A7%CE%9F%CE%9B%CE%97%20%CE%9A%CE%91%CE%9B%CE%A9%CE%9D%20%CE%A4%CE%95%CE"
-"%A7%CE%9D%CE%A9%CE%9D' target='_blank'>SCHOLI KALON TECHNON</a> stop)"
+"Bus 049, 914 (<a href='http://telematics.oasa.gr/en/#stationInfo_450040_%CE"
+"%A3%CE%A7%CE%9F%CE%9B%CE%97%20%CE%9A%CE%91%CE%9B%CE%A9%CE%9D%20%CE%A4%CE"
+"%95%CE%A7%CE%9D%CE%A9%CE%9D' target='_blank'>SCHOLI KALON TECHNON</a> stop)"
 
-#: project/home/templates/home/index.html:143
+#: project/home/templates/home/index.html:120
+msgid "map.access2"
+msgstr ""
+"Metro green line (line 1) (<a href='http://www.stasy.gr/index.php?id=67&L=1' "
+"target='_blank'>KALLITHEA</a> stop)"
+
+#: project/home/templates/home/index.html:144
 msgid "auspices"
 msgstr "Under the auspices of NTUA"
 
@@ -221,6 +227,10 @@ msgstr "Schedule"
 msgid "schedule.description"
 msgstr ""
 
+#: project/program/templates/program/schedule.html:13
+msgid "to-be-1"
+msgstr "To be announced"
+
 #: project/program/templates/program/schedule_desktop.html:7
 #: project/program/templates/program/schedule_mobile.html:25
 msgid "schedule_time"
@@ -232,11 +242,11 @@ msgstr "Time"
 msgid "speakers.bio"
 msgstr "Speakers"
 
-#: project/settings/base.py:168
+#: project/settings/base.py:170
 msgid "Greek"
 msgstr ""
 
-#: project/settings/base.py:169
+#: project/settings/base.py:171
 msgid "English"
 msgstr ""
 
@@ -259,14 +269,6 @@ msgstr "About"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Get tickets!"
-
-#, fuzzy
-#~| msgid "map.desc"
-#~ msgid "map.access2"
-#~ msgstr ""
-#~ "TEDxNTUA event will take place in Hellenic Cosmos Cultural Centre. The "
-#~ "venue address is Peiraios 254, Tavros. The place is 10 minutes walking "
-#~ "distance from Kallithea's station, green line."
 
 #, fuzzy
 #~| msgid "map.desc"
