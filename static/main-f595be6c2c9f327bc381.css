@@ -7251,7 +7251,8 @@ article.schedule {
     font-size: 1em; }
 
 #tba {
-  padding-top: 10%; }
+  padding-top: 10%;
+  margin-top: 50; }
   #tba .spinner {
     margin-top: 15% auto 0;
     width: 70px;

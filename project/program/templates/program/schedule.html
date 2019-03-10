@@ -3,7 +3,25 @@
 {% block title %}{% trans "schedule" %}{% endblock %}
 {% block description %}{% trans "schedule.description" %}{% endblock %}
 {% block content %}
-<section class="content">
+<!--  XXX: THIS IS WRONG AND JUST FOR NOW -->
+<article class="page speakers">
+  <section class="heading">
+    <h1>{% trans "speakers" %}</h1>
+  </section>
+  <section class="content">
+    <div id="tba">
+      <h2 class="tba_text">{% trans "to-be" %}</h2>
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+    </section>
+</article>
+
+
+<!-- <section class="content">
     <article class="schedule page">
       {% if schedule %}
         {% include "./schedule_mobile.html" %}
@@ -19,5 +37,5 @@
       </div>
      {% endif %}
     </article>
-</section>
+</section> -->
 {% endblock %}
