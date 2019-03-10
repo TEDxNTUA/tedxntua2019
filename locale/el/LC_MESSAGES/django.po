@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-09 22:47+0200\n"
+"POT-Creation-Date: 2019-03-10 16:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -138,13 +138,14 @@ msgstr ""
 "class='primary_text'>α</span>τί η γνώση δομείται με ένα αίνιγμα τη φορά."
 
 #: project/home/templates/home/index.html:83
+#: project/program/templates/program/schedule.html:9
 #: project/program/templates/program/speakers.html:11
 #: project/templates/layouts/partials/nav.html:51
 msgid "speakers"
 msgstr "Ομιλητές"
 
 #: project/home/templates/home/index.html:104
-#: project/program/templates/program/schedule.html:13
+#: project/program/templates/program/schedule.html:31
 #: project/program/templates/program/speakers.html:40
 msgid "to-be"
 msgstr "Θα ανακοινωθούν σύντομα"
@@ -158,20 +159,25 @@ msgid "map.desc"
 msgstr ""
 "Το αίνιγμα του TEDxNTUA θα εκτυλιχθεί φέτος στο Κέντρο Πολιτισμού «Ελληνικός "
 "Κόσμος». Το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» βρίσκεται στη διεύθυνση "
-"Πειραιώς 254, Ταύρος. Η πρόσβαση από το κέντρο είναι πολύ εύκολη. Είναι "
-"μόλις 10 λεπτά περπάτημα από τον ηλεκτρικό σταθμό Καλλιθέα της πράσινης "
-"γραμμής. Πρόσβαση με Λεωφορείο:"
+"Πειραιώς 254, Ταύρος. Πρόσβαση:"
 
 #: project/home/templates/home/index.html:119
 msgid "map.access1"
 msgstr ""
-"049, 914 (στάση <a href='http://telematics.oasa.gr/#stationInfo_450040_%CE"
-"%A3%CE%A7%CE%9F%CE%9B%CE%97%20%CE%9A%CE%91%CE%9B%CE%A9%CE%9D%20%CE%A4%CE"
-"%95%CE%A7%CE%9D%CE%A9%CE%9D' target='_blank'>ΣΧΟΛΗ ΚΑΛΩΝ ΤΕΧΝΩΝ</a>)"
+"Λεωφορείο 049, 914 (στάση <a href='http://telematics.oasa.gr/"
+"#stationInfo_450040_%CE%A3%CE%A7%CE%9F%CE%9B%CE%97%20%CE%9A%CE%91%CE%9B%CE"
+"%A9%CE%9D%20%CE%A4%CE%95%CE%A7%CE%9D%CE%A9%CE%9D' target='_blank'>ΣΧΟΛΗ "
+"ΚΑΛΩΝ ΤΕΧΝΩΝ</a>)"
 
-#: project/home/templates/home/index.html:143
+#: project/home/templates/home/index.html:120
+msgid "map.access2"
+msgstr ""
+"Μετρό πράσινη γραμμή ηλεκτρικού (στάση <a href='http://stasy.gr/index.php?"
+"id=67' target='_blank'>ΚΑΛΛΙΘΕΑ</a>) "
+
+#: project/home/templates/home/index.html:144
 msgid "auspices"
-msgstr "Υπό την αίγίδα του ΕΜΠ"
+msgstr "Υπό την αιγίδα του ΕΜΠ"
 
 #: project/partners/models.py:50
 msgid "Grand Sponsors"
@@ -222,6 +228,10 @@ msgstr "Πρόγραμμα"
 msgid "schedule.description"
 msgstr ""
 
+#: project/program/templates/program/schedule.html:13
+msgid "to-be-1"
+msgstr "Θα ανακοινωθεί σύντομα"
+
 #: project/program/templates/program/schedule_desktop.html:7
 #: project/program/templates/program/schedule_mobile.html:25
 msgid "schedule_time"
@@ -233,11 +243,11 @@ msgstr "Ώρα"
 msgid "speakers.bio"
 msgstr "Ομιλητές"
 
-#: project/settings/base.py:168
+#: project/settings/base.py:170
 msgid "Greek"
 msgstr ""
 
-#: project/settings/base.py:169
+#: project/settings/base.py:171
 msgid "English"
 msgstr ""
 
@@ -260,17 +270,6 @@ msgstr "Σχετικά με εμάς"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Κάνε κράτηση!"
-
-
-#, fuzzy
-#~| msgid "map.desc"
-#~ msgid "map.access2"
-#~ msgstr ""
-#~ "Το αίνιγμα του TEDxNTUA θα εκτυλιχθεί φέτος στο Κέντρο Πολιτισμού "
-#~ "«Ελληνικός Κόσμος». Το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» βρίσκεται στη "
-#~ "διεύθυνση Πειραιώς 254, Ταύρος. Η πρόσβαση από το κέντρο είναι πολύ "
-#~ "εύκολη. Είναι μόλις 10 λεπτά περπάτημα από τον ηλεκτρικό σταθμό Καλλιθέα "
-#~ "της πράσινης γραμμής. "
 
 #, fuzzy
 #~| msgid "map.desc"
