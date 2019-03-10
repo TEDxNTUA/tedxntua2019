@@ -5,6 +5,7 @@
 <section class="content">
     <article class="sponsors">
     {% for id, type in partners.items %}
+    {% if type.items %}
         <div>
             <h2 class="page-heading">{{ type.title }}</h2>
 
@@ -20,6 +21,7 @@
 
         		</div>
         </div>
+    {% endif %}
     {% endfor %}
     </article>
 </section>
