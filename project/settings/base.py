@@ -10,6 +10,11 @@ DEBUG = env_bool('DEBUG', False)
 ALLOWED_HOSTS = env_list('ALLOWED_HOSTS', ['*'] if DEBUG else [])
 SECRET_KEY = env_str('SECRET_KEY', 'secret' if DEBUG else '')
 
+FILE_UPLOAD_PERMISSIONS = env_str('FILE_UPLOAD_PERMISSIONS')
+if FILE_UPLOAD_PERMISSIONS is not None:
+    # Convert string to octal
+    # https://docs.djangoproject.com/en/2.1/ref/settings/#file-upload-permissions
+    FILE_UPLOAD_PERMISSIONS = int(FILE_UPLOAD_PERMISSIONS, 8)
 
 # Application definition
 
