@@ -162,7 +162,9 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
     ]
 }
 
-LOCALE_PATHS = ('locale/',)
+LOCALE_PATHS = (
+    abs_path('locale'),
+)
 
 LANGUAGES = [
     ('el', _('Greek')),
