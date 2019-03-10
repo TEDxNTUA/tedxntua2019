@@ -4,7 +4,7 @@
 {% load home_extras %} {# see templatetags/home_extras.py for docs #}
 {% load render_bundle from webpack_loader %}
 {% block title %}Home{% endblock %}
-{% block description %}This is the home page{% endblock %}
+{% block description %}{% trans "home_description" %}{% endblock %}
 {% block content %}
 <article class="page home">
   <section class="content">

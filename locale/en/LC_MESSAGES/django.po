@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-10 16:56+0200\n"
+"POT-Creation-Date: 2019-03-10 17:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,6 +74,10 @@ msgstr ""
 #: project/contact/views.py:7
 msgid "test_message"
 msgstr "This is a test message"
+
+#: project/home/templates/home/index.html:7
+msgid "home_description"
+msgstr "Home page of TEDxNTUA event."
 
 #: project/home/templates/home/index.html:28
 msgid "venue_name1"
@@ -225,7 +229,7 @@ msgstr "Schedule"
 
 #: project/program/templates/program/schedule.html:4
 msgid "schedule.description"
-msgstr ""
+msgstr "Schedule page of TEDxNTUA event."
 
 #: project/program/templates/program/schedule.html:13
 msgid "to-be-1"
@@ -249,6 +253,10 @@ msgstr ""
 #: project/settings/base.py:171
 msgid "English"
 msgstr ""
+
+#: project/team/templates/team/index.html:5
+msgid "team_description"
+msgstr "TEDxNTUA team"
 
 #: project/templates/layouts/partials/nav.html:48
 msgid "home"
