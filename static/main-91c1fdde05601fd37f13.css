@@ -7343,6 +7343,7 @@ article.sponsors {
   height: 200px;
   position: relative;
   overflow: hidden;
+  border: none;
   background-color: #fce5e1; }
 
 .card-img-top:hover .hover {
