@@ -15,15 +15,3 @@ for (let elem of elements){
     mouse_monitor(e, elem)
   })
 }
-
-
-let img_el =  document.getElementsByClassName("cover-img")
-for (let elem of img_el){
-  elem.style.backgroundImage = "url('/media/" + elem.id + "')"
-}
-
-
-let img_el2 =  document.getElementsByClassName("cover-img2")
-for (let elem of img_el2){
-    elem.style.backgroundImage = "url('/media/" + elem.id + "')"
-}

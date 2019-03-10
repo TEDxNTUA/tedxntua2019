@@ -18,9 +18,9 @@
               <div class="card-body">
                 <div class="card-img-top">
                     <a href="mailto:{{member.email}}" target="_blank">
-                    <div id="{{member.image_fun}}" class="fill cover-img">
+                    <div id="{{member.image}}" class="fill cover-img">
                       <div class="fill hover">
-                        <div id="{{member.image}}" class="fill cover-img2 hover-img"> </div>
+                        <div id="{{member.image_fun}}" class="fill cover-img2 hover-img"> </div>
                         </div>
                       </div>
                      </a>
@@ -39,6 +39,19 @@
         {% endfor %}
     </section>
 </article>
+
+<script>
+let p;
+{% for id, team in teams.items %}
+  {% for member in team %}
+  p = document.getElementsById('{{member.image}}')
+  console.log(p)
+  p.style.backgroundImage = '{{member.image.url}}'
+  p = document.getElementsById('{{member.image_fun}}')
+  p.style.backgroundImage = '{{member.image_fun.url}}'
+  {% endfor %}
+{% endfor %}
+</script>
 {% endblock %}
 
 {% block scripts %}
