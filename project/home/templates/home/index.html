@@ -79,26 +79,28 @@
         <div class="col d-none d-md-block col-md-2">
         </div>
         <div class="col col-12 col-md-8">
-          <section class="content" id="speakers">
+          <section  class="angle-brackets" id="speakers">
             <h2>{% trans "speakers" %}</h2>
             {% if speakers %}
-            <div class="container-fluid speaker-container">
-                {% for row in speakers|splitByFour %}
-                    <div class="row">
-                      {% for speaker in row %}
-                      <div class="col col-6 col-xl-4">
-                          <a href="/speakers">
-                            <img class="photo" src="{{ speaker.image.url}}">
-                            <div class="speaker-info">
-                              <h3>{{ speaker.fullname }}</h3>
-                              <p class="m-0">{{ speaker.occupation }}</p>
-                            </div>
-                          </a>
+              <div class="container-fluid speaker-container">
+                  {% for row in speakers|splitByFour %}
+                      <div class="row">
+                        {% for speaker in row %}
+                        <div class="col col-6 col-xl-3">
+                            <a href="/speakers">
+                              <img class="photo1" src="{{ speaker.image.url}}">
+                              <img class="photo2" src="{{ speaker.image_shadows.url}}">
+                              <div class="speaker-info">
+                                <h3>{{ speaker.fullname }}</h3>
+                                <p class="m-0">{{ speaker.occupation }}</p>
+                              </div>
+                            </a>
+                        </div>
                       </div>
-                    </div>
-                    {% endfor %}
-                {% endfor %}
-            </div>
+                      {% endfor %}
+                  {% endfor %}
+              </div>
+          </section>
             {% else %}
             <div class="text-center" id="tba">
               <h2 class="tba_text">{% trans "to-be" %}</h2>

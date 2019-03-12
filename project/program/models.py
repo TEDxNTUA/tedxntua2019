@@ -248,7 +248,8 @@ class PresenterManager(TranslatableManager):
         Unlike the rest of the models file, here we make the assumption
         that each speaker is presenting only a single talk.
         '''
-        speakers = self.get_queryset().filter(activity__activity_type=Activity.TALK)
+        #speakers = self.get_queryset().filter(activity__activity_type=Activity.TALK) # Uncomment, if we have talks for all our speakers
+        speakers = self.get_queryset()
         for speaker in speakers:
             speaker.talk = speaker.activity_set.first()
         return speakers
@@ -297,6 +298,14 @@ class Presenter(TranslatableModel):
     image_height = models.PositiveIntegerField(editable=False, null=True)
     image_width = models.PositiveIntegerField(editable=False, null=True)
 
+    image_shadows = VersatileImageField(
+        'Image',
+        upload_to='presenters/',
+        width_field='image_width',
+        height_field='image_height'
+    )
+    image_shadows_height = models.PositiveIntegerField(editable=False, null=True)
+    image_shadows_width = models.PositiveIntegerField(editable=False, null=True)
     # Managers are an easy way to create custom filters for queries.
     #
     # Documentation link:

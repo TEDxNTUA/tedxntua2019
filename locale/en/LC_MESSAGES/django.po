@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-10 17:40+0200\n"
+"POT-Creation-Date: 2019-03-13 00:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,36 +147,36 @@ msgstr ""
 msgid "speakers"
 msgstr "Speakers"
 
-#: project/home/templates/home/index.html:104
+#: project/home/templates/home/index.html:106
 #: project/program/templates/program/schedule.html:31
 #: project/program/templates/program/speakers.html:40
 msgid "to-be"
 msgstr "To be announced"
 
-#: project/home/templates/home/index.html:114
+#: project/home/templates/home/index.html:116
 msgid "map.venue"
 msgstr "Map & Venue"
 
-#: project/home/templates/home/index.html:116
+#: project/home/templates/home/index.html:118
 msgid "map.desc"
 msgstr ""
 "TEDxNTUA event will take place in Hellenic Cosmos Cultural Centre. The venue "
 "address is Peiraios 254, Tavros. Access via:"
 
-#: project/home/templates/home/index.html:119
+#: project/home/templates/home/index.html:121
 msgid "map.access1"
 msgstr ""
 "Bus 049, 914 (<a href='http://telematics.oasa.gr/en/#stationInfo_450040_%CE"
 "%A3%CE%A7%CE%9F%CE%9B%CE%97%20%CE%9A%CE%91%CE%9B%CE%A9%CE%9D%20%CE%A4%CE"
 "%95%CE%A7%CE%9D%CE%A9%CE%9D' target='_blank'>SCHOLI KALON TECHNON</a> stop)"
 
-#: project/home/templates/home/index.html:120
+#: project/home/templates/home/index.html:122
 msgid "map.access2"
 msgstr ""
 "Metro green line (line 1) (<a href='http://www.stasy.gr/index.php?id=67&L=1' "
 "target='_blank'>KALLITHEA</a> stop)"
 
-#: project/home/templates/home/index.html:144
+#: project/home/templates/home/index.html:146
 msgid "auspices"
 msgstr "Under the auspices of NTUA"
 
@@ -241,22 +241,16 @@ msgid "schedule_time"
 msgstr "Time"
 
 #: project/program/templates/program/speakers.html:32
-#, fuzzy
-#| msgid "speakers"
 msgid "speakers.bio"
-msgstr "Speakers"
+msgstr "Bio"
 
-#: project/settings/base.py:170
+#: project/settings/base.py:175
 msgid "Greek"
 msgstr ""
 
-#: project/settings/base.py:171
+#: project/settings/base.py:176
 msgid "English"
 msgstr ""
-
-#: project/team/templates/team/index.html:5
-msgid "team_description"
-msgstr "TEDxNTUA team"
 
 #: project/templates/layouts/partials/nav.html:48
 msgid "home"
@@ -277,6 +271,9 @@ msgstr "About"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Get tickets!"
+
+#~ msgid "team_description"
+#~ msgstr "TEDxNTUA team"
 
 #, fuzzy
 #~| msgid "map.desc"
