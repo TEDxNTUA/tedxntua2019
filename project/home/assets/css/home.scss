@@ -38,66 +38,73 @@ $enigma-container-height: 540px;
 
 article.home {
     #speakers {
-      padding: 50px;
       h2 {
         font-size: 2.5rem;
         text-align: center;
       }
-      a .photo {
+
+  		a .photo1 {
   			display: block;
   		}
-  		a:hover .speaker-info {
+
+  		a .photo2 {
   			display: none;
   		}
+
+  		a:hover .photo1 {
+  			display: none;
+  		}
+
+  		a:hover .photo2 {
+  			display: block;
+  		}
+
+  		a:hover .speaker-info {
+  			opacity: 0;
+  		}
       .speaker-container {
-  			img {
-  				width: 100%;
-  				height: auto;
-  				position: absolute;
-  				top: 0;
-  				left: 0;
-  				z-index: 1;
-  			}
-  			a {
-  				background-color: transparent;
-  				transition: background-color .5s;
-  				text-align: center;
-  				display: block;
-  				color: black;
-  				position: relative;
-  				width: 100%;
-  				padding-bottom: 100%;
-  				font-size: .9rem;
-  			}
-  			.speaker-info {
-  				position: absolute;
-  				bottom: 0;
-  				z-index: 2;
-  				color: white;
-  				padding: 0 10px;
-  				width: 100%;
-  				h3 {
-  					font-size: 1.5em;
-  					line-height: 1;
-  					margin-bottom: .2rem;
-  				}
-  				p {
-  					font-size: 1em;
-  					line-height: 1.25;
-  					margin-bottom: 0;
-            color:$primary
-  				}
-  			}
-		   }
+      			img {
+      				width: 100%;
+      				height: auto;
+      				top: 0;
+      				left: 0;
+      				z-index: 1;
+      			}
+      			a {
+      				background-color: transparent;
+      				transition: background-color .5s;
+      				text-align: center;
+      				display: block;
+      				color: black;
+      				position: relative;
+      				width: 100%;
+      				font-size: .9rem;
+      			}
+      			.speaker-info {
+      				bottom: 1.25em;
+      				z-index: 2;
+      				color: $primary;
+      				width: 100%;
+      				h3 {
+      					font-size: 1.15em;
+      					line-height: 1;
+      				}
+      				p {
+      					font-size: .75em;
+      					line-height: 1.25;
+      				}
+      			}
+      		}
        /* change following 10px values to your desired value of padding between the columns */
        .row {
+         padding: 1rem;
          margin-left: -10px;
          margin-right: -10px;
          justify-content: center;
        }
        .col {
-         padding: 10px;
-       }
+       			padding: 10px;
+       		}
     }
     #auspices {
       padding: 50px;
@@ -314,6 +321,30 @@ article.home {
   }
 }
 
+/* ANGLE BRACKETS STYLING FOR SECTIONS */
+.angle-brackets, section.content .angle-brackets {
+	position: relative;
+	padding: 1rem;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+}
+
+/* END ANGLE BRACKETS */
+
 @-webkit-keyframes opacity {
   0%, 100% {opacity:0;}
   50% {opacity:1;}
@@ -382,6 +413,45 @@ article.home {
 }
 .circle{
   display: none;
+}
+
+@include media-breakpoint-up(sm) {
+  article.home {
+    #speakers {
+      .speaker-container {
+        a {
+          /* font size gets smaller from lg to xl since we move to a 4-column layout */
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  article.home {
+    #speakers {
+      .speaker-container {
+        a {
+          /* font size gets smaller from lg to xl since we move to a 4-column layout */
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+	article.home {
+		#speakers {
+			.speaker-container {
+				a {
+					/* font size gets smaller from lg to xl since we move to a 4-column layout */
+					font-size: 1rem;
+				}
+			}
+		}
+	}
 }
 
 /* media queries */

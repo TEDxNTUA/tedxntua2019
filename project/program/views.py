@@ -29,8 +29,6 @@ class ScheduleView(View):
 def set_language(request):
     language = request.GET.get('language')
     url = request.GET.get('url')
-    print(language)
-    print(url)
     translation.activate(language)
     request.session[translation.LANGUAGE_SESSION_KEY] = language
     return redirect(url)

@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 {% load render_bundle from webpack_loader %}
 {% load static %}
-{% load i18n %}
 {% block title %}Team{% endblock %}
-{% block description %}{%trans "team_description" %}{% endblock %}
+{% block description %}This is the Team page{% endblock %}
 {% block content %}
 <article class="page team">
     <section class="content">
@@ -14,14 +13,14 @@
         <div class="container-fluid">
           <div class="row vertical-align">
           {% for member in team.members %}
-          <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="col col-6 col-lg-4">
             <div class="card">
               <div class="card-body">
                 <div class="card-img-top">
                     <a href="mailto:{{member.email}}" target="_blank">
-                    <div id="{{member}}" class="fill cover-img">
+                    <div id="{{forloop.counter}}" class="fill cover-img">
                       <div class="fill hover">
-                        <div id="{{member}}_" class="fill cover-img2 hover-img"> </div>
+                        <div id="{{forloop.counter}}_" class="fill cover-img2 hover-img"> </div>
                         </div>
                       </div>
                      </a>
@@ -46,9 +45,9 @@ let p;
 let z;
 {% for id, team in teams.items %}
   {% for member in team.members %}
-  p = document.getElementById("{{member}}")
+  p = document.getElementById("{{forloop.counter}}")
   p.style.backgroundImage = "url('{{member.image.url}}')"
-  z = document.getElementById("{{member}}_")
+  z = document.getElementById("{{forloop.counter}}_")
   z.style.backgroundImage = "url('{{member.image_fun.url}}')"
   {% endfor %}
 {% endfor %}

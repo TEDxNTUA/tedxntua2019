@@ -11,7 +11,7 @@ from project.program.models import Presenter
 class HomeView(TemplateView):
     template_name = 'home/index.html'
     def get(self, request, *args, **kwargs):
-        speakers = Presenter.speakers.all()
+        speakers = Presenter.objects.get_speakers()
         return render(request, self.template_name, {'speakers': speakers})
 
 
