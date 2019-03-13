@@ -18,9 +18,9 @@
               <div class="card-body">
                 <div class="card-img-top">
                     <a href="mailto:{{member.email}}" target="_blank">
-                    <div id="{{forloop.counter}}" class="fill cover-img">
+                    <div id="{{member}}" class="fill cover-img">
                       <div class="fill hover">
-                        <div id="{{forloop.counter}}_" class="fill cover-img2 hover-img"> </div>
+                        <div id="{{member}}_" class="fill cover-img2 hover-img"> </div>
                         </div>
                       </div>
                      </a>
@@ -45,9 +45,9 @@ let p;
 let z;
 {% for id, team in teams.items %}
   {% for member in team.members %}
-  p = document.getElementById("{{forloop.counter}}")
+  p = document.getElementById("{{member}}")
   p.style.backgroundImage = "url('{{member.image.url}}')"
-  z = document.getElementById("{{forloop.counter}}_")
+  z = document.getElementById("{{member}}_")
   z.style.backgroundImage = "url('{{member.image_fun.url}}')"
   {% endfor %}
 {% endfor %}
