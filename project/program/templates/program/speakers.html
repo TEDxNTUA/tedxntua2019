@@ -12,9 +12,16 @@
 	</section>
 	<section class="content">
 		{% if speakers %}
-	    {% for speaker in speakers%}
+	    {% for speaker in speakers %}
 	      <div id="{{ speaker.id }}" class="speaker-header container-fluid">
-	        <img src="{{ speaker.image.url}}">
+					<img srcset="{{ speaker.image.thumbnail.320x320.url }} 320w,
+											 {{ speaker.image.thumbnail.720x720.url }} 720w,
+											 {{ speaker.image.thumbnail.1024x1024.url }} 1024w"
+							sizes="(max-width: 576px) 320px,
+											(max-width: 992px) 720px,
+											1024px"
+							src="{{ speaker.image.thumbnail.320x320.url }}"
+							alt="{{ speaker.fullname }}" />
 	        <h2>{{ speaker.fullname }} <a href="{{ speaker.link }}" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
 	        <h5>{{ speaker.occupation }}</h5>
 	        {% if speaker.quote %}

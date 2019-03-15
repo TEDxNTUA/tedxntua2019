@@ -14,7 +14,17 @@
         			<div class="row vertical-align">
                 {% for partner in type.items %}
         				<div class="col col-12 col-lg-4">
-        					<a href="{{partner.link}}" target="_blank"><img class="img-fluid grid-image hover-zoom" src="{{partner.image.url}}" alt=""></a>
+        					<a href="{{ partner.link }}" target="_blank">
+                    <img class="img-fluid grid-image hover-zoom"
+                        srcset="{{ partner.image.thumbnail.320x320.url }} 320w,
+                                {{ partner.image.thumbnail.720x720.url }} 720w,
+                                {{ partner.image.thumbnail.1024x1024.url }} 1024w"
+                        sizes="(max-width: 576px) 320px,
+                                (max-width: 992px) 720px,
+                                1024px"
+                        src="{{ partner.image.thumbnail.320x320.url }}"
+                        alt="{{ partner.name }}" />
+                  </a>
         				</div>
                 {% endfor %}
         			</div>
