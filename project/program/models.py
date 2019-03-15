@@ -335,10 +335,11 @@ def warm_presenter_images(sender, instance, **kwargs):
     https://django-versatileimagefield.readthedocs.io/en/latest/overview.html#create-images-wherever-you-need-them
     '''
 
-    img_warmer = VersatileImageFieldWarmer(
-        instance_or_queryset=instance,
-        rendition_key_set='Sizes',
-        image_attr='image',
-        verbose=True
-    )
-    num_created, failed_to_create = img_warmer.warm()
+    for field in ['image', 'image_shadows']:
+        img_warmer = VersatileImageFieldWarmer(
+            instance_or_queryset=instance,
+            rendition_key_set='Sizes',
+            image_attr=field,
+            verbose=True
+        )
+        num_created, failed_to_create = img_warmer.warm()

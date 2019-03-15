@@ -161,9 +161,9 @@ VERSATILEIMAGEFIELD_SETTINGS = {
 VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
     # Documentation link: https://django-versatileimagefield.readthedocs.io/en/latest/installation.html#versatileimagefield-rendition-key-sets
     'Sizes': [
-        ('small', 'thumbnail__100x100'),
-        ('medium', 'thumbnail__200x200'),
-        ('large', 'thumbnail__500x500')
+        ('small', 'thumbnail__320x320'),
+        ('medium', 'thumbnail__720x720'),
+        ('large', 'thumbnail__1024x1024')
     ]
 }
 
