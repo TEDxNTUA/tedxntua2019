@@ -17,7 +17,8 @@ module.exports = {
     home: fromRoot('project/home/assets/js/home.js'),
     pipes: fromRoot('project/home/assets/js/pipes.js'),
     scramble: fromRoot('project/home/assets/js/scramble.js'),
-    team: fromRoot('project/team/assets/js/team.js')
+    team: fromRoot('project/team/assets/js/team.js'),
+    speakers: fromRoot('project/program/assets/js/speakers.js')
   },
   module: {
     rules: [{
