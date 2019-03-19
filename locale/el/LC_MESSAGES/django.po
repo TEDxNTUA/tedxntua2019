@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-13 12:19+0200\n"
+"POT-Creation-Date: 2019-03-19 22:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -148,24 +148,24 @@ msgstr ""
 msgid "speakers"
 msgstr "Ομιλητές"
 
-#: project/home/templates/home/index.html:106
+#: project/home/templates/home/index.html:122
 #: project/program/templates/program/schedule.html:31
-#: project/program/templates/program/speakers.html:40
+#: project/program/templates/program/speakers.html:47
 msgid "to-be"
 msgstr "Θα ανακοινωθούν σύντομα"
 
-#: project/home/templates/home/index.html:116
+#: project/home/templates/home/index.html:132
 msgid "map.venue"
 msgstr "Χάρτης & Χώρος"
 
-#: project/home/templates/home/index.html:118
+#: project/home/templates/home/index.html:134
 msgid "map.desc"
 msgstr ""
 "Το αίνιγμα του TEDxNTUA θα εκτυλιχθεί φέτος στο Κέντρο Πολιτισμού «Ελληνικός "
 "Κόσμος». Το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» βρίσκεται στη διεύθυνση "
 "Πειραιώς 254, Ταύρος. Πρόσβαση:"
 
-#: project/home/templates/home/index.html:121
+#: project/home/templates/home/index.html:137
 msgid "map.access1"
 msgstr ""
 "Λεωφορείο 049, 914 (στάση <a href='http://telematics.oasa.gr/"
@@ -173,13 +173,13 @@ msgstr ""
 "%A9%CE%9D%20%CE%A4%CE%95%CE%A7%CE%9D%CE%A9%CE%9D' target='_blank'>ΣΧΟΛΗ "
 "ΚΑΛΩΝ ΤΕΧΝΩΝ</a>)"
 
-#: project/home/templates/home/index.html:122
+#: project/home/templates/home/index.html:138
 msgid "map.access2"
 msgstr ""
 "Μετρό πράσινη γραμμή ηλεκτρικού (στάση <a href='http://stasy.gr/index.php?"
 "id=67' target='_blank'>ΚΑΛΛΙΘΕΑ</a>) "
 
-#: project/home/templates/home/index.html:146
+#: project/home/templates/home/index.html:162
 msgid "auspices"
 msgstr "Υπό την αιγίδα του ΕΜΠ"
 
@@ -211,6 +211,16 @@ msgstr "Χορηγοί Επικοινωνίας"
 msgid "Community Partners"
 msgstr "Συνεργάτες Κοινότητας"
 
+#: project/partners/models.py:73 project/program/models.py:183
+#: project/program/models.py:338 project/team/models.py:84
+msgid "Published"
+msgstr "Δημόσιο"
+
+#: project/partners/models.py:81 project/program/models.py:206
+#: project/program/models.py:357 project/team/models.py:105
+msgid "Draft"
+msgstr "Πρόχειρο"
+
 #: project/program/models.py:44
 msgid "Main stage"
 msgstr "Κύρια σκηνή"
@@ -241,7 +251,7 @@ msgstr "Θα ανακοινωθεί σύντομα"
 msgid "schedule_time"
 msgstr "Ώρα"
 
-#: project/program/templates/program/speakers.html:32
+#: project/program/templates/program/speakers.html:39
 msgid "speakers.bio"
 msgstr "Βιογραφικό"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-13 12:19+0200\n"
+"POT-Creation-Date: 2019-03-19 22:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,36 +147,36 @@ msgstr ""
 msgid "speakers"
 msgstr "Speakers"
 
-#: project/home/templates/home/index.html:106
+#: project/home/templates/home/index.html:122
 #: project/program/templates/program/schedule.html:31
-#: project/program/templates/program/speakers.html:40
+#: project/program/templates/program/speakers.html:47
 msgid "to-be"
 msgstr "To be announced"
 
-#: project/home/templates/home/index.html:116
+#: project/home/templates/home/index.html:132
 msgid "map.venue"
 msgstr "Map & Venue"
 
-#: project/home/templates/home/index.html:118
+#: project/home/templates/home/index.html:134
 msgid "map.desc"
 msgstr ""
 "TEDxNTUA event will take place in Hellenic Cosmos Cultural Centre. The venue "
 "address is Peiraios 254, Tavros. Access via:"
 
-#: project/home/templates/home/index.html:121
+#: project/home/templates/home/index.html:137
 msgid "map.access1"
 msgstr ""
 "Bus 049, 914 (<a href='http://telematics.oasa.gr/en/#stationInfo_450040_%CE"
 "%A3%CE%A7%CE%9F%CE%9B%CE%97%20%CE%9A%CE%91%CE%9B%CE%A9%CE%9D%20%CE%A4%CE"
 "%95%CE%A7%CE%9D%CE%A9%CE%9D' target='_blank'>SCHOLI KALON TECHNON</a> stop)"
 
-#: project/home/templates/home/index.html:122
+#: project/home/templates/home/index.html:138
 msgid "map.access2"
 msgstr ""
 "Metro green line (line 1) (<a href='http://www.stasy.gr/index.php?id=67&L=1' "
 "target='_blank'>KALLITHEA</a> stop)"
 
-#: project/home/templates/home/index.html:146
+#: project/home/templates/home/index.html:162
 msgid "auspices"
 msgstr "Under the auspices of NTUA"
 
@@ -210,6 +210,16 @@ msgstr "Media Partners"
 msgid "Community Partners"
 msgstr "Community Partners"
 
+#: project/partners/models.py:73 project/program/models.py:183
+#: project/program/models.py:338 project/team/models.py:84
+msgid "Published"
+msgstr "Published"
+
+#: project/partners/models.py:81 project/program/models.py:206
+#: project/program/models.py:357 project/team/models.py:105
+msgid "Draft"
+msgstr "Draft"
+
 #: project/program/models.py:44
 msgid "Main stage"
 msgstr "Main stage"
@@ -240,7 +250,7 @@ msgstr "To be announced"
 msgid "schedule_time"
 msgstr "Time"
 
-#: project/program/templates/program/speakers.html:32
+#: project/program/templates/program/speakers.html:39
 msgid "speakers.bio"
 msgstr "Bio"
 
