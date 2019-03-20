@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-19 22:51+0000\n"
+"POT-Creation-Date: 2019-03-20 02:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -142,14 +142,13 @@ msgstr ""
 "class='primary_text'>α</span>τί η γνώση δομείται με ένα αίνιγμα τη φορά."
 
 #: project/home/templates/home/index.html:83
-#: project/program/templates/program/schedule.html:9
 #: project/program/templates/program/speakers.html:11
 #: project/templates/layouts/partials/nav.html:51
 msgid "speakers"
 msgstr "Ομιλητές"
 
 #: project/home/templates/home/index.html:122
-#: project/program/templates/program/schedule.html:31
+#: project/program/templates/program/schedule.html:13
 #: project/program/templates/program/speakers.html:47
 msgid "to-be"
 msgstr "Θα ανακοινωθούν σύντομα"
@@ -212,14 +211,23 @@ msgid "Community Partners"
 msgstr "Συνεργάτες Κοινότητας"
 
 #: project/partners/models.py:73 project/program/models.py:183
-#: project/program/models.py:338 project/team/models.py:84
+#: project/program/models.py:340 project/team/models.py:84
 msgid "Published"
 msgstr "Δημόσιο"
 
 #: project/partners/models.py:81 project/program/models.py:206
-#: project/program/models.py:357 project/team/models.py:105
+#: project/program/models.py:359 project/team/models.py:105
 msgid "Draft"
 msgstr "Πρόχειρο"
+
+#: project/program/forms.py:17
+msgid "Get image from presenter"
+msgstr "Λήψη εικόνας από τον παρουσιαστή"
+
+#: project/program/forms.py:18
+msgid ""
+"If selected, the image will be overridden by that of the first presenter"
+msgstr "Αν επιλεχθεί, η εικόνα θα αντικατασταθεί με την εικόνα του πρώτου παρουσιαστή"
 
 #: project/program/models.py:44
 msgid "Main stage"
@@ -241,10 +249,6 @@ msgstr "Πρόγραμμα"
 #: project/program/templates/program/schedule.html:4
 msgid "schedule.description"
 msgstr "Η σελίδα του προγράμματος του TEDxNTUA."
-
-#: project/program/templates/program/schedule.html:13
-msgid "to-be-1"
-msgstr "Θα ανακοινωθεί σύντομα"
 
 #: project/program/templates/program/schedule_desktop.html:7
 #: project/program/templates/program/schedule_mobile.html:25
@@ -282,6 +286,9 @@ msgstr "Σχετικά με εμάς"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Κάνε κράτηση!"
+
+#~ msgid "to-be-1"
+#~ msgstr "Θα ανακοινωθεί σύντομα"
 
 #~ msgid "team_description"
 #~ msgstr "Η ομάδα του TEDxNTUA."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-19 22:51+0000\n"
+"POT-Creation-Date: 2019-03-20 02:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,14 +141,13 @@ msgstr ""
 "time."
 
 #: project/home/templates/home/index.html:83
-#: project/program/templates/program/schedule.html:9
 #: project/program/templates/program/speakers.html:11
 #: project/templates/layouts/partials/nav.html:51
 msgid "speakers"
 msgstr "Speakers"
 
 #: project/home/templates/home/index.html:122
-#: project/program/templates/program/schedule.html:31
+#: project/program/templates/program/schedule.html:13
 #: project/program/templates/program/speakers.html:47
 msgid "to-be"
 msgstr "To be announced"
@@ -211,14 +210,23 @@ msgid "Community Partners"
 msgstr "Community Partners"
 
 #: project/partners/models.py:73 project/program/models.py:183
-#: project/program/models.py:338 project/team/models.py:84
+#: project/program/models.py:340 project/team/models.py:84
 msgid "Published"
 msgstr "Published"
 
 #: project/partners/models.py:81 project/program/models.py:206
-#: project/program/models.py:357 project/team/models.py:105
+#: project/program/models.py:359 project/team/models.py:105
 msgid "Draft"
 msgstr "Draft"
+
+#: project/program/forms.py:17
+msgid "Get image from presenter"
+msgstr "Get image from presenter"
+
+#: project/program/forms.py:18
+msgid ""
+"If selected, the image will be overridden by that of the first presenter"
+msgstr "If selected, the image will be overridden by that of the first presenter"
 
 #: project/program/models.py:44
 msgid "Main stage"
@@ -240,10 +248,6 @@ msgstr "Schedule"
 #: project/program/templates/program/schedule.html:4
 msgid "schedule.description"
 msgstr "Schedule page of TEDxNTUA event."
-
-#: project/program/templates/program/schedule.html:13
-msgid "to-be-1"
-msgstr "To be announced"
 
 #: project/program/templates/program/schedule_desktop.html:7
 #: project/program/templates/program/schedule_mobile.html:25
@@ -281,6 +285,9 @@ msgstr "About"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Get tickets!"
+
+#~ msgid "to-be-1"
+#~ msgstr "To be announced"
 
 #~ msgid "team_description"
 #~ msgstr "TEDxNTUA team"
