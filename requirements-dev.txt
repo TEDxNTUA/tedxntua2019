@@ -9,3 +9,4 @@ pylint-django==2.0.2
 six==1.11.0
 typed-ast==1.1.0
 wrapt==1.10.11
+django-extensions==2.1.5
