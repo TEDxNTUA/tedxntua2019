@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 03:25+0100\n"
+"POT-Creation-Date: 2019-03-20 23:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -210,24 +210,44 @@ msgstr "Χορηγοί Επικοινωνίας"
 msgid "Community Partners"
 msgstr "Συνεργάτες Κοινότητας"
 
-#: project/partners/models.py:73 project/program/models.py:183
-#: project/program/models.py:331 project/team/models.py:84
+#: project/partners/models.py:73 project/program/models.py:197
+#: project/program/models.py:345 project/team/models.py:84
 msgid "Published"
 msgstr "Δημόσιο"
 
-#: project/program/admin.py:22
+#: project/program/admin/activity_admin.py:26
 msgid "Presenters"
 msgstr "Παρουσιαστές"
 
-#: project/program/forms.py:17
+#: project/program/admin/presenter_admin.py:26
+msgid "Activities"
+msgstr ""
+
+#: project/program/forms/activity_form.py:17
 msgid "Get image from presenter"
 msgstr "Λήψη εικόνας από τον παρουσιαστή"
 
-#: project/program/forms.py:18
+#: project/program/forms/activity_form.py:18
 msgid ""
 "If selected, the image will be overridden by that of the first presenter"
 msgstr ""
 "Αν επιλεχθεί, η εικόνα θα αντικατασταθεί με την εικόνα του πρώτου παρουσιαστή"
+
+#: project/program/forms/presenter_form.py:9
+msgid "No"
+msgstr "Όχι"
+
+#: project/program/forms/presenter_form.py:21
+msgid "Assign empty activity"
+msgstr "Ανάθεσε κενή δραστηριότητα"
+
+#: project/program/forms/presenter_form.py:22
+msgid ""
+"This will create an empty and unpublished activity of the given type with "
+"the same photo as the presenter's"
+msgstr ""
+"Θα δημιουργηθεί μία κενή και μη δημόσια δραστηριότητα του δοθέντος τύπου που "
+"θα έχει την ίδια εικόνα με τον παρουσιαστή"
 
 #: project/program/models.py:44
 msgid "Main stage"

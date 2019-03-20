@@ -122,6 +122,20 @@ class ActivityManager(TranslatableManager):
         slots = OrderedDict(sorted(slots.items()))
         return slots
 
+    def make_empty(self, **other_values):
+        '''
+        Generates instance with placeholders for the required fields.
+
+        Other values can also be passed as keyword arguments.
+        The instance will not be saved to the database.
+        '''
+        a = self.model(**other_values)
+        for lang in ['el', 'en']:
+            a.set_current_language(lang)
+            for field in ['title', 'subtitle', 'description']:
+                setattr(a, field, '-')
+        return a
+
 
 class ActivityTypeManager(TranslatableManager):
     '''
