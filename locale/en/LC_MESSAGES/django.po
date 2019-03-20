@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 02:53+0100\n"
+"POT-Creation-Date: 2019-03-20 03:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -210,14 +210,13 @@ msgid "Community Partners"
 msgstr "Community Partners"
 
 #: project/partners/models.py:73 project/program/models.py:183
-#: project/program/models.py:340 project/team/models.py:84
+#: project/program/models.py:331 project/team/models.py:84
 msgid "Published"
 msgstr "Published"
 
-#: project/partners/models.py:81 project/program/models.py:206
-#: project/program/models.py:359 project/team/models.py:105
-msgid "Draft"
-msgstr "Draft"
+#: project/program/admin.py:22
+msgid "Presenters"
+msgstr "Presenters"
 
 #: project/program/forms.py:17
 msgid "Get image from presenter"
@@ -298,6 +297,9 @@ msgstr "TEDxNTUA 2019 admin"
 #: project/utils/admin.py:20
 msgid "Translatable"
 msgstr "Translatable"
+
+#~ msgid "Draft"
+#~ msgstr "Draft"
 
 #~ msgid "to-be-1"
 #~ msgstr "To be announced"
