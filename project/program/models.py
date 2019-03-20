@@ -241,7 +241,7 @@ def warm_activity_images(sender, instance, **kwargs):
     Documentation link:
     https://django-versatileimagefield.readthedocs.io/en/latest/overview.html#create-images-wherever-you-need-them
     '''
-    if instance.image is not None:
+    if instance.image:
         img_warmer = VersatileImageFieldWarmer(
             instance_or_queryset=instance,
             rendition_key_set='Sizes',
@@ -251,7 +251,7 @@ def warm_activity_images(sender, instance, **kwargs):
 
         num_created, failed_to_create = img_warmer.warm()
     else:
-        logger.info('No image file added for this activity')
+        logger.info('No image file added for this activity: %s', instance)
 
 
 class PresenterManager(TranslatableManager):
