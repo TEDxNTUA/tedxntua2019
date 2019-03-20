@@ -28,7 +28,7 @@ urlpatterns = [
     path('partners/', include('project.partners.urls')),
     path('team/', include('project.team.urls')),
     path('about/', include('project.about.urls')),
-    path('tickets/', RedirectView.as_view(url='https://www.eventbrite.com/e/tedxntua-2019-enigma-tickets-58737834444?fbclid=IwAR0NQSfvTu8cISwGgszG7xd_Aofd6U3776vfT2l7RohfWL0dXEYnDIbXdvE'))
+    path('tickets/', RedirectView.as_view(url='https://www.eventbrite.com/e/tedxntua-2019-enigma-tickets-58737834444'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
