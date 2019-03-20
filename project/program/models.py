@@ -164,11 +164,11 @@ class Activity(TranslatableModel):
     WORKSHOP = 'W'
     HOSTING = 'H'
     TYPE_CHOICES = (
-        (GENERAL, 'General'),
-        (TALK, 'Talk'),
-        (PERFORMANCE, 'Performance'),
-        (WORKSHOP, 'Workshop'),
-        (HOSTING, 'Hosting'),
+        (GENERAL, _('General')),
+        (TALK, _('Talk')),
+        (PERFORMANCE, _('Performance')),
+        (WORKSHOP, _('Workshop')),
+        (HOSTING, _('Hosting')),
     )
 
     activity_type = models.CharField(max_length=1, choices=TYPE_CHOICES,
@@ -277,9 +277,7 @@ class PresenterManager(TranslatableManager):
         that each speaker is presenting only a single talk.
         '''
         speakers = self.get_queryset().filter(
-            # TODO: Uncomment this when talks have been created for each speaker.
-            # It will work even if they are drafts.
-            #activity__activity_type=Activity.TALK,
+            activity__activity_type=Activity.TALK,
             is_published=True,
         )
         for speaker in speakers:

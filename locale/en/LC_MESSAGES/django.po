@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 23:16+0100\n"
+"POT-Creation-Date: 2019-03-20 23:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -210,7 +210,7 @@ msgid "Community Partners"
 msgstr "Community Partners"
 
 #: project/partners/models.py:73 project/program/models.py:197
-#: project/program/models.py:345 project/team/models.py:84
+#: project/program/models.py:343 project/team/models.py:84
 msgid "Published"
 msgstr "Published"
 
@@ -259,6 +259,28 @@ msgstr "Performances"
 #: project/program/models.py:46
 msgid "Side events"
 msgstr "Side events"
+
+#: project/program/models.py:167
+msgid "General"
+msgstr "General"
+
+#: project/program/models.py:168
+msgid "Talk"
+msgstr "Talk"
+
+#: project/program/models.py:169
+#, fuzzy
+#| msgid "Performances"
+msgid "Performance"
+msgstr "Performance"
+
+#: project/program/models.py:170
+msgid "Workshop"
+msgstr "Workshop"
+
+#: project/program/models.py:171
+msgid "Hosting"
+msgstr "Hosting"
 
 #: project/program/templates/program/schedule.html:3
 #: project/templates/layouts/partials/nav.html:54
