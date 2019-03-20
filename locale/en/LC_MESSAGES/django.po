@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 02:43+0100\n"
+"POT-Creation-Date: 2019-03-20 02:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -286,6 +286,14 @@ msgstr "About"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Get tickets!"
+
+#: project/urls.py:39
+msgid "TEDxNTUA 2019 administration"
+msgstr "TEDxNTUA 2019 administration"
+
+#: project/urls.py:40
+msgid "TEDxNTUA 2019 admin"
+msgstr "TEDxNTUA 2019 admin"
 
 #: project/utils/admin.py:20
 msgid "Translatable"

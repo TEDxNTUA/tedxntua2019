@@ -19,6 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.views.generic import RedirectView
+from django.utils.translation import ugettext_lazy as _
 
 urlpatterns = [
     path('', include('project.home.urls')),
@@ -34,3 +35,6 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
 )
+
+admin.site.site_header = _('TEDxNTUA 2019 administration')
+admin.site.site_title = _('TEDxNTUA 2019 admin')
