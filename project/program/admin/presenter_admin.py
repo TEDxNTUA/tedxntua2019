@@ -3,15 +3,19 @@ from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.utils.html import format_html_join
 
-from project.utils.admin import PartiallyTranslatableAdmin
+from project.utils.admin import PartiallyTranslatableAdmin, render_link_field
 from ..models import Activity
 from ..forms import PresenterModelForm
 
 
 class PresenterAdmin(PartiallyTranslatableAdmin):
     form = PresenterModelForm
-    list_display = ('__str__', 'occupation', 'link', 'activity_list', 'is_published')
+    list_display = ('__str__', 'occupation', 'link_html', 'activity_list', 'is_published')
     list_filter = ('activity__activity_type', 'is_published')
+
+    def link_html(self, obj):
+        return render_link_field(obj, 'link', new_tab=True)
+    link_html.short_description = _('Link')
 
     def activity_list(self, obj):
         '''

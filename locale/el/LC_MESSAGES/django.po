@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 23:30+0100\n"
+"POT-Creation-Date: 2019-03-21 00:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -182,6 +182,10 @@ msgstr ""
 msgid "auspices"
 msgstr "Υπό την αιγίδα του ΕΜΠ"
 
+#: project/partners/admin.py:15 project/program/admin/presenter_admin.py:18
+msgid "Link"
+msgstr "Σύνδεσμος"
+
 #: project/partners/models.py:50
 msgid "Grand Sponsors"
 msgstr "Μεγάλοι Χορηγοί"
@@ -219,7 +223,7 @@ msgstr "Δημόσιο"
 msgid "Presenters"
 msgstr "Παρουσιαστές"
 
-#: project/program/admin/presenter_admin.py:26
+#: project/program/admin/presenter_admin.py:30
 msgid "Activities"
 msgstr ""
 
@@ -337,7 +341,7 @@ msgstr "Διαχείριση TEDxNTUA 2019"
 msgid "TEDxNTUA 2019 admin"
 msgstr "Διαχείριση TEDxNTUA 2019"
 
-#: project/utils/admin.py:20
+#: project/utils/admin.py:21
 msgid "Translatable"
 msgstr "Προς μετάφραση"
 

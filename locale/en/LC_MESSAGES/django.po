@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 23:30+0100\n"
+"POT-Creation-Date: 2019-03-21 00:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -179,6 +179,10 @@ msgstr ""
 msgid "auspices"
 msgstr "Under the auspices of NTUA"
 
+#: project/partners/admin.py:15 project/program/admin/presenter_admin.py:18
+msgid "Link"
+msgstr "Link"
+
 #: project/partners/models.py:50
 msgid "Grand Sponsors"
 msgstr "Grand Sponsors"
@@ -218,7 +222,7 @@ msgstr "Published"
 msgid "Presenters"
 msgstr "Presenters"
 
-#: project/program/admin/presenter_admin.py:26
+#: project/program/admin/presenter_admin.py:30
 msgid "Activities"
 msgstr ""
 
@@ -336,7 +340,7 @@ msgstr "TEDxNTUA 2019 administration"
 msgid "TEDxNTUA 2019 admin"
 msgstr "TEDxNTUA 2019 admin"
 
-#: project/utils/admin.py:20
+#: project/utils/admin.py:21
 msgid "Translatable"
 msgstr "Translatable"
 

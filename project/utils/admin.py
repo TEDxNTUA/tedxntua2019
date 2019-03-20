@@ -1,3 +1,4 @@
+from django.utils.html import format_html
 from django.utils.translation import ugettext_lazy as _
 from parler.admin import TranslatableAdmin
 
@@ -19,3 +20,20 @@ class PartiallyTranslatableAdmin(TranslatableAdmin):
         # Add translatable fieldset
         fieldsets += [(_('Translatable'), {'fields': translated_fields})]
         return fieldsets
+
+
+def render_link_field(obj, field, new_tab=False):
+    '''
+    Utility to display link fields in admin list view.
+
+    Arguments:
+        - obj: The model instance
+        - field: The name of the URL field
+        - new_tab: If True, the link will open in a new tab in the browser
+    '''
+    link = getattr(obj, field)
+    return format_html(
+        '<a href="{0}"{1}>{0}</a>',
+        link,
+        ' target="_blank"' if new_tab else '',
+    )
