@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-13 12:19+0200\n"
+"POT-Creation-Date: 2019-03-20 03:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -142,30 +142,29 @@ msgstr ""
 "class='primary_text'>α</span>τί η γνώση δομείται με ένα αίνιγμα τη φορά."
 
 #: project/home/templates/home/index.html:83
-#: project/program/templates/program/schedule.html:9
 #: project/program/templates/program/speakers.html:11
 #: project/templates/layouts/partials/nav.html:51
 msgid "speakers"
 msgstr "Ομιλητές"
 
-#: project/home/templates/home/index.html:106
-#: project/program/templates/program/schedule.html:31
-#: project/program/templates/program/speakers.html:40
+#: project/home/templates/home/index.html:122
+#: project/program/templates/program/schedule.html:13
+#: project/program/templates/program/speakers.html:47
 msgid "to-be"
 msgstr "Θα ανακοινωθούν σύντομα"
 
-#: project/home/templates/home/index.html:116
+#: project/home/templates/home/index.html:132
 msgid "map.venue"
 msgstr "Χάρτης & Χώρος"
 
-#: project/home/templates/home/index.html:118
+#: project/home/templates/home/index.html:134
 msgid "map.desc"
 msgstr ""
 "Το αίνιγμα του TEDxNTUA θα εκτυλιχθεί φέτος στο Κέντρο Πολιτισμού «Ελληνικός "
 "Κόσμος». Το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» βρίσκεται στη διεύθυνση "
 "Πειραιώς 254, Ταύρος. Πρόσβαση:"
 
-#: project/home/templates/home/index.html:121
+#: project/home/templates/home/index.html:137
 msgid "map.access1"
 msgstr ""
 "Λεωφορείο 049, 914 (στάση <a href='http://telematics.oasa.gr/"
@@ -173,13 +172,13 @@ msgstr ""
 "%A9%CE%9D%20%CE%A4%CE%95%CE%A7%CE%9D%CE%A9%CE%9D' target='_blank'>ΣΧΟΛΗ "
 "ΚΑΛΩΝ ΤΕΧΝΩΝ</a>)"
 
-#: project/home/templates/home/index.html:122
+#: project/home/templates/home/index.html:138
 msgid "map.access2"
 msgstr ""
 "Μετρό πράσινη γραμμή ηλεκτρικού (στάση <a href='http://stasy.gr/index.php?"
 "id=67' target='_blank'>ΚΑΛΛΙΘΕΑ</a>) "
 
-#: project/home/templates/home/index.html:146
+#: project/home/templates/home/index.html:162
 msgid "auspices"
 msgstr "Υπό την αιγίδα του ΕΜΠ"
 
@@ -211,6 +210,25 @@ msgstr "Χορηγοί Επικοινωνίας"
 msgid "Community Partners"
 msgstr "Συνεργάτες Κοινότητας"
 
+#: project/partners/models.py:73 project/program/models.py:183
+#: project/program/models.py:331 project/team/models.py:84
+msgid "Published"
+msgstr "Δημόσιο"
+
+#: project/program/admin.py:22
+msgid "Presenters"
+msgstr "Παρουσιαστές"
+
+#: project/program/forms.py:17
+msgid "Get image from presenter"
+msgstr "Λήψη εικόνας από τον παρουσιαστή"
+
+#: project/program/forms.py:18
+msgid ""
+"If selected, the image will be overridden by that of the first presenter"
+msgstr ""
+"Αν επιλεχθεί, η εικόνα θα αντικατασταθεί με την εικόνα του πρώτου παρουσιαστή"
+
 #: project/program/models.py:44
 msgid "Main stage"
 msgstr "Κύρια σκηνή"
@@ -232,16 +250,12 @@ msgstr "Πρόγραμμα"
 msgid "schedule.description"
 msgstr "Η σελίδα του προγράμματος του TEDxNTUA."
 
-#: project/program/templates/program/schedule.html:13
-msgid "to-be-1"
-msgstr "Θα ανακοινωθεί σύντομα"
-
 #: project/program/templates/program/schedule_desktop.html:7
 #: project/program/templates/program/schedule_mobile.html:25
 msgid "schedule_time"
 msgstr "Ώρα"
 
-#: project/program/templates/program/speakers.html:32
+#: project/program/templates/program/speakers.html:39
 msgid "speakers.bio"
 msgstr "Βιογραφικό"
 
@@ -272,6 +286,24 @@ msgstr "Σχετικά με εμάς"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Κάνε κράτηση!"
+
+#: project/urls.py:39
+msgid "TEDxNTUA 2019 administration"
+msgstr "Διαχείριση TEDxNTUA 2019"
+
+#: project/urls.py:40
+msgid "TEDxNTUA 2019 admin"
+msgstr "Διαχείριση TEDxNTUA 2019"
+
+#: project/utils/admin.py:20
+msgid "Translatable"
+msgstr "Προς μετάφραση"
+
+#~ msgid "Draft"
+#~ msgstr "Πρόχειρο"
+
+#~ msgid "to-be-1"
+#~ msgstr "Θα ανακοινωθεί σύντομα"
 
 #~ msgid "team_description"
 #~ msgstr "Η ομάδα του TEDxNTUA."

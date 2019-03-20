@@ -17,16 +17,24 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 from django.views.generic import RedirectView
+from django.utils.translation import ugettext_lazy as _
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('project.home.urls')),
     path('schedule/', include('project.program.schedule_urls')),
     path('speakers/', include('project.program.urls')),
     path('partners/', include('project.partners.urls')),
     path('team/', include('project.team.urls')),
     path('about/', include('project.about.urls')),
-    path('tickets/', RedirectView.as_view(url='https://www.eventbrite.com/e/tedxntua-2019-enigma-tickets-58737834444?fbclid=IwAR0NQSfvTu8cISwGgszG7xd_Aofd6U3776vfT2l7RohfWL0dXEYnDIbXdvE'))
+    path('tickets/', RedirectView.as_view(url='https://www.eventbrite.com/e/tedxntua-2019-enigma-tickets-58737834444'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += i18n_patterns(
+    path('admin/', admin.site.urls),
+)
+
+admin.site.site_header = _('TEDxNTUA 2019 administration')
+admin.site.site_title = _('TEDxNTUA 2019 admin')

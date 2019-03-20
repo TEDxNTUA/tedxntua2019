@@ -2,11 +2,12 @@ from collections import OrderedDict
 
 from django.db import models
 from django.dispatch import receiver
+from django.utils.translation import ugettext_lazy as _
 
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 from parler.models import TranslatableModel, TranslatedFields
-from parler.managers import TranslatableQuerySet, TranslatableManager
+from parler.managers import TranslatableManager
 
 
 class TeamMemberManager(TranslatableManager):
@@ -27,7 +28,7 @@ class TeamMemberManager(TranslatableManager):
                 'members': [],
             }
 
-        for member in self.get_queryset():
+        for member in self.get_queryset().filter(is_published=True):
             teams[member.team]['members'].append(member)
         return teams
 
@@ -80,6 +81,8 @@ class TeamMember(TranslatableModel):
     image_fun_height = models.PositiveIntegerField(editable=False, null=True)
     image_fun_width = models.PositiveIntegerField(editable=False, null=True)
 
+    is_published = models.BooleanField(_('Published'), default=True)
+
     objects = TeamMemberManager()
 
     @property
@@ -93,7 +96,8 @@ class TeamMember(TranslatableModel):
         return ' '.join([self.first, self.last])
 
     def __str__(self):
-        '''Objects of the TeamMember class are represented as strings by
+        '''
+        Objects of the TeamMember class are represented as strings by
         their fullname property
         '''
         return self.fullname

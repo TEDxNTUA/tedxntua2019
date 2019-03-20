@@ -5,7 +5,7 @@ from django.dispatch import receiver
 from versatileimagefield.fields import VersatileImageField
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 from parler.models import TranslatableModel, TranslatedFields
-from parler.managers import TranslatableQuerySet, TranslatableManager
+from parler.managers import TranslatableManager
 
 
 class PartnerManager(TranslatableManager):
@@ -23,7 +23,7 @@ class PartnerManager(TranslatableManager):
                 'items': [],
             }
 
-        for item in self.get_queryset():
+        for item in self.get_queryset().filter(is_published=True):
             partners[item.partner_type]['items'].append(item)
         return partners
 
@@ -70,10 +70,11 @@ class Partner(TranslatableModel):
     image_height = models.PositiveIntegerField(editable=False, null=True)
     image_width = models.PositiveIntegerField(editable=False, null=True)
 
+    is_published = models.BooleanField(_('Published'), default=True)
+
     objects = PartnerManager()
 
     def __str__(self):
-        '''Objects of the Partner class are represented as strings by their name'''
         return self.name
 
 @receiver(models.signals.post_save, sender=Partner)

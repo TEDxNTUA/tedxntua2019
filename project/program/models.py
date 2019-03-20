@@ -75,6 +75,8 @@ class ActivityManager(TranslatableManager):
         returned, since the other will be overridden. This is prevented by the
         clean() method of the Activity model.
 
+        Activities with no start or end time will not be included.
+
         Example result:
         {
             '11:30': {
@@ -95,7 +97,13 @@ class ActivityManager(TranslatableManager):
         # Initialize each line to contain None for each stage
         blank_line = {stage.value: None for stage in Stage}
 
-        for activity in Activity.objects.all():
+        activities = Activity.objects.filter(
+            is_published=True,
+            start__isnull=False,
+            end__isnull=False,
+        )
+
+        for activity in activities:
             # Get time slot
             slot = activity.start_time
             # Get stage name
@@ -125,7 +133,10 @@ class ActivityTypeManager(TranslatableManager):
         self.type_ = type_
 
     def get_queryset(self):
-        return super().get_queryset().filter(activity_type=self.type_)
+        return super().get_queryset().filter(
+            activity_type=self.type_,
+            is_published=True,
+        )
 
 
 class Activity(TranslatableModel):
@@ -149,14 +160,14 @@ class Activity(TranslatableModel):
     activity_type = models.CharField(max_length=1, choices=TYPE_CHOICES,
                                      verbose_name='Type')
 
-    start = models.TimeField()
-    end = models.TimeField()
+    start = models.TimeField(null=True, blank=True)
+    end = models.TimeField(null=True, blank=True)
 
     translations = TranslatedFields(
-        title = models.CharField(max_length=255),
-        subtitle = models.TextField(),
-        description = models.TextField(),
-        )
+        title=models.CharField(max_length=255),
+        subtitle=models.TextField(),
+        description=models.TextField(),
+    )
 
     image = VersatileImageField(
         'Image',
@@ -168,6 +179,8 @@ class Activity(TranslatableModel):
     )
     image_height = models.PositiveIntegerField(editable=False, null=True)
     image_width = models.PositiveIntegerField(editable=False, null=True)
+
+    is_published = models.BooleanField(_('Published'), default=True)
 
     '''An activity may be presented by many people and a presenter
     may present many activities respectively
@@ -183,23 +196,24 @@ class Activity(TranslatableModel):
     workshops = ActivityTypeManager(WORKSHOP)
 
     def __str__(self):
-        '''String representation of an activity.
-
-        get_FOO_display() returns the display value of a `choices` CharField.
-        https://docs.djangoproject.com/el/2.1/ref/models/instances/#django.db.models.Model.get_FOO_display
-        '''
-        return f'{self.title} ({self.get_activity_type_display()})'
+        return self.title
 
     @property
     def start_time(self):
+        if not self.start:
+            return None
         return f'{self.start.hour:02d}:{self.start.minute:02d}'
 
     @property
     def end_time(self):
+        if not self.end:
+            return None
         return f'{self.end.hour:02d}:{self.end.minute:02d}'
 
     @property
     def time_span(self):
+        if (not self.start) or (not self.end):
+            return None
         return f'{self.start_time}-{self.end_time}'
 
     def clean(self):
@@ -248,10 +262,14 @@ class PresenterManager(TranslatableManager):
         Unlike the rest of the models file, here we make the assumption
         that each speaker is presenting only a single talk.
         '''
-        #speakers = self.get_queryset().filter(activity__activity_type=Activity.TALK) # Uncomment, if we have talks for all our speakers
-        speakers = self.get_queryset()
+        speakers = self.get_queryset().filter(
+            # TODO: Uncomment this when talks have been created for each speaker.
+            # It will work even if they are drafts.
+            #activity__activity_type=Activity.TALK,
+            is_published=True,
+        )
         for speaker in speakers:
-            speaker.talk = speaker.activity_set.first()
+            speaker.talk = speaker.activity_set.filter(is_published=True).first()
         return speakers
 
 
@@ -267,7 +285,10 @@ class PresenterTypeManager(TranslatableManager):
         self.type_ = type_
 
     def get_queryset(self):
-        return super().get_queryset().filter(activity__activity_type=self.type_)
+        return super().get_queryset().filter(
+            activity__activity_type=self.type_,
+            is_published=True,
+        )
 
 
 class Presenter(TranslatableModel):
@@ -306,6 +327,9 @@ class Presenter(TranslatableModel):
     )
     image_shadows_height = models.PositiveIntegerField(editable=False, null=True)
     image_shadows_width = models.PositiveIntegerField(editable=False, null=True)
+
+    is_published = models.BooleanField(_('Published'), default=True)
+
     # Managers are an easy way to create custom filters for queries.
     #
     # Documentation link:
