@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 02:35+0100\n"
+"POT-Creation-Date: 2019-03-20 02:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -226,7 +226,8 @@ msgstr "Get image from presenter"
 #: project/program/forms.py:18
 msgid ""
 "If selected, the image will be overridden by that of the first presenter"
-msgstr "If selected, the image will be overridden by that of the first presenter"
+msgstr ""
+"If selected, the image will be overridden by that of the first presenter"
 
 #: project/program/models.py:44
 msgid "Main stage"
@@ -285,6 +286,10 @@ msgstr "About"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Get tickets!"
+
+#: project/utils/admin.py:20
+msgid "Translatable"
+msgstr "Translatable"
 
 #~ msgid "to-be-1"
 #~ msgstr "To be announced"

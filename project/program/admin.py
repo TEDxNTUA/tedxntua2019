@@ -1,13 +1,13 @@
 from django.contrib import admin
 
+from project.utils.admin import PartiallyTranslatableAdmin
 from .models import Presenter, Activity
 from .forms import ActivityModelForm
-from parler.admin import TranslatableAdmin
 
 
-class ActivityAdmin(TranslatableAdmin):
+class ActivityAdmin(PartiallyTranslatableAdmin):
     form = ActivityModelForm
 
 
-admin.site.register(Presenter, TranslatableAdmin)
+admin.site.register(Presenter, PartiallyTranslatableAdmin)
 admin.site.register(Activity, ActivityAdmin)

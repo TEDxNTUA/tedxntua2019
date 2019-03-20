@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 02:35+0100\n"
+"POT-Creation-Date: 2019-03-20 02:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -227,7 +227,8 @@ msgstr "Λήψη εικόνας από τον παρουσιαστή"
 #: project/program/forms.py:18
 msgid ""
 "If selected, the image will be overridden by that of the first presenter"
-msgstr "Αν επιλεχθεί, η εικόνα θα αντικατασταθεί με την εικόνα του πρώτου παρουσιαστή"
+msgstr ""
+"Αν επιλεχθεί, η εικόνα θα αντικατασταθεί με την εικόνα του πρώτου παρουσιαστή"
 
 #: project/program/models.py:44
 msgid "Main stage"
@@ -286,6 +287,10 @@ msgstr "Σχετικά με εμάς"
 #: project/templates/layouts/partials/nav.html:66
 msgid "tickets"
 msgstr "Κάνε κράτηση!"
+
+#: project/utils/admin.py:20
+msgid "Translatable"
+msgstr "Προς μετάφραση"
 
 #~ msgid "to-be-1"
 #~ msgstr "Θα ανακοινωθεί σύντομα"
