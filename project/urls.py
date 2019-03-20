@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('project.home.urls')),
     path('schedule/', include('project.program.schedule_urls')),
     path('speakers/', include('project.program.urls')),
@@ -30,3 +30,7 @@ urlpatterns = [
     path('tickets/', RedirectView.as_view(url='https://www.eventbrite.com/e/tedxntua-2019-enigma-tickets-58737834444?fbclid=IwAR0NQSfvTu8cISwGgszG7xd_Aofd6U3776vfT2l7RohfWL0dXEYnDIbXdvE'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += i18n_patterns(
+    path('admin/', admin.site.urls),
+)
