@@ -24,7 +24,14 @@
                 {% if event %}
                 <div class="cell-content media">
                     {% if event.image %}
-                        <img src="{{event.image.url}}" alt="">
+                        <img srcset="{{ event.image.thumbnail.320x320.url }} 320w,
+                                            {{ event.image.thumbnail.720x720.url }} 720w,
+                                            {{ event.image.thumbnail.1024x1024.url }} 1024w"
+                            sizes="(max-width: 576px) 320px,
+                                            (max-width: 992px) 720px,
+                                            1024px"
+                            src="{{ event.image.thumbnail.320x320.url }}"
+                            alt="{{ event.title }}" />
                     {% else %}
                         <div class="image-placeholder"></div>
                     {% endif %}
@@ -39,7 +46,7 @@
                                 talks, performances etc. edit as you wish
                             {% endcomment %}
                                 {% if event.activity_type == "T" %}
-                                    <a href="/speakers/{{presenter.id}}">{{presenter.fullname}}</a>
+                                    <a href="/speakers/#{{presenter.id}}">{{presenter.fullname}}</a>
                                 {% else %}
                                     {{presenter.fullname}}
                                 {% endif %}
