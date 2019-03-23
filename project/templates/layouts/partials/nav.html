@@ -3,15 +3,25 @@
 {% get_current_language as LANGUAGE_CODE %}
 <nav id="nav" class="navbar navbar-expand-lg mx-auto">
     <div class="row-wrapper">
-        <a class="navbar-brand mr-auto" href="/">
+        <a class="navbar-brand" href="/">
             <img src="{% static "images/tedxntua_logo_whitetext.png" %}" alt="TEDxNTUA Logo" />
         </a>
 
         <div class="language-selector">
+          {% if LANGUAGE_CODE == 'en' %}
             <button class="btn dropdown-toggle nav-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ LANGUAGE_CODE | upper}}
+                EN
                 <i class="fas fa-angle-down"></i>
             </button>
+            {% endif %}
+
+            {% if LANGUAGE_CODE == 'el' %}
+              <button class="btn dropdown-toggle nav-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  GR
+                  <i class="fas fa-angle-down"></i>
+              </button>
+              {% endif %}
+
             <div class="dropdown-menu dropdown-menu-right">
               <form name="english_form" action="language" method="get">
                 <input type="hidden" name="language" id="language" value="en"/>
