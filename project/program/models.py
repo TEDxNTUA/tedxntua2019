@@ -283,6 +283,14 @@ class PresenterManager(TranslatableManager):
         for speaker in speakers:
             speaker.talk = speaker.activity_set.filter(is_published=True).first()
         return speakers
+    def get_host(self):
+        '''Returns the host of the event
+        '''
+        host = self.get_queryset().filter(
+            activity__activity_type=Activity.HOSTING,
+            is_published=True,
+        )
+        return host
 
 
 # Presenter model & managers
