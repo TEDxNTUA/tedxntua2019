@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-24 13:45+0200\n"
+"POT-Creation-Date: 2019-03-24 14:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,10 +147,10 @@ msgstr ""
 msgid "speakers"
 msgstr "Ομιλητές"
 
-#: project/home/templates/home/index.html:118 project/program/models.py:171
+#: project/home/templates/home/index.html:118
 #: project/program/templates/program/speakers.html:45
-msgid "Hosting"
-msgstr "Παρουσιάζει"
+msgid "Host"
+msgstr "Παρουσιαστής"
 
 #: project/home/templates/home/index.html:151
 #: project/program/templates/program/schedule.html:13
@@ -288,6 +288,10 @@ msgstr "Παράσταση"
 #: project/program/models.py:170
 msgid "Workshop"
 msgstr "Workshop"
+
+#: project/program/models.py:171
+msgid "Hosting"
+msgstr "Παρουσιάζει"
 
 #: project/program/templates/program/schedule.html:3
 #: project/templates/layouts/partials/nav.html:54
