@@ -10,7 +10,8 @@ class SpeakersView(View):
 
     def get(self, request, *args, **kwargs):
         speakers = Presenter.objects.get_speakers()
-        return render(request, self.template_name, {'speakers': speakers})
+        host = Presenter.objects.get_host()
+        return render(request, self.template_name, {'speakers': speakers, 'host': host[0]})
 
 
 class ScheduleView(View):
