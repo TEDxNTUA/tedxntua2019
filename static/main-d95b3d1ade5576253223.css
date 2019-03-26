@@ -7091,6 +7091,11 @@ article.home .enigma-animation-container {
     /* font size gets smaller from lg to xl since we move to a 4-column layout */
     font-size: 1.2rem; } }
 
+@media (max-width: 767.98px) {
+  article.home #speakers .speaker-container a {
+    /* font size gets smaller from lg to xl since we move to a 4-column layout */
+    font-size: 0.6rem; } }
+
 @media (min-width: 768px) {
   article.home #speakers .speaker-container a {
     /* font size gets smaller from lg to xl since we move to a 4-column layout */
