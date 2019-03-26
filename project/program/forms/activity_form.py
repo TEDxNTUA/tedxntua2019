@@ -46,8 +46,10 @@ class ActivityModelForm(TranslatableModelForm):
         get_im = self.cleaned_data.get('get_image_from_presenter', False)
         presenters = self.cleaned_data.get('presenters', None)
         if get_im and presenters:
+            presenter = presenters.first()
             # Set image field to point to first presenter's image
-            obj.image.name = presenters.first().image.name
+            if presenter.image:
+                obj.image.name = presenter.image.name
 
         if commit:
             obj.save()
