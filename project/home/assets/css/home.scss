@@ -59,9 +59,6 @@ article.home {
   			display: block;
   		}
 
-  		a:hover .speaker-info {
-  			opacity: 0;
-  		}
       .speaker-container {
       			img {
       				width: 100%;
@@ -428,6 +425,19 @@ article.home {
         a {
           /* font size gets smaller from lg to xl since we move to a 4-column layout */
           font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  article.home {
+    #speakers {
+      .speaker-container {
+        a {
+          /* font size gets smaller from lg to xl since we move to a 4-column layout */
+          font-size: 0.6rem;
         }
       }
     }
