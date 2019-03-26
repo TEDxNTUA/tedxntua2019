@@ -276,22 +276,20 @@ class PresenterManager(TranslatableManager):
         Unlike the rest of the models file, here we make the assumption
         that each speaker is presenting only a single talk.
         '''
-        speakers1 = self.get_queryset().filter(activity__activity_type=Activity.TALK)
-        speakers2 = self.get_queryset().filter(is_published=True)
-        speakers = []
-        for published_speaker in speakers2:
-            if(published_speaker in speakers1):
-                speakers.append(published_speaker)
+        speakers = self.get_queryset().filter(
+            activity__activity_type=Activity.TALK,
+            is_published=True,
+        ).distinct()
         for speaker in speakers:
             speaker.talk = speaker.activity_set.filter(is_published=True).first()
         return speakers
+
     def get_host(self):
-        '''Returns the host of the event
-        '''
+        '''Returns the host of the event'''
         host = self.get_queryset().filter(
             activity__activity_type=Activity.HOSTING,
             is_published=True,
-        )
+        ).distinct()
         return host
 
 
@@ -310,7 +308,7 @@ class PresenterTypeManager(TranslatableManager):
         return super().get_queryset().filter(
             activity__activity_type=self.type_,
             is_published=True,
-        )
+        ).distinct()
 
 
 class Presenter(TranslatableModel):
