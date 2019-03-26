@@ -169,10 +169,8 @@ msgstr ""
 
 #: project/home/templates/home/index.html:166
 msgid "map.access0"
-msgstr ""
-"Uber (<a href='https://www.uber.com/gr/en/' target='_blank'>uber.com</a>, <a "
-"href='https://play.google.com/store/apps/details?id=com.ubercab&hl=en' "
-"target='_blank'>App</a>)"
+msgstr "Taxi via <a href=\"https://get.uber.com/open_app\" "
+"target=\"_blank\">Uber</a>"
 
 #: project/home/templates/home/index.html:167
 msgid "map.access1"
