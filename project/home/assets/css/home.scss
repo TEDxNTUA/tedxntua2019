@@ -434,6 +434,19 @@ article.home {
   }
 }
 
+@include media-breakpoint-down(sm) {
+  article.home {
+    #speakers {
+      .speaker-container {
+        a {
+          /* font size gets smaller from lg to xl since we move to a 4-column layout */
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
 @include media-breakpoint-up(md) {
   article.home {
     #speakers {
