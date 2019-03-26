@@ -13,7 +13,6 @@ class HomeView(TemplateView):
     def get(self, request, *args, **kwargs):
         speakers = Presenter.objects.get_speakers()
         host = Presenter.objects.get_host()
-        print(host[0])
         return render(request, self.template_name, {'speakers': speakers, 'host': host[0]})
 
 
