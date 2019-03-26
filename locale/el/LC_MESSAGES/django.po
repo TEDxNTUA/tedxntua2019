@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-24 14:38+0200\n"
+"POT-Creation-Date: 2019-03-26 18:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -170,6 +170,13 @@ msgstr ""
 "Πειραιώς 254, Ταύρος. Πρόσβαση:"
 
 #: project/home/templates/home/index.html:166
+msgid "map.access0"
+msgstr ""
+"Uber (<a href='https://www.uber.com/gr/el/' target='_blank'>uber.com</a>, <a "
+"href='https://play.google.com/store/apps/details?id=com.ubercab&hl=el' "
+"target='_blank'>App</a>)"
+
+#: project/home/templates/home/index.html:167
 msgid "map.access1"
 msgstr ""
 "Λεωφορείο 049, 914 (στάση <a href='http://telematics.oasa.gr/"
@@ -177,13 +184,13 @@ msgstr ""
 "%A9%CE%9D%20%CE%A4%CE%95%CE%A7%CE%9D%CE%A9%CE%9D' target='_blank'>ΣΧΟΛΗ "
 "ΚΑΛΩΝ ΤΕΧΝΩΝ</a>)"
 
-#: project/home/templates/home/index.html:167
+#: project/home/templates/home/index.html:168
 msgid "map.access2"
 msgstr ""
 "Μετρό πράσινη γραμμή ηλεκτρικού (στάση <a href='http://stasy.gr/index.php?"
 "id=67' target='_blank'>ΚΑΛΛΙΘΕΑ</a>) "
 
-#: project/home/templates/home/index.html:191
+#: project/home/templates/home/index.html:192
 msgid "auspices"
 msgstr "Υπό την αιγίδα του ΕΜΠ"
 
