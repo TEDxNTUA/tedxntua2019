@@ -6764,8 +6764,6 @@ article.home #speakers {
     display: none; }
   article.home #speakers a:hover .photo2 {
     display: block; }
-  article.home #speakers a:hover .speaker-info {
-    opacity: 0; }
   article.home #speakers .speaker-container img {
     width: 100%;
     height: auto;
