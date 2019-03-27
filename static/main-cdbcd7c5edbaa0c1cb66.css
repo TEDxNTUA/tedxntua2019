@@ -6922,6 +6922,10 @@ article.home .enigma-animation-container {
     width: 540px;
     opacity: 0; }
 
+article.home .side-container {
+  position: relative;
+  top: 40%; }
+
 #enigma-text {
   margin-top: 4rem;
   font-size: 110%; }
