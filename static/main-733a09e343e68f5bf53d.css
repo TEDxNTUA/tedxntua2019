@@ -7048,7 +7048,7 @@ html, body {
   width: 100%; }
 
 html {
-  font-size: 120%; }
+  font-size: 110%; }
 
 body {
   color: white;
@@ -8040,13 +8040,16 @@ article.speakers {
 
 /* SCHEDULE PAGE */
 article.schedule {
-  font-size: .85rem; }
+  font-size: .75rem; }
   article.schedule .nav-slider {
     border-bottom: 4px solid #F19386;
+    font-size: 1.1em;
     justify-content: center; }
-    article.schedule .nav-slider .nav-link.active {
-      background-color: #F19386;
-      color: white; }
+    article.schedule .nav-slider .nav-link {
+      padding: .5rem; }
+      article.schedule .nav-slider .nav-link.active {
+        background-color: #F19386;
+        color: white; }
   article.schedule h5 {
     font-size: 1.25em;
     font-weight: bold; }
@@ -8163,12 +8166,16 @@ article.schedule {
  * MEDIA QUERIES
  */
 @media (min-width: 576px) {
-  article.schedule .nav-slider {
-    font-size: 1.25em; } }
+  article.schedule {
+    font-size: .85rem; }
+    article.schedule .nav-slider .nav-link {
+      padding: .5rem 1rem; } }
 
 @media (min-width: 768px) {
-  article.schedule .table th, article.schedule .table td {
-    padding: .75rem; } }
+  article.schedule {
+    font-size: 1rem; }
+    article.schedule .table th, article.schedule .table td {
+      padding: .75rem; } }
 
 @media (min-width: 992px) {
   article.schedule thead th {

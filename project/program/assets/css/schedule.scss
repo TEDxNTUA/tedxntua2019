@@ -1,13 +1,17 @@
 /* SCHEDULE PAGE */
 
 article.schedule {
-	font-size: .85rem;
+	font-size: .75rem;
 	.nav-slider {
 		border-bottom: 4px solid $primary;
+		font-size: 1.1em;
 		justify-content: center;
-		.nav-link.active {
-			background-color: $primary;
-			color: $body-color;
+		.nav-link {
+			padding: .5rem;
+			&.active {
+				background-color: $primary;
+				color: $body-color;
+			}
 		}
 	}
 	h5 {
@@ -166,14 +170,18 @@ article.schedule {
 
 @include media-breakpoint-up(sm) {
 	article.schedule {
+		font-size: .85rem;
 		.nav-slider {
-			font-size: 1.25em;
+			.nav-link {
+				padding: .5rem 1rem;
+			}
 		}
 	}
 }
 
 @include media-breakpoint-up(md) {
 	article.schedule {
+		font-size: 1rem;
 		.table th, .table td {
 			padding: .75rem;
 		}
