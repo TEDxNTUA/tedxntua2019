@@ -6346,7 +6346,8 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  font-family: 'Jura', sans-serif; }
+  font-family: 'Jura', sans-serif;
+  line-height: 150%; }
 
 header, main, footer {
   flex-shrink: 0; }
@@ -6724,6 +6725,9 @@ a.collapse-triangle.collapsed:after, button.collapse-triangle.collapsed:after {
 #venue-home {
   color: #C1E3D3; }
 
+#enigma_text {
+  color: white; }
+
 .flex-list {
   position: relative;
   margin: 1em; }
@@ -6782,7 +6786,6 @@ article.home #speakers {
   article.home #speakers .speaker-container .speaker-info {
     bottom: 1.25em;
     z-index: 2;
-    color: #F19386;
     width: 100%; }
     article.home #speakers .speaker-container .speaker-info h3 {
       font-size: 100%;
@@ -6895,7 +6898,7 @@ article.home #tba {
     transform: scale(1); } }
 
 article.home .enigma-animation-container {
-  margin-top: 4rem;
+  margin-top: 0rem;
   position: relative;
   height: 540px;
   width: 100%;
@@ -6937,7 +6940,7 @@ article.home .enigma-animation-container {
     text-align: center;
     font-weight: 600;
     overflow: hidden;
-    height: 40px;
+    height: 43px;
     padding: 0 40px; }
     .enigma__container:before {
       content: '[';
@@ -7117,6 +7120,12 @@ article.home .enigma-animation-container {
   #enigma-section .enigma {
     display: block; } }
 
+.opt1 {
+  color: #C1E3D3; }
+
+.opt2 {
+  color: #F19386; }
+
 .side-container {
   position: relative;
   top: 50%; }
@@ -7241,13 +7250,12 @@ article.speakers {
   /* remove bootstrap's container-fluid margin from this page, since we have a custom layout */ }
   article.speakers section.content .container-fluid {
     margin-bottom: 0; }
-  article.speakers section.content .speaker-container {
-    margin-bottom: 2rem; }
-    article.speakers section.content .speaker-container:last {
-      margin-bottom: 0; }
+  article.speakers section.content .speaker-seperator {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    border-bottom: 1px solid #AAA; }
   article.speakers div.speaker-header {
     text-align: center;
-    border-bottom: 1px solid #AAA;
     /* bottom-padding */
     padding: 0 0 1.5rem 0;
     /* middle spacing */ }
