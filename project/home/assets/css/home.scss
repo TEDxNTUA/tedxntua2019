@@ -1,11 +1,14 @@
 /* HOME */
 $enigma-container-height: 540px;
 
+
 #venue-home{
   color: $secondary;
 }
 
-
+#enigma_text{
+  color: white;
+}
 .flex-list {
     position: relative;
     margin: 1em;
@@ -80,16 +83,17 @@ article.home {
       			.speaker-info {
       				bottom: 1.25em;
       				z-index: 2;
-      				color: $primary;
       				width: 100%;
       				h3 {
       					font-size: 100%;
       					line-height: 1;
                 margin-top: 1.5rem;
+                color: $primary;
       				}
       				p {
       					font-size: 75%;
       					line-height: 1.25;
+                color: white;
       				}
       			}
       		}
@@ -262,7 +266,7 @@ article.home {
     text-align: center;
     font-weight: 600;
     overflow: hidden;
-    height: 40px;
+    height: 43px;
     padding: 0 40px;
 
     &:before {
@@ -466,4 +470,12 @@ article.home {
       display: block;
     }
   }
+}
+
+.opt1{
+  color: $secondary;
+}
+
+.opt2{
+  color: $primary;
 }
