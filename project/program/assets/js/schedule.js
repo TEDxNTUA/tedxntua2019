@@ -88,7 +88,21 @@ const bindTouchEvents = () => {
     })
 }
 
+/**
+ * Given a location hash, it checks if a tab exists with
+ * that hash as href and if so, it shows it.
+ * @param {String} hash
+ */
+const handleHash = (hash) => {
+    let whichTab = null
+    tabs.forEach((tab, i) => tab.getAttribute("href") === hash && (whichTab = i))
+    if (whichTab !== null) {
+        jQuery(tabs[whichTab]).tab("show")
+    }
+}
+
 // Apply only on pages where the elements exist
 if (el && tabs.length) {
     bindTouchEvents()
+    handleHash(location.hash)
 }
