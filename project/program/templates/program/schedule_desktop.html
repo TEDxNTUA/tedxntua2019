@@ -35,11 +35,9 @@
                     {% else %}
                         <div class="image-placeholder"></div>
                     {% endif %}
+
                     <div class="media-body">
                         <h5>
-                            {{event.title}}
-                        </h5>
-                        <h6>
                             {% for presenter in event.presenters.all %}
                             {% comment %}
                                 just an example on how to differentiate between
@@ -51,10 +49,13 @@
                                     {{presenter.fullname}}
                                 {% endif %}
                             {% endfor %}
-                            {{event.subtitle}} ({{event.time_span}})
+                        </h5>
+                        <h6>
+                            {{event.title}}
                         </h6>
                     </div>
                 </div>
+                <p>{{event.subtitle}} ({{event.time_span}})</p>
                 {% else %}
                 <div class="cell-content"></div>
                 {% endif %}

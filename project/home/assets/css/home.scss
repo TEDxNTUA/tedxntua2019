@@ -86,16 +86,18 @@ article.home {
       					font-size: 100%;
       					line-height: 1;
                 margin-top: 1.5rem;
+                color: $primary
       				}
       				p {
       					font-size: 75%;
       					line-height: 1.25;
+                color: white;
       				}
       			}
       		}
         h2.host {
           font-size: 2.5rem;
-          color: $secondary;
+          color: white;
           margin-top: 1.5rem;
         }
        /* change following 10px values to your desired value of padding between the columns */
@@ -114,6 +116,7 @@ article.home {
       h2 {
         font-size: 2.5rem;
         text-align: center;
+        color: white;
       }
   		a {
   			color: black;
@@ -137,6 +140,7 @@ article.home {
       h2 {
         font-size: 2.5rem;
         text-align: center;
+        color: white;
       }
       p {
         text-align: justify;
