@@ -15,7 +15,7 @@ let x0 = null,
  * Given y, x coordinates this function calculates
  * the angle measured from the horizontal level
  * in absolute value.
- * @param {Number} angle 
+ * @param {Number} angle
  */
 const angleFromHLevel = (y, x) => {
     /**
@@ -77,7 +77,7 @@ const bindTouchEvents = () => {
             y = e.changedTouches[0].clientY,
             dx = x - x0,
             dy = y - y0
-        
+
         let angle = angleFromHLevel(dy, dx)
 
         if (angle < ANGLE_THRESHOLD && Math.abs(dx) > DIST_THRESHOLD) {
