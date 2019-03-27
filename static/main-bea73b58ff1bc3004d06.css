@@ -6764,8 +6764,6 @@ article.home #speakers {
     display: none; }
   article.home #speakers a:hover .photo2 {
     display: block; }
-  article.home #speakers a:hover .speaker-info {
-    opacity: 0; }
   article.home #speakers .speaker-container img {
     width: 100%;
     height: auto;
@@ -6793,6 +6791,10 @@ article.home #speakers {
     article.home #speakers .speaker-container .speaker-info p {
       font-size: 75%;
       line-height: 1.25; }
+  article.home #speakers h2.host {
+    font-size: 2.5rem;
+    color: #C1E3D3;
+    margin-top: 1.5rem; }
   article.home #speakers .row {
     padding: 1rem;
     margin-left: -10px;
@@ -7086,6 +7088,11 @@ article.home .enigma-animation-container {
   article.home #speakers .speaker-container a {
     /* font size gets smaller from lg to xl since we move to a 4-column layout */
     font-size: 1.2rem; } }
+
+@media (max-width: 767.98px) {
+  article.home #speakers .speaker-container a {
+    /* font size gets smaller from lg to xl since we move to a 4-column layout */
+    font-size: 0.6rem; } }
 
 @media (min-width: 768px) {
   article.home #speakers .speaker-container a {

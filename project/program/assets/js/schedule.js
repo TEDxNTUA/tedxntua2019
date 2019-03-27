@@ -15,7 +15,7 @@ let x0 = null,
  * Given y, x coordinates this function calculates
  * the angle measured from the horizontal level
  * in absolute value.
- * @param {Number} angle 
+ * @param {Number} angle
  */
 const angleFromHLevel = (y, x) => {
     /**
@@ -77,7 +77,7 @@ const bindTouchEvents = () => {
             y = e.changedTouches[0].clientY,
             dx = x - x0,
             dy = y - y0
-        
+
         let angle = angleFromHLevel(dy, dx)
 
         if (angle < ANGLE_THRESHOLD && Math.abs(dx) > DIST_THRESHOLD) {
@@ -88,7 +88,21 @@ const bindTouchEvents = () => {
     })
 }
 
+/**
+ * Given a location hash, it checks if a tab exists with
+ * that hash as href and if so, it shows it.
+ * @param {String} hash
+ */
+const handleHash = (hash) => {
+    let whichTab = null
+    tabs.forEach((tab, i) => tab.getAttribute("href") === hash && (whichTab = i))
+    if (whichTab !== null) {
+        jQuery(tabs[whichTab]).tab("show")
+    }
+}
+
 // Apply only on pages where the elements exist
 if (el && tabs.length) {
     bindTouchEvents()
+    handleHash(location.hash)
 }

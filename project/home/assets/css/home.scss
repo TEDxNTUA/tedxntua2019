@@ -97,6 +97,11 @@ article.home {
       				}
       			}
       		}
+        h2.host {
+          font-size: 2.5rem;
+          color: white;
+          margin-top: 1.5rem;
+        }
        /* change following 10px values to your desired value of padding between the columns */
        .row {
          padding: 1rem;
@@ -113,6 +118,7 @@ article.home {
       h2 {
         font-size: 2.5rem;
         text-align: center;
+        color: white;
       }
   		a {
   			color: black;
@@ -136,6 +142,7 @@ article.home {
       h2 {
         font-size: 2.5rem;
         text-align: center;
+        color: white;
       }
       p {
         text-align: justify;
@@ -317,7 +324,7 @@ article.home {
       &__item {
         line-height:40px;
         margin:0;
-        padding-left: 15rem;
+        padding-left: 17rem;
       }
     }
   }
@@ -424,6 +431,19 @@ article.home {
         a {
           /* font size gets smaller from lg to xl since we move to a 4-column layout */
           font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  article.home {
+    #speakers {
+      .speaker-container {
+        a {
+          /* font size gets smaller from lg to xl since we move to a 4-column layout */
+          font-size: 0.6rem;
         }
       }
     }

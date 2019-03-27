@@ -47,6 +47,35 @@
 					</div>
 					{% endif %}
 	    {% endfor %}
+			<h2 >{% trans "Host" %}</h2>
+			<div id="host" class="speaker-header container-fluid">
+				<img srcset="{{ host.image.thumbnail.320x320.url }} 320w,
+										 {{ host.image.thumbnail.720x720.url }} 720w,
+										 {{ host.image.thumbnail.1024x1024.url }} 1024w"
+						sizes="(max-width: 576px) 320px,
+										(max-width: 992px) 720px,
+										1024px"
+						src="{{ host.image.thumbnail.320x320.url }}"
+						alt="{{ host.fullname }}" />
+				<h2>{{ host.fullname }} <a href="{{ host.link }}" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+				<h5>{{ host.occupation }}</h5>
+				{% if host.quote %}
+				<blockquote class="quote">{{ host.quote }}</blockquote>
+				{% endif %}
+			</div>
+			<div class="speaker-info container-fluid">
+				<div class="row mb-3">
+					<div class="col col-12">
+						{{ host.talk.title }}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-12">
+						<h3 class="text-center primary">{% trans "speakers.bio" %}</h3>
+						{{ host.short_bio|safe }}
+					</div>
+				</div>
+			</div>
 	{% else %}
 	<div id="tba">
 		<h2 class="tba_text">{% trans "to-be" %}</h2>

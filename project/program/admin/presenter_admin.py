@@ -54,7 +54,8 @@ class PresenterAdmin(PartiallyTranslatableAdmin):
                 is_published=False,
             )
             # Get image from presenter
-            a.image.name = presenter.image.name
+            if presenter.image:
+                a.image.name = presenter.image.name
             a.save()
             # Assign activity to presenter
             presenter.activity_set.add(a)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-21 00:02+0100\n"
+"POT-Creation-Date: 2019-03-26 18:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -146,36 +146,46 @@ msgstr ""
 msgid "speakers"
 msgstr "Speakers"
 
-#: project/home/templates/home/index.html:122
+#: project/home/templates/home/index.html:118
+#: project/program/templates/program/speakers.html:45
+msgid "Host"
+msgstr "Host"
+
+#: project/home/templates/home/index.html:151
 #: project/program/templates/program/schedule.html:13
-#: project/program/templates/program/speakers.html:47
+#: project/program/templates/program/speakers.html:76
 msgid "to-be"
 msgstr "To be announced"
 
-#: project/home/templates/home/index.html:132
+#: project/home/templates/home/index.html:161
 msgid "map.venue"
 msgstr "Map & Venue"
 
-#: project/home/templates/home/index.html:134
+#: project/home/templates/home/index.html:163
 msgid "map.desc"
 msgstr ""
 "TEDxNTUA event will take place in Hellenic Cosmos Cultural Centre. The venue "
 "address is Peiraios 254, Tavros. Access via:"
 
-#: project/home/templates/home/index.html:137
+#: project/home/templates/home/index.html:166
+msgid "map.access0"
+msgstr "Taxi via <a href=\"https://get.uber.com/open_app\" "
+"target=\"_blank\">Uber</a>"
+
+#: project/home/templates/home/index.html:167
 msgid "map.access1"
 msgstr ""
 "Bus 049, 914 (<a href='http://telematics.oasa.gr/en/#stationInfo_450040_%CE"
 "%A3%CE%A7%CE%9F%CE%9B%CE%97%20%CE%9A%CE%91%CE%9B%CE%A9%CE%9D%20%CE%A4%CE"
 "%95%CE%A7%CE%9D%CE%A9%CE%9D' target='_blank'>SCHOLI KALON TECHNON</a> stop)"
 
-#: project/home/templates/home/index.html:138
+#: project/home/templates/home/index.html:168
 msgid "map.access2"
 msgstr ""
 "Metro green line (line 1) (<a href='http://www.stasy.gr/index.php?id=67&L=1' "
 "target='_blank'>KALLITHEA</a> stop)"
 
-#: project/home/templates/home/index.html:162
+#: project/home/templates/home/index.html:192
 msgid "auspices"
 msgstr "Under the auspices of NTUA"
 
@@ -214,7 +224,7 @@ msgid "Community Partners"
 msgstr "Community Partners"
 
 #: project/partners/models.py:73 project/program/models.py:197
-#: project/program/models.py:343 project/team/models.py:84
+#: project/program/models.py:351 project/team/models.py:84
 msgid "Published"
 msgstr "Published"
 
@@ -237,6 +247,7 @@ msgstr ""
 "If selected, the image will be overridden by that of the first presenter"
 
 #: project/program/forms/presenter_form.py:9
+#: venv/lib/python3.6/site-packages/django/forms/widgets.py:701
 msgid "No"
 msgstr "No"
 
@@ -301,6 +312,7 @@ msgid "schedule_time"
 msgstr "Time"
 
 #: project/program/templates/program/speakers.html:39
+#: project/program/templates/program/speakers.html:69
 msgid "speakers.bio"
 msgstr "Bio"
 

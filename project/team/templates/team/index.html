@@ -9,11 +9,11 @@
         <h2 class="page-heading">Our Team</h2>
         {% for id, team in teams.items %}
         <br />
-        <h3 ckass="wow fadeIn">{{team.title}} </h3>
+        <h3 class="teamtitle">{{team.title}} </h3>
         <div class="container-fluid">
           <div class="row vertical-align">
           {% for member in team.members %}
-          <div class="col col-6 col-lg-4">
+          <div class="col col-6 col-lg-3">
             <div class="card">
               <div class="card-body">
                 <div class="card-img-top">

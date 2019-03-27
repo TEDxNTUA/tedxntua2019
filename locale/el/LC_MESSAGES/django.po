@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-21 00:02+0100\n"
+"POT-Creation-Date: 2019-03-26 18:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,24 +147,34 @@ msgstr ""
 msgid "speakers"
 msgstr "Ομιλητές"
 
-#: project/home/templates/home/index.html:122
+#: project/home/templates/home/index.html:118
+#: project/program/templates/program/speakers.html:45
+msgid "Host"
+msgstr "Παρουσιαστής"
+
+#: project/home/templates/home/index.html:151
 #: project/program/templates/program/schedule.html:13
-#: project/program/templates/program/speakers.html:47
+#: project/program/templates/program/speakers.html:76
 msgid "to-be"
 msgstr "Θα ανακοινωθούν σύντομα"
 
-#: project/home/templates/home/index.html:132
+#: project/home/templates/home/index.html:161
 msgid "map.venue"
 msgstr "Χάρτης & Χώρος"
 
-#: project/home/templates/home/index.html:134
+#: project/home/templates/home/index.html:163
 msgid "map.desc"
 msgstr ""
 "Το αίνιγμα του TEDxNTUA θα εκτυλιχθεί φέτος στο Κέντρο Πολιτισμού «Ελληνικός "
 "Κόσμος». Το Κέντρο Πολιτισμού «Ελληνικός Κόσμος» βρίσκεται στη διεύθυνση "
 "Πειραιώς 254, Ταύρος. Πρόσβαση:"
 
-#: project/home/templates/home/index.html:137
+#: project/home/templates/home/index.html:166
+msgid "map.access0"
+msgstr "Ταξί με την <a href=\"https://get.uber.com/open_app\" "
+"target=\"_blank\">Uber</a>"
+
+#: project/home/templates/home/index.html:167
 msgid "map.access1"
 msgstr ""
 "Λεωφορείο 049, 914 (στάση <a href='http://telematics.oasa.gr/"
@@ -172,13 +182,13 @@ msgstr ""
 "%A9%CE%9D%20%CE%A4%CE%95%CE%A7%CE%9D%CE%A9%CE%9D' target='_blank'>ΣΧΟΛΗ "
 "ΚΑΛΩΝ ΤΕΧΝΩΝ</a>)"
 
-#: project/home/templates/home/index.html:138
+#: project/home/templates/home/index.html:168
 msgid "map.access2"
 msgstr ""
 "Μετρό πράσινη γραμμή ηλεκτρικού (στάση <a href='http://stasy.gr/index.php?"
 "id=67' target='_blank'>ΚΑΛΛΙΘΕΑ</a>) "
 
-#: project/home/templates/home/index.html:162
+#: project/home/templates/home/index.html:192
 msgid "auspices"
 msgstr "Υπό την αιγίδα του ΕΜΠ"
 
@@ -215,7 +225,7 @@ msgid "Community Partners"
 msgstr "Συνεργάτες Κοινότητας"
 
 #: project/partners/models.py:73 project/program/models.py:197
-#: project/program/models.py:343 project/team/models.py:84
+#: project/program/models.py:351 project/team/models.py:84
 msgid "Published"
 msgstr "Δημόσιο"
 
@@ -238,6 +248,7 @@ msgstr ""
 "Αν επιλεχθεί, η εικόνα θα αντικατασταθεί με την εικόνα του πρώτου παρουσιαστή"
 
 #: project/program/forms/presenter_form.py:9
+#: venv/lib/python3.6/site-packages/django/forms/widgets.py:701
 msgid "No"
 msgstr "Όχι"
 
@@ -285,7 +296,7 @@ msgstr "Workshop"
 
 #: project/program/models.py:171
 msgid "Hosting"
-msgstr "Παρουσίαση"
+msgstr "Παρουσιάζει"
 
 #: project/program/templates/program/schedule.html:3
 #: project/templates/layouts/partials/nav.html:54
@@ -302,6 +313,7 @@ msgid "schedule_time"
 msgstr "Ώρα"
 
 #: project/program/templates/program/speakers.html:39
+#: project/program/templates/program/speakers.html:69
 msgid "speakers.bio"
 msgstr "Βιογραφικό"
 

@@ -189,7 +189,7 @@ class Activity(TranslatableModel):
         width_field='image_width',
         height_field='image_height',
         null=True,
-        blank=True
+        blank=True,
     )
     image_height = models.PositiveIntegerField(editable=False, null=True)
     image_width = models.PositiveIntegerField(editable=False, null=True)
@@ -279,10 +279,18 @@ class PresenterManager(TranslatableManager):
         speakers = self.get_queryset().filter(
             activity__activity_type=Activity.TALK,
             is_published=True,
-        )
+        ).distinct()
         for speaker in speakers:
             speaker.talk = speaker.activity_set.filter(is_published=True).first()
         return speakers
+
+    def get_host(self):
+        '''Returns the host of the event'''
+        host = self.get_queryset().filter(
+            activity__activity_type=Activity.HOSTING,
+            is_published=True,
+        ).distinct()
+        return host
 
 
 # Presenter model & managers
@@ -300,7 +308,7 @@ class PresenterTypeManager(TranslatableManager):
         return super().get_queryset().filter(
             activity__activity_type=self.type_,
             is_published=True,
-        )
+        ).distinct()
 
 
 class Presenter(TranslatableModel):
@@ -326,7 +334,9 @@ class Presenter(TranslatableModel):
         'Image',
         upload_to='presenters/',
         width_field='image_width',
-        height_field='image_height'
+        height_field='image_height',
+        null=True,
+        blank=True,
     )
     image_height = models.PositiveIntegerField(editable=False, null=True)
     image_width = models.PositiveIntegerField(editable=False, null=True)
@@ -335,7 +345,9 @@ class Presenter(TranslatableModel):
         'Image',
         upload_to='presenters/',
         width_field='image_width',
-        height_field='image_height'
+        height_field='image_height',
+        null=True,
+        blank=True,
     )
     image_shadows_height = models.PositiveIntegerField(editable=False, null=True)
     image_shadows_width = models.PositiveIntegerField(editable=False, null=True)
@@ -372,10 +384,11 @@ def warm_presenter_images(sender, instance, **kwargs):
     '''
 
     for field in ['image', 'image_shadows']:
-        img_warmer = VersatileImageFieldWarmer(
-            instance_or_queryset=instance,
-            rendition_key_set='Sizes',
-            image_attr=field,
-            verbose=True
-        )
-        num_created, failed_to_create = img_warmer.warm()
+        if getattr(instance, field, None):
+            img_warmer = VersatileImageFieldWarmer(
+                instance_or_queryset=instance,
+                rendition_key_set='Sizes',
+                image_attr=field,
+                verbose=True
+            )
+            num_created, failed_to_create = img_warmer.warm()
