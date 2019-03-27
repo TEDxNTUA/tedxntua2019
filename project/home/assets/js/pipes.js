@@ -2,7 +2,7 @@
   const seconds = 8;  //Total duration of the animation
   const transition = "linear"; // Tranisiton animation of each path (not total)
   const max_lines = 1000;
-  const colors = [{'b': '#c1e3d2', 'f': '#323232'}];
+  const colors = [{'b': '#323232', 'f': '#c1e3d2'}];
   //const scale = 1/1.2 // The bigger the denominator, the bigger the svg
   const perScreen = 2; // pipe svgs per screen
   var num = 7; // number of svgs to render
