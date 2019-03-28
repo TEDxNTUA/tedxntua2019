@@ -65,6 +65,13 @@
 
 
 article.speakers {
+  h3.talk{
+    color: $primary;
+    text-align: center;
+  }
+  a.italics{
+    font-style: italic;
+  }
 	text-align: center;
 	font-size: .85rem;
 	/* remove bootstrap's container-fluid margin from this page, since we have a custom layout */

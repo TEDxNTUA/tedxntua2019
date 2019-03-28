@@ -7252,6 +7252,11 @@ article.speakers {
   text-align: center;
   font-size: .85rem;
   /* remove bootstrap's container-fluid margin from this page, since we have a custom layout */ }
+  article.speakers h3.talk {
+    color: #F19386;
+    text-align: center; }
+  article.speakers a.italics {
+    font-style: italic; }
   article.speakers section.content .container-fluid {
     margin-bottom: 0; }
   article.speakers section.content .speaker-seperator {
