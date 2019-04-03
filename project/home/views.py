@@ -13,7 +13,11 @@ class HomeView(TemplateView):
     def get(self, request, *args, **kwargs):
         speakers = Presenter.objects.get_speakers()
         host = Presenter.objects.get_host()
-        return render(request, self.template_name, {'speakers': speakers, 'host': host[0]})
+        try:
+            host = host[0]
+        except:
+            host = None
+        return render(request, self.template_name, {'speakers': speakers, 'host': host})
 
 
 def set_language(request):
