@@ -31,7 +31,7 @@
 		      <div class="speaker-info container-fluid">
 						<div class="row mb-3">
 							<div class="col col-12">
-								<h3 class="talk">{% trans "Talk" %} • 
+								<h3 class="talk">{% trans "Talk" %} •
 								<a class="italics" href="/schedule">{{ speaker.talk.title }} </a>
 								</h3>
 							</div>
@@ -43,11 +43,8 @@
 							</div>
 						</div>
 					</div>
-					{% if forloop.last %}
-					{% else %}
 					<div class="speaker-seperator">
 					</div>
-					{% endif %}
 	    {% endfor %}
 			<h2 >{% trans "Host" %}</h2>
 			<div id="host" class="speaker-header container-fluid">
