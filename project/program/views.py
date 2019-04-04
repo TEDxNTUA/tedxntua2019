@@ -15,7 +15,7 @@ class SpeakersView(View):
             host = host[0]
         except:
             host = None
-        return render(request, self.template_name, {'speakers': speakers, 'host': None})
+        return render(request, self.template_name, {'speakers': speakers, 'host': host})
 
 
 class ScheduleView(View):
